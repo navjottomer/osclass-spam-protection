@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OSClass Spam Protection\n"
-"POT-Creation-Date: 2017-05-29 01:53+0200\n"
-"PO-Revision-Date: 2017-05-29 01:54+0200\n"
+"POT-Creation-Date: 2017-09-05 01:16+0200\n"
+"PO-Revision-Date: 2017-09-05 01:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: Liath <amfearliath@gmx.de>\n"
 "Language: de_DE\n"
@@ -22,22 +22,22 @@ msgstr ""
 msgid "User"
 msgstr "Benutzer"
 
-#: admin/ban_log.php:22 admin/check.php:158 admin/comments_check.php:22
+#: admin/ban_log.php:22 admin/check.php:161 admin/comments_check.php:22
 #: admin/contact_check.php:22
 msgid "Reason"
 msgstr "Begründung"
 
-#: admin/ban_log.php:23 admin/security.php:598
+#: admin/ban_log.php:23 admin/tools.php:285
 msgid "IP"
 msgstr "IP"
 
-#: admin/ban_log.php:24 admin/security.php:401 admin/security.php:445
-#: admin/security.php:503 functions/searchUser.php:39
+#: admin/ban_log.php:24 admin/tools.php:70 admin/tools.php:114
+#: admin/tools.php:172 functions/searchUser.php:32
 msgid "Email"
 msgstr "E-Mail"
 
-#: admin/ban_log.php:25 admin/check.php:159 admin/comments_check.php:23
-#: admin/contact_check.php:23 admin/plugin.php:499 functions/log.php:65
+#: admin/ban_log.php:25 admin/check.php:162 admin/comments_check.php:23
+#: admin/contact_check.php:23 admin/plugin.php:542 functions/log.php:72
 msgid "Date"
 msgstr "Datum"
 
@@ -49,72 +49,72 @@ msgstr "Eintrag löschen"
 msgid "Activate user"
 msgstr "Benutzer aktivieren"
 
-#: admin/check.php:31
+#: admin/check.php:34
 msgid "Registered User"
 msgstr "Registrierter Benutzer"
 
-#: admin/check.php:35
+#: admin/check.php:38
 msgid "User is not registered"
 msgstr "Nicht registrierter Benutzer"
 
-#: admin/check.php:39
+#: admin/check.php:42
 msgid "Blocked ads summary"
 msgstr "Summe blockierter Anzeigen"
 
-#: admin/check.php:47
+#: admin/check.php:50
 msgid "User ID"
 msgstr "Benutzer-ID"
 
-#: admin/check.php:53
+#: admin/check.php:56
 msgid "User Name"
 msgstr "Benutzer Name"
 
-#: admin/check.php:59
+#: admin/check.php:62
 msgid "User Email"
 msgstr "Benutzer E-Mail"
 
-#: admin/check.php:65
-msgid "Location"
-msgstr "Wohnort"
-
-#: admin/check.php:71
+#: admin/check.php:68
 msgid "Date registered"
 msgstr "Registriert am"
 
-#: admin/check.php:77
+#: admin/check.php:74
 msgid "Last access"
 msgstr "Letzer Login"
 
-#: admin/check.php:83
+#: admin/check.php:80
 msgid "Last IP"
 msgstr "Letzte IP"
 
-#: admin/check.php:89
+#: admin/check.php:86
 msgid "Ad Date"
 msgstr "Datum der Anzeige"
 
-#: admin/check.php:95
+#: admin/check.php:91
+msgid "Location"
+msgstr "Wohnort"
+
+#: admin/check.php:98
 msgid "Activate Ad"
 msgstr "Anzeige aktivieren"
 
-#: admin/check.php:96
+#: admin/check.php:99
 msgid "Delete Ad"
 msgstr "Anzeige löschen"
 
-#: admin/check.php:98
+#: admin/check.php:101
 msgid "Block User"
 msgstr "Benutzer blockieren"
 
-#: admin/check.php:99 admin/help.php:310 admin/security.php:20
-#: admin/security.php:530
+#: admin/check.php:102 admin/help.php:310 admin/tools.php:29
+#: admin/tools.php:199
 msgid "IP Ban"
 msgstr "IP Sperren"
 
-#: admin/check.php:135
+#: admin/check.php:138
 msgid "Description"
 msgstr "Beschreibung"
 
-#: admin/check.php:157 functions/searchUser.php:37
+#: admin/check.php:160 functions/searchUser.php:30
 msgid "ID"
 msgstr "ID"
 
@@ -135,17 +135,17 @@ msgid "Stopwords"
 msgstr "blockierte Wörter"
 
 #: admin/comments.php:17 admin/help.php:139 admin/help.php:180
-#: admin/help.php:321 admin/security.php:21 admin/settings.php:23
+#: admin/help.php:321 admin/security.php:19 admin/settings.php:22
 msgid "Cleaner"
 msgstr "Bereinigung"
 
 #: admin/comments.php:18 admin/contact.php:17 admin/plugin.php:224
-#: admin/plugin.php:336 admin/plugin.php:375 admin/plugin.php:434
-#: admin/security.php:22 admin/settings.php:24
+#: admin/plugin.php:379 admin/plugin.php:418 admin/plugin.php:477
+#: admin/security.php:20 admin/settings.php:23 admin/tools.php:32
 msgid "Save"
 msgstr "Speichern"
 
-#: admin/comments.php:26 admin/config.php:120 admin/help.php:15
+#: admin/comments.php:26 admin/help.php:15 admin/main.php:124
 msgid "Comment Settings"
 msgstr "Kommentar Einstellungen"
 
@@ -167,17 +167,17 @@ msgid "Check for Links"
 msgstr "Auf Links überprüfen"
 
 #: admin/comments.php:41 admin/contact.php:40 admin/help.php:157
-#: admin/help.php:199 admin/settings.php:49
+#: admin/help.php:199 admin/settings.php:62
 msgid "Deactivated"
 msgstr "Deaktiviert"
 
 #: admin/comments.php:42 admin/help.php:94 admin/help.php:158
-#: admin/settings.php:59
+#: admin/settings.php:72
 msgid "Only title"
 msgstr "Nur Titel"
 
 #: admin/comments.php:43 admin/help.php:95 admin/help.php:159
-#: admin/settings.php:60
+#: admin/settings.php:73
 msgid "Title and description"
 msgstr "Titel und Beschreibung"
 
@@ -189,12 +189,12 @@ msgstr ""
 "Dies gestattet dem System nach Links in Kommentaren zu suchen und diese zu "
 "deaktivieren, wenn gefunden"
 
-#: admin/comments.php:55 admin/contact.php:77 admin/settings.php:120
+#: admin/comments.php:55 admin/contact.php:77 admin/settings.php:133
 msgid "Blocked Mails"
 msgstr "E-Mails blockieren"
 
 #: admin/comments.php:59 admin/contact.php:81 admin/help.php:122
-#: admin/help.php:168 admin/help.php:213 admin/settings.php:124
+#: admin/help.php:168 admin/help.php:213 admin/settings.php:137
 msgid "Block banned E-Mailadresses"
 msgstr "Gebannte E-Mailadressen blockieren"
 
@@ -205,16 +205,16 @@ msgstr ""
 "Hier kannst Du E-Mailadressen definieren, die vom System als Spam erkannt "
 "werden"
 
-#: admin/comments.php:64 admin/contact.php:86 admin/settings.php:129
+#: admin/comments.php:64 admin/contact.php:86 admin/settings.php:142
 msgid "Enter the blocked E-Mailadresses, separated by ,"
 msgstr "E-Mailadressen hier eingeben (getrennt mit ,)"
 
-#: admin/comments.php:71 admin/contact.php:93 admin/settings.php:136
+#: admin/comments.php:71 admin/contact.php:93 admin/settings.php:149
 msgid "Blocked Mail Hoster"
 msgstr "E-Mailanbieter blockieren"
 
 #: admin/comments.php:75 admin/contact.php:97 admin/help.php:123
-#: admin/help.php:169 admin/help.php:214 admin/settings.php:140
+#: admin/help.php:169 admin/help.php:214 admin/settings.php:153
 msgid "Block banned E-Mail TLD"
 msgstr "E-Mailanbieter blockieren"
 
@@ -226,15 +226,15 @@ msgstr ""
 "Diese Einstellung ermöglicht das blockieren von E-Mailanbietern (z.B. mail."
 "ru, gmail.com)"
 
-#: admin/comments.php:80 admin/contact.php:102 admin/settings.php:145
+#: admin/comments.php:80 admin/contact.php:102 admin/settings.php:158
 msgid "Enter the blocked E-Mail TLD, separated by ,"
 msgstr "E-Mailanbieter hier eingeben (getrennt mit ,)"
 
-#: admin/comments.php:90 admin/contact.php:112 admin/settings.php:154
+#: admin/comments.php:90 admin/contact.php:112 admin/settings.php:167
 msgid "Stop Words"
 msgstr "Geblockte Wörter"
 
-#: admin/comments.php:93 admin/contact.php:115 admin/settings.php:157
+#: admin/comments.php:93 admin/contact.php:115 admin/settings.php:170
 msgid ""
 "Here you can define the search mechanism, how stopwords are checked. You can "
 "search for substrings or particular words"
@@ -242,7 +242,7 @@ msgstr ""
 "Hier kannst Du bestimmen, wie nach blockierten Wörtern gesucht wird. Du "
 "kannst nach ganzen Wörtern oder nach Teilwörtern suchen lassen"
 
-#: admin/comments.php:97 admin/contact.php:119 admin/settings.php:161
+#: admin/comments.php:97 admin/contact.php:119 admin/settings.php:174
 msgid "Search for Substrings"
 msgstr "Suche nach Teilwörtern"
 
@@ -256,7 +256,7 @@ msgstr ""
 "deaktiviert das Kommentar, wenn gefunden (e.g. <em>`Birne`</em> wird "
 "gefunden in <em>`Glühbirne`</em>)</small>"
 
-#: admin/comments.php:101 admin/contact.php:123 admin/settings.php:165
+#: admin/comments.php:101 admin/contact.php:123 admin/settings.php:178
 msgid "Search for Words"
 msgstr "Suche nach ganzen Wörtern"
 
@@ -294,18 +294,18 @@ msgstr ""
 "Hier kannst Du aktivieren, dass nicht aktivierte Kommentare nach x Tagen "
 "automatisch gelöscht werden."
 
-#: admin/comments.php:130 admin/comments.php:156 admin/security.php:642
-#: admin/settings.php:221 admin/settings.php:247 admin/settings.php:273
+#: admin/comments.php:130 admin/comments.php:156 admin/security.php:434
+#: admin/settings.php:207 admin/settings.php:233 admin/settings.php:259
 msgid "after"
 msgstr "nach"
 
-#: admin/comments.php:136 admin/comments.php:162 admin/security.php:648
-#: admin/settings.php:227 admin/settings.php:253 admin/settings.php:279
+#: admin/comments.php:136 admin/comments.php:162 admin/security.php:440
+#: admin/settings.php:213 admin/settings.php:239 admin/settings.php:265
 msgid "Max."
 msgstr "Max."
 
 #: admin/comments.php:149
-msgid "Delete as spam marked comments"
+msgid "Delete comments marked as spam"
 msgstr "Als Spam markierte Kommentare löschen"
 
 #: admin/comments.php:151
@@ -315,6 +315,16 @@ msgid ""
 msgstr ""
 "Hier kannst Du aktivieren, dass als Spam markierte Anzeigen nach x Tagen "
 "automatisch gelöscht werden."
+
+#: admin/comments.php:172 admin/contact.php:139 admin/security.php:524
+#: admin/settings.php:275 admin/tools.php:489
+msgid "<strong>Saving</strong>"
+msgstr "<strong>Speichere</strong>"
+
+#: admin/comments.php:173 admin/contact.php:140 admin/security.php:525
+#: admin/settings.php:276 admin/tools.php:490
+msgid "Saving data, please be patient."
+msgstr "Speichere Daten. Bitte etwas Geduld."
 
 #: admin/comments_check.php:20 admin/contact_check.php:20
 msgid "Status"
@@ -336,7 +346,7 @@ msgstr "Ansehen"
 msgid "Activate"
 msgstr "Aktivieren"
 
-#: admin/comments_check.php:43 admin/contact_check.php:46 admin/plugin.php:510
+#: admin/comments_check.php:43 admin/contact_check.php:46 admin/plugin.php:553
 msgid "Delete"
 msgstr "Löschen"
 
@@ -406,64 +416,9 @@ msgstr ""
 msgid "Delete comment and block user"
 msgstr "Kommentar löschen und Nutzer blockieren"
 
-#: admin/config.php:46 admin/plugin.php:115 admin/plugin.php:161
-msgid "<strong>Success.</strong>"
-msgstr "<strong>Erfolg</strong>"
-
-#: admin/config.php:47 admin/plugin.php:116 admin/plugin.php:162
-msgid "Settings saved."
-msgstr "Einstellungen gespeichert"
-
-#: admin/config.php:60 admin/plugin.php:25 admin/plugin.php:41
-#: admin/plugin.php:52 admin/plugin.php:72 admin/plugin.php:88
-#: admin/plugin.php:99 admin/plugin.php:129 admin/plugin.php:175
-msgid "<strong>Error.</strong>"
-msgstr "<strong>Fehler</strong>"
-
-#: admin/config.php:61 admin/plugin.php:130 admin/plugin.php:176
-msgid "Your settings can not be saved."
-msgstr "Die Einstellungen konnten nicht übernommen werden."
-
-#: admin/config.php:82 admin/config.php:95 admin/config.php:102
-msgid "<strong>Error</strong>"
-msgstr "<strong>Fehler</strong>"
-
-#: admin/config.php:83
-msgid "Could not create file"
-msgstr "Datei kann nicht erstellt werden"
-
-#: admin/config.php:88
-msgid "<strong>Success</strong>"
-msgstr "<strong>Erfolg</strong>"
-
-#: admin/config.php:89
-msgid "File created"
-msgstr "Datei erstellt"
-
-#: admin/config.php:96
-msgid "Path not writable"
-msgstr "Pfad nicht beschreibbar"
-
-#: admin/config.php:103
-msgid "Source file is empty. You have to create your own standard file"
-msgstr "Quelldatei ist leer. Du musst die Weiterleitungsdatei selber erstellen"
-
-#: admin/config.php:119 admin/help.php:14 admin/settings.php:31
-msgid "Ad Settings"
-msgstr "Anzeigen Einstellungen"
-
-#: admin/config.php:121 admin/contact.php:25 admin/help.php:16
+#: admin/contact.php:25 admin/help.php:16 admin/main.php:125
 msgid "Contact Settings"
 msgstr "Kontakt Einstellungen"
-
-#: admin/config.php:122
-msgid "Account Settings"
-msgstr "Kontoeinstellungen"
-
-#: admin/config.php:123 classes/class.spamprotection.php:306
-#: functions/backend.php:157 functions/backend.php:165
-msgid "Help"
-msgstr "Hilfe"
 
 #: admin/contact.php:29 admin/help.php:190
 msgid "Activate the Contact Form Spam Protection"
@@ -489,13 +444,13 @@ msgstr ""
 "Dies gestattet dem System nach Links in Kontaktnachrichten zu suchen und die "
 "Mail als spam zu markieren, wenn gefunden"
 
-#: admin/contact.php:49 admin/security.php:104 admin/security.php:261
-#: admin/settings.php:102
+#: admin/contact.php:49 admin/security.php:116 admin/security.php:290
+#: admin/settings.php:115
 msgid "Honeypot"
 msgstr "Honigtopf"
 
 #: admin/contact.php:53 admin/help.php:113 admin/help.php:204
-#: admin/settings.php:106
+#: admin/settings.php:119
 msgid "Activate the Honeypot form field"
 msgstr "Honigtopf aktivieren"
 
@@ -507,7 +462,7 @@ msgstr ""
 "Diese Option fügt ein verstecktes Eingabefeld dem Kontaktformular hinzu. "
 "Fallen Bots drauf rein wird die Anzeige als Spam markiert."
 
-#: admin/contact.php:58 admin/settings.php:110
+#: admin/contact.php:58 admin/settings.php:123
 msgid "Enter the name of the hidden honeypot field"
 msgstr "Name des Honigtopf-Feldes"
 
@@ -634,6 +589,10 @@ msgstr "E-Mail löschen und Nutzer blockieren"
 msgid "General"
 msgstr "Generelles"
 
+#: admin/help.php:14 admin/main.php:123 admin/settings.php:30
+msgid "Ad Settings"
+msgstr "Anzeigen Einstellungen"
+
 #: admin/help.php:17
 msgid "Security Settings"
 msgstr "Sicherheits Einstellungen"
@@ -745,7 +704,7 @@ msgstr ""
 "vorkommen dürfen. Sollte eins oder mehrere dieser Wörter in neuen oder "
 "bearbeiteten Anzeigen vorkommen, werden diese als Spam markiert"
 
-#: admin/help.php:67 admin/settings.php:22 admin/settings.php:182
+#: admin/help.php:67
 msgid ".htaccess Editor"
 msgstr ".htaccess Editor"
 
@@ -769,7 +728,7 @@ msgstr "Viel Spass mit diesem kleinen Plugin"
 msgid "Main Features"
 msgstr "Hauptfunktionen"
 
-#: admin/help.php:80 admin/settings.php:35
+#: admin/help.php:80 admin/settings.php:34
 msgid "Activate the Spam Protection"
 msgstr "Spamschutz aktivieren"
 
@@ -783,7 +742,7 @@ msgstr ""
 "Einige Funktionen können separat deaktiviert werden, schaltest Du diese "
 "Funktion ab, ist das ganze System deaktiviert."
 
-#: admin/help.php:85 admin/settings.php:46
+#: admin/help.php:85 admin/settings.php:59
 msgid "Check for duplicates"
 msgstr "Nach Duplikaten suchen"
 
@@ -796,7 +755,7 @@ msgstr ""
 "allen Anzeigen kann eine hohe Serverlast verursachen, solltest Du viele "
 "Anzeigen haben."
 
-#: admin/help.php:88 admin/settings.php:50
+#: admin/help.php:88 admin/settings.php:63
 msgid "Per user"
 msgstr "Pro Benutzer"
 
@@ -809,7 +768,7 @@ msgstr "Diese Option sucht nur in Anzeigen des gleichen Benutzers."
 msgid "<strong>(recommended)</strong>"
 msgstr "<strong>(empfohlen)</strong>"
 
-#: admin/help.php:89 admin/settings.php:51
+#: admin/help.php:89 admin/settings.php:64
 msgid "All items"
 msgstr "Alle Anzeigen"
 
@@ -847,7 +806,7 @@ msgstr ""
 "3.) Hier kannst Du bestimmen, welcher Suchalgorythmus für die Suche nach "
 "Duplikaten verwendet wird."
 
-#: admin/help.php:102 admin/settings.php:75
+#: admin/help.php:102 admin/settings.php:88
 msgid "md5/string comparition"
 msgstr "md5/Zeichenkette vergleichen"
 
@@ -862,7 +821,7 @@ msgstr ""
 "net/manual/en/function.md5.php\">md5 hash</a> ermittelt und mit den anderen "
 "Anzeigen verglichen."
 
-#: admin/help.php:103 admin/settings.php:76
+#: admin/help.php:103 admin/settings.php:89
 msgid "Similar text"
 msgstr "Ähnlichkeitsberechnung"
 
@@ -1089,15 +1048,15 @@ msgstr ""
 "Speichere hier Deine \"Badwords\" die Du in neuen Kontaktnachrichten "
 "verbieten möchtest."
 
-#: admin/help.php:225 admin/security.php:16 admin/security.php:29
+#: admin/help.php:225 admin/security.php:16 admin/security.php:27
 msgid "User Protection"
 msgstr "Benutzer Sicherheit"
 
-#: admin/help.php:225 admin/security.php:17 admin/security.php:186
+#: admin/help.php:225 admin/security.php:17 admin/security.php:201
 msgid "Admin Protection"
 msgstr "Administrator Sicherheit"
 
-#: admin/help.php:227 admin/security.php:33
+#: admin/help.php:227 admin/security.php:31
 msgid "Activate the Form Protection"
 msgstr "Formularschutz aktivieren"
 
@@ -1111,7 +1070,7 @@ msgstr ""
 "können separat deaktiviert werden, schaltest Du diese Funktion ab, ist das "
 "ganze System deaktiviert."
 
-#: admin/help.php:232 admin/security.php:44 admin/security.php:201
+#: admin/help.php:232 admin/security.php:42 admin/security.php:216
 msgid "Max amount of wrong logins"
 msgstr "Maximale Anzahl von Fehlanmeldungen"
 
@@ -1121,7 +1080,7 @@ msgstr ""
 "Hier kannst Du festlegen, wieviele Anmeldeversuche innerhalb welchem "
 "Zeitraum erlaubt sind."
 
-#: admin/help.php:237 admin/security.php:82 admin/security.php:239
+#: admin/help.php:237 admin/security.php:94 admin/security.php:268
 msgid "Action done after false logins"
 msgstr "Aktion nach überschreiten der maximalen Anmeldeversuche"
 
@@ -1132,7 +1091,7 @@ msgstr ""
 "Lege hier fest, was passieren soll nachdem die maximale Anzahl überschritten "
 "wurde."
 
-#: admin/help.php:240 admin/security.php:85 admin/security.php:242
+#: admin/help.php:240 admin/security.php:97 admin/security.php:271
 msgid "Disable user account"
 msgstr "Benutzerkonto deaktivieren"
 
@@ -1140,7 +1099,7 @@ msgstr "Benutzerkonto deaktivieren"
 msgid "With this option, the user account will be disabled"
 msgstr "Diese Einstellung deaktiviert das Benutzerkonto"
 
-#: admin/help.php:241 admin/security.php:86 admin/security.php:243
+#: admin/help.php:241 admin/security.php:98 admin/security.php:272
 msgid "Add IP to Banlist"
 msgstr "IP zur Sperrliste hinzufügen"
 
@@ -1148,7 +1107,7 @@ msgstr "IP zur Sperrliste hinzufügen"
 msgid "This will add the user ip to the ban list"
 msgstr "Diese Einstellung fügt die IP der Sperrliste hinzu"
 
-#: admin/help.php:242 admin/security.php:87 admin/security.php:244
+#: admin/help.php:242 admin/security.php:99 admin/security.php:273
 msgid "Both"
 msgstr "Beides"
 
@@ -1156,8 +1115,8 @@ msgstr "Beides"
 msgid "Both actions will done after limit has reached"
 msgstr "Hiermit werden beide Aktionen zusammen ausgeführt"
 
-#: admin/help.php:245 admin/help.php:248 admin/security.php:54
-#: admin/security.php:211 admin/security.php:323
+#: admin/help.php:245 admin/help.php:248 admin/security.php:52
+#: admin/security.php:226 admin/security.php:352
 msgid "Unban accounts after"
 msgstr "Entsperren nach"
 
@@ -1177,8 +1136,8 @@ msgstr ""
 "Dies ist die Zeitspanne, wie lange ein Benutzer mindestens gesperrt bleibt. "
 "Setze es auf 0 um die automatische Entsperrung zu deaktivieren"
 
-#: admin/help.php:249 admin/security.php:61 admin/security.php:218
-#: admin/security.php:330
+#: admin/help.php:249 admin/security.php:73 admin/security.php:247
+#: admin/security.php:373
 msgid "Run cron..."
 msgstr "Cron aufrufen..."
 
@@ -1188,7 +1147,7 @@ msgstr ""
 "Hier kannst Du festlegen wie oft der Cron überprüft ob Benutzer "
 "freigeschaltet werden müssen."
 
-#: admin/help.php:254 admin/security.php:97
+#: admin/help.php:254 admin/security.php:109
 msgid "Inform user how many tries are remaining"
 msgstr "Den Benutzer über die verbleibenden Anmeldeversuche informieren"
 
@@ -1200,7 +1159,7 @@ msgstr ""
 "Wenn diese Einstellung aktiviert ist, wird der Benutzer über die "
 "verbleibende Anzahl der möglichen Anmeldeversuche informiert."
 
-#: admin/help.php:259 admin/security.php:106
+#: admin/help.php:259 admin/security.php:118
 msgid "Add Honeypot to login/register/recover forms"
 msgstr ""
 "Honeypot den Login/Registrierungs/Wiederherstellen Formularen hinzufügen"
@@ -1244,7 +1203,7 @@ msgstr ""
 msgid "Registrations"
 msgstr "Registrierungen"
 
-#: admin/help.php:273 admin/security.php:278
+#: admin/help.php:273 admin/security.php:307
 msgid "Check registrations"
 msgstr "Registrierungen überwachen"
 
@@ -1261,15 +1220,15 @@ msgstr ""
 "Anbieter, muss der Benutzer für die Registrierung eine dieser E-Mail "
 "Adressen verwenden."
 
-#: admin/help.php:278 admin/security.php:298
+#: admin/help.php:278 admin/security.php:327
 msgid "StopForumSpam"
 msgstr "StopForumSpam"
 
-#: admin/help.php:281 admin/security.php:303
+#: admin/help.php:281 admin/security.php:332
 msgid "Check email address"
 msgstr "E-Mail Adresse überprüfen"
 
-#: admin/help.php:281 admin/security.php:308
+#: admin/help.php:281 admin/security.php:337
 msgid "Check IP"
 msgstr "IP überprüfen"
 
@@ -1285,7 +1244,7 @@ msgstr ""
 "\">StopForumSpam</a> verglichen. Ist eins davon dort gelistet, kann sich der "
 "Benutzer nicht registrieren."
 
-#: admin/help.php:285 admin/security.php:315
+#: admin/help.php:285 admin/security.php:344
 msgid "Add Email or IP to Ban list if found on StopForumSpam"
 msgstr ""
 "E-Mail Adresse oder IP der Banliste hinzufügen, wenn auf StopForumSpam "
@@ -1301,7 +1260,7 @@ msgstr ""
 "Adressen oder IP's intern gebannt. So kannst Du unnötigen Datenverkehr und "
 "Serveranfragen verhindern."
 
-#: admin/help.php:289 admin/security.php:345
+#: admin/help.php:289 admin/security.php:388
 msgid "Max frequency of reports"
 msgstr "Maximale Anzahl an Meldungen"
 
@@ -1313,7 +1272,7 @@ msgstr ""
 "Hier kannst Du die maximale Anzahl angeben, wie oft ein Benutzer maximal "
 "gemeldet worden sein darf. (0 - 255)"
 
-#: admin/help.php:293 admin/security.php:351
+#: admin/help.php:293 admin/security.php:399
 msgid "Max percentage of suspiciousness"
 msgstr "Max. Prozent Misstrauen"
 
@@ -1325,7 +1284,7 @@ msgstr ""
 "Gib hier an, wie hoch das Vertrauen in Prozent auf StopForumSpam sein muss "
 "(0 = hohes Vertrauen, 100 = geringes Vertrauen)."
 
-#: admin/help.php:299 admin/security.php:19 admin/security.php:370
+#: admin/help.php:299 admin/tools.php:28 admin/tools.php:39
 msgid "Bad/Trusted User"
 msgstr "Gute/Schlechte Benutzer"
 
@@ -1372,7 +1331,7 @@ msgstr ""
 "Hier kannst du die IP Ban Funktion aktivieren und festlegen, was mit "
 "gesperrten IP's passiert"
 
-#: admin/help.php:313 admin/security.php:548
+#: admin/help.php:313 admin/tools.php:218
 msgid "Use standard file"
 msgstr "Standarddatei nutzen"
 
@@ -1382,7 +1341,7 @@ msgid ""
 msgstr ""
 "Du kannst die Datei durch das Plugin erstellen und nach belieben modifizieren"
 
-#: admin/help.php:314 admin/security.php:565
+#: admin/help.php:314 admin/tools.php:235
 msgid "Cause 404 Error"
 msgstr "Verursache 404 Fehler"
 
@@ -1391,7 +1350,7 @@ msgid "This option redirects the banned user to a fake 404 Page."
 msgstr ""
 "Dieser Link leitet den Benutzer zu einer simulierten Fehler 404 Seite weiter."
 
-#: admin/help.php:315 admin/security.php:569
+#: admin/help.php:315 admin/tools.php:239
 msgid "Cause 500 Error"
 msgstr "Verursache 500 Fehler"
 
@@ -1400,7 +1359,7 @@ msgid "This option redirects the banned user to a fake 500 Page."
 msgstr ""
 "Dieser Link leitet den Benutzer zu einer simulierten Fehler 500 Seite weiter."
 
-#: admin/help.php:316 admin/security.php:578
+#: admin/help.php:316 admin/tools.php:266
 msgid "Or redirect banned users to"
 msgstr "Oder leite gesperrte Benutzer zu"
 
@@ -1441,17 +1400,25 @@ msgid ""
 "beta tests.\n"
 "            <br />\n"
 "            <ul>\n"
-"            <li><strong>Web-Media</strong>   -   Improve the plugin "
+"            <li><strong>Web-Media</strong>          -   Improve the plugin "
 "security</li>\n"
-"            <li><strong>Aficionado</strong>  -   Testing and error "
-"reporting...</li>\n"
-"            <li><strong>dev101</strong>      -   Suggestions and explaining "
-"features and functions</li>\n"
-"            <li><strong>TangoX</strong>      -   Correcting some "
+"            <li><strong>Aficionado & Tito </strong>     -   Testing and "
+"error reporting...</li>\n"
+"            <li><strong>dev101</strong>             -   Suggestions and "
+"explaining features and functions</li>\n"
+"            <li><strong>TangoX</strong>             -   Correcting some "
 "translations</li>\n"
 "            </ul> \n"
 "            <strong>Thanks to all for your help!</strong>\n"
+"            <br /><br /><br /><br />\n"
+"            After the time, this plugin becomes more then a premium plugin, "
+"but it is and will always be free. \n"
+"            If you would like to thank with a donation for the work, I would "
+"be glad if you donate something to the Unicef.\n"
 "            <br /><br />\n"
+"            <a class=\"btn btn-red\" style=\"float: none;\" href=\"https://"
+"donate.unicef.org/donate/now\" target=\"_blank\">Donate for Unicef</a>.\n"
+"            <br /><br /><br /><br />\n"
 "            I hope this plugin will be useful to many of you and it helps "
 "you to reduce the spam on your pages to a minimum. \n"
 "            Keep in mind, however, that it was never intended to fight spam "
@@ -1480,17 +1447,25 @@ msgstr ""
 "entwickelt, wobei ich dort viele Ideen gesammelt habe und mich einige User "
 "in Beta-Tests unterstützt haben. Darum geht ein besonderer Dank an:<br />\n"
 "            <ul>\n"
-"            <li><strong>Web-Media</strong>   -   Für die Verbesserung der "
-"Sicherheit im Plugin.</li>\n"
-"            <li><strong>Aficionado</strong>  -   Für die vielen Tests und "
-"Berichterstattungen.</li>\n"
-"            <li><strong>dev101</strong>      -   Für die vielen Vorschläge "
-"und Erklärungen</li>\n"
-"            <li><strong>TangoX</strong>      -   Für die vielen "
+"            <li><strong>Web-Media</strong>          -   Für die Verbesserung "
+"der Sicherheit im Plugin.</li>\n"
+"            <li><strong>Aficionado & Tito </strong>     -   Für die vielen "
+"Tests und Berichterstattungen.</li>\n"
+"            <li><strong>dev101</strong>             -   Für die vielen "
+"Vorschläge und Erklärungen</li>\n"
+"            <li><strong>TangoX</strong>             -   Für die vielen "
 "Übersetzungsvorschläge</li>\n"
 "            </ul> \n"
 "            <strong>Danke an alle für Eure Unterstützung!</strong>\n"
+"            <br /><br /><br /><br />\n"
+"            Mit der Zeit wurde dieses Plugin immer mehr zu einem Premium "
+"Plugin, aber es ist und es wird immer kostenlos bleiben \n"
+"            Wenn Du dich mit einer Spende für die Arbeit bedanken möchtest, "
+"würde ich mich freuen, wenn Du etwas an die UNICEF spendest.\n"
 "            <br /><br />\n"
+"            <a class=\"btn btn-red\" style=\"float: none;\" href=\"https://"
+"donate.unicef.org/donate/now\" target=\"_blank\">Spende an die Unicef</a>.\n"
+"            <br /><br /><br /><br />\n"
 "            Ich hoffe, dass dieses Plugin für viele von Euch nützlich sein "
 "wird und es Euch hilft den Spam auf ein Minimum zu reduzieren. Aber denkt "
 "immer daran, dieses Plugin war nie dazu bestimmt, den Spam automatisch zu "
@@ -1516,6 +1491,61 @@ msgstr ""
 "            <br /><br />\n"
 "            <strong>Vielen Dank</strong>\n"
 "            "
+
+#: admin/main.php:50 admin/plugin.php:115 admin/plugin.php:161
+msgid "<strong>Success.</strong>"
+msgstr "<strong>Erfolg</strong>"
+
+#: admin/main.php:51 admin/plugin.php:116 admin/plugin.php:162
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert"
+
+#: admin/main.php:64 admin/plugin.php:25 admin/plugin.php:41
+#: admin/plugin.php:52 admin/plugin.php:72 admin/plugin.php:88
+#: admin/plugin.php:99 admin/plugin.php:129 admin/plugin.php:175
+msgid "<strong>Error.</strong>"
+msgstr "<strong>Fehler</strong>"
+
+#: admin/main.php:65 admin/plugin.php:130 admin/plugin.php:176
+msgid "Your settings can not be saved."
+msgstr "Die Einstellungen konnten nicht übernommen werden."
+
+#: admin/main.php:86 admin/main.php:99 admin/main.php:106
+msgid "<strong>Error</strong>"
+msgstr "<strong>Fehler</strong>"
+
+#: admin/main.php:87
+msgid "Could not create file"
+msgstr "Datei kann nicht erstellt werden"
+
+#: admin/main.php:92
+msgid "<strong>Success</strong>"
+msgstr "<strong>Erfolg</strong>"
+
+#: admin/main.php:93
+msgid "File created"
+msgstr "Datei erstellt"
+
+#: admin/main.php:100
+msgid "Path not writable"
+msgstr "Pfad nicht beschreibbar"
+
+#: admin/main.php:107
+msgid "Source file is empty. You have to create your own standard file"
+msgstr "Quelldatei ist leer. Du musst die Weiterleitungsdatei selber erstellen"
+
+#: admin/main.php:126
+msgid "Account Settings"
+msgstr "Kontoeinstellungen"
+
+#: admin/main.php:127
+msgid "Tools"
+msgstr "Tools"
+
+#: admin/main.php:128 classes/class.spamprotection.php:351
+#: functions/backend.php:157 functions/backend.php:165
+msgid "Help"
+msgstr "Hilfe"
 
 #: admin/plugin.php:26
 msgid "Can't create folder, please create manually and grant write access."
@@ -1546,9 +1576,9 @@ msgstr "Kann %s nicht löschen. Vielleicht falsche Berechtigungen?"
 msgid "There is no filename given to delete!"
 msgstr "Falscher oder fehlender Dateiname"
 
-#: admin/plugin.php:206 admin/plugin.php:261
-#: classes/class.spamprotection.php:305 functions/backend.php:156
-#: functions/backend.php:164
+#: admin/plugin.php:206 admin/plugin.php:261 admin/tools.php:393
+#: admin/tools.php:405 classes/class.spamprotection.php:349
+#: functions/backend.php:156 functions/backend.php:164
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -1560,11 +1590,11 @@ msgstr "E-Mail Templates"
 msgid "Export"
 msgstr "Export"
 
-#: admin/plugin.php:209 classes/class.spamprotection.php:2052
+#: admin/plugin.php:209 classes/class.spamprotection.php:2146
 msgid "Import"
 msgstr "Import"
 
-#: admin/plugin.php:210
+#: admin/plugin.php:210 classes/class.spamprotection.php:350
 msgid "Global Log"
 msgstr "Globales Log"
 
@@ -1601,7 +1631,7 @@ msgstr "Dies erlaubt Dir ein Icon in der Admin-Seitenleiste anzuzeigen."
 msgid "Show icon after"
 msgstr "Zeige Icon nach"
 
-#: admin/plugin.php:255 classes/class.spamprotection.php:304
+#: admin/plugin.php:255 classes/class.spamprotection.php:348
 #: functions/backend.php:155
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -1711,7 +1741,79 @@ msgstr ""
 "Dies überprüft nach jedem automatischen oder manuellen Update, ob Änderungen "
 "an der Datenbank vorgenommen werden müssen."
 
+#: admin/plugin.php:337
+msgid "Global log settings"
+msgstr "Globale Log Einstellungen"
+
+#: admin/plugin.php:342
+msgid "Activate the global log"
+msgstr "Globales Log aktivieren"
+
 #: admin/plugin.php:344
+msgid ""
+"If this option is activated, all activities of this plugin will be logged in "
+"the global log."
+msgstr ""
+"Ist diese Option aktiviert, werden alle Aktivitäten des Plugins im Global "
+"Log aufgezeichnet."
+
+#: admin/plugin.php:348
+msgid "Standard log limit"
+msgstr "Standard Limit für Logeinträge"
+
+#: admin/plugin.php:349
+msgid "Logs"
+msgstr "Logs"
+
+#: admin/plugin.php:351 functions/log.php:42
+msgid "Show 25 log entries"
+msgstr "Zeige 25 Einträge"
+
+#: admin/plugin.php:352 functions/log.php:43
+msgid "Show 50 log entries"
+msgstr "Zeige 50 Einträge"
+
+#: admin/plugin.php:353 functions/log.php:44
+msgid "Show 100 log entries"
+msgstr "Zeige 100 Einträge"
+
+#: admin/plugin.php:356
+msgid ""
+"This would be the standard, how many logs are shown at once. You can change "
+"this on the global log page also."
+msgstr ""
+"Standardeinstellung, wieviele Logeinträge gleichzeitig angezeigt werden. Du "
+"kannst dies auch im Global Log ändern."
+
+#: admin/plugin.php:362
+msgid "Automatically delete logs after"
+msgstr "Lösche Logs automatisch nach"
+
+#: admin/plugin.php:365
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: admin/plugin.php:366
+msgid "1 day"
+msgstr "1 Tag"
+
+#: admin/plugin.php:367
+msgid "1 week"
+msgstr "1 Woche"
+
+#: admin/plugin.php:368
+msgid "1 month"
+msgstr "1 Monat"
+
+#: admin/plugin.php:369
+msgid "6 month"
+msgstr "6 Monate"
+
+#: admin/plugin.php:374
+msgid "Clear now"
+msgstr "Jetzt löschen"
+
+#: admin/plugin.php:387
 msgid ""
 "Here you can edit the mailtemplates, which will be used to inform the user "
 "about false login attempts"
@@ -1719,16 +1821,16 @@ msgstr ""
 "Hier kannst Du die E-Mail Templates bearbeiten die verwendet werden, wenn "
 "ein Benutzer über die Fehlanmeldungen informiert wird"
 
-#: admin/plugin.php:345
+#: admin/plugin.php:388
 #, php-format
 msgid ""
-"If you dont want to generate your own templates, the standard mail templates "
-"will be used. The mails for admins will be always sended to: %s"
+"If you don't want to generate your own templates, the standard mail "
+"templates will be used. The mails for admins will always be sent to: %s"
 msgstr ""
 "Möchtest Du hier keine Templates erstellen, werden die Standardtemplates "
 "verwendet. E-Mails an Admins werden immer an %s gesendet"
 
-#: admin/plugin.php:350
+#: admin/plugin.php:393
 msgid ""
 "For adding important informations in your mail, you can use following "
 "placeholders:"
@@ -1736,85 +1838,85 @@ msgstr ""
 "Um der E-Mail wichtige Informationen hinzuzufügen, verwende folgende "
 "Platzhalter:"
 
-#: admin/plugin.php:353
+#: admin/plugin.php:396
 #, php-format
 msgid "This is the name of your page (%s)"
 msgstr "Der Name der Seite (%s)"
 
-#: admin/plugin.php:354
+#: admin/plugin.php:397
 msgid "This is the name of the user who will receive the mail"
 msgstr "Der Name des Benutzers, der die E-Mail erhält"
 
-#: admin/plugin.php:355
+#: admin/plugin.php:398
 msgid "This is the used mail address for the login attempts"
 msgstr "Die verwendete E-Mail Adresse während der Anmeldeversuche"
 
-#: admin/plugin.php:356
+#: admin/plugin.php:399
 msgid "This is the date for the last false login attempt"
 msgstr "Das Datum des letzten Anmeldeversuchs"
 
-#: admin/plugin.php:357
+#: admin/plugin.php:400
 msgid "This is the ip which was used for the false login attempt"
 msgstr "Die IP die während der Anmeldeversuche verwendet wurde"
 
-#: admin/plugin.php:358
+#: admin/plugin.php:401
 msgid "This link allows the user to automatically unban his account"
 msgstr "Dieser Link erlaubt es dem Benutzer sich wieder zu entsperren"
 
-#: admin/plugin.php:359
+#: admin/plugin.php:402
 msgid "This link redirect the user to the password recovery page"
 msgstr "Dieser Link leitet den Benutzer zur Passwortwiederherstellung weiter"
 
-#: admin/plugin.php:360
+#: admin/plugin.php:403
 msgid "This link redirect the admin to the ban list"
 msgstr "Dieser Link leitet den Admin zur Ban Liste weiter"
 
-#: admin/plugin.php:380
+#: admin/plugin.php:423
 msgid "Configure mail templates for false user logins"
 msgstr "E-Mail Templates für Benutzer Falschanmeldungen konfigurieren"
 
-#: admin/plugin.php:383
+#: admin/plugin.php:426
 msgid "Send to user"
 msgstr "Zu senden an den Benutzer"
 
-#: admin/plugin.php:385 admin/plugin.php:396 admin/plugin.php:413
-#: admin/plugin.php:424
+#: admin/plugin.php:428 admin/plugin.php:439 admin/plugin.php:456
+#: admin/plugin.php:467
 msgid "Subject"
 msgstr "Betreff"
 
-#: admin/plugin.php:388 admin/plugin.php:399 admin/plugin.php:416
-#: admin/plugin.php:427
+#: admin/plugin.php:431 admin/plugin.php:442 admin/plugin.php:459
+#: admin/plugin.php:470
 msgid "Mail"
 msgstr "E-Mail"
 
-#: admin/plugin.php:390 admin/plugin.php:401 admin/plugin.php:418
-#: admin/plugin.php:429
+#: admin/plugin.php:433 admin/plugin.php:444 admin/plugin.php:461
+#: admin/plugin.php:472
 #, php-format
 msgid "Send test mail to: %s"
 msgstr "Testmail senden an: %s"
 
-#: admin/plugin.php:394 admin/plugin.php:411
+#: admin/plugin.php:437 admin/plugin.php:454
 msgid "Send to admin"
 msgstr "Zu senden an den Admin"
 
-#: admin/plugin.php:408
+#: admin/plugin.php:451
 msgid "Configure mail templates for false admin logins"
 msgstr "E-Mail Templates für Admin Falschanmeldungen konfigurieren"
 
-#: admin/plugin.php:422
+#: admin/plugin.php:465
 msgid "Send to main admin"
 msgstr "Sende an den Hauptadmin"
 
-#: admin/plugin.php:442
+#: admin/plugin.php:485
 msgid "Export settings and data"
 msgstr "Einstellungen und Daten exportieren"
 
-#: admin/plugin.php:445 admin/plugin.php:456
-#: classes/class.spamprotection.php:2013
+#: admin/plugin.php:488 admin/plugin.php:499
+#: classes/class.spamprotection.php:2107
 msgid "Error"
 msgstr "Fehler"
 
-#: admin/plugin.php:449
+#: admin/plugin.php:492
 #, php-format
 msgid ""
 "<strong>Following path does not exist, please create and grant write access "
@@ -1823,11 +1925,11 @@ msgstr ""
 "<strong>Folgendes Verzeichnis existiert nicht. Bitte manuell erstellen und "
 "Schreibberechtigung setzen:</strong><br /><em>%s</em>"
 
-#: admin/plugin.php:452
+#: admin/plugin.php:495
 msgid "Create Folder"
 msgstr "Verzeichnis erstellen"
 
-#: admin/plugin.php:460
+#: admin/plugin.php:503
 #, php-format
 msgid ""
 "<strong>Following path is not writable, please ensure that you grant write "
@@ -1836,7 +1938,7 @@ msgstr ""
 "<strong>Folgendes Verzeichnis ist nicht beschreibbar. Bitte "
 "Schreibberechtigung setzen:</strong><br /><em>%s</em>"
 
-#: admin/plugin.php:471
+#: admin/plugin.php:514
 msgid ""
 "Here you can define which chmod should be set and try to fix this problem. "
 "Otherwise you have to change the permissions manually"
@@ -1844,55 +1946,55 @@ msgstr ""
 "Bestimme hier, welcher chmod gesetzt werden soll und versuche das Problem zu "
 "beheben. Ansonsten hast Du die Berechtigungen manuell zu setzen."
 
-#: admin/plugin.php:473
+#: admin/plugin.php:516
 msgid "Chmod Folder"
 msgstr "Berechtigungen setzen"
 
-#: admin/plugin.php:480
+#: admin/plugin.php:523
 msgid "Select for export"
 msgstr "Für Export auswählen"
 
-#: admin/plugin.php:484
+#: admin/plugin.php:527
 msgid "Export plugin settings"
 msgstr "Plugineinstellungen exportieren"
 
-#: admin/plugin.php:487
+#: admin/plugin.php:530
 msgid "Export database"
 msgstr "Plugindaten exportieren"
 
-#: admin/plugin.php:497
+#: admin/plugin.php:540
 msgid "Created exports"
 msgstr "Erstellte Exportdateien"
 
-#: admin/plugin.php:498
+#: admin/plugin.php:541
 msgid "Size"
 msgstr "Größe"
 
-#: admin/plugin.php:513
+#: admin/plugin.php:556
 msgid "Download"
 msgstr "DOwnload"
 
-#: admin/plugin.php:530
+#: admin/plugin.php:573
 msgid "Import settings and data"
 msgstr "Einstellungen und Daten importieren"
 
-#: admin/plugin.php:533
+#: admin/plugin.php:576
 msgid "Files on Server"
 msgstr "Dateien auf Server"
 
-#: admin/plugin.php:535
+#: admin/plugin.php:578
 msgid "This files can be used for quick import."
 msgstr "Diese Dateien können für einen Schnellimport benutzt werden."
 
-#: admin/plugin.php:538
+#: admin/plugin.php:581
 msgid "Import plugin settings"
 msgstr "Plugineinstellungen importieren"
 
-#: admin/plugin.php:542
+#: admin/plugin.php:585
 msgid "Import database"
 msgstr "Plugindaten importieren"
 
-#: admin/plugin.php:546
+#: admin/plugin.php:589
 #, php-format
 msgid ""
 "There is no file to import. If you want to import your previous saved files, "
@@ -1901,27 +2003,27 @@ msgstr ""
 "Keine Dateien für den Import vorhanden. Möchtest Du Daten importieren, "
 "kopiere die Dateien nach:<br /><em>%s</em>"
 
-#: admin/plugin.php:551
+#: admin/plugin.php:594
 msgid "Upload file for import"
 msgstr "Datei für Import hochladen"
 
-#: admin/plugin.php:560
+#: admin/plugin.php:603
 msgid "Only xml files generated through this plugin allowed"
 msgstr "Nur xml Dateien erlaubt, die durch dieses Plugin erstellt wurden"
 
-#: admin/plugin.php:563
+#: admin/plugin.php:606
 msgid "Choose file for import"
 msgstr "Datei für Import auswählen"
 
-#: admin/plugin.php:573
+#: admin/plugin.php:616
 msgid "File ready to import: "
 msgstr "Datei für den Import bereit: "
 
-#: admin/plugin.php:574
+#: admin/plugin.php:617
 msgid "Upload & Import"
 msgstr "Hochladen und importieren"
 
-#: admin/security.php:35
+#: admin/security.php:33
 msgid ""
 "This Option activates the whole form protection. Some features are optional "
 "and can be de/activated separetely"
@@ -1929,35 +2031,38 @@ msgstr ""
 "Diese Option aktiviert den Formularschutz , Einige Module sind separat "
 "aktivierbar"
 
-#: admin/security.php:40 admin/security.php:197
+#: admin/security.php:38 admin/security.php:212
 msgid "False logins"
 msgstr "Falschanmeldungen"
 
-#: admin/security.php:64 admin/security.php:221 admin/security.php:333
+#: admin/security.php:76 admin/security.php:250 admin/security.php:376
+#: admin/tools.php:339 admin/tools.php:435
 msgid "Every hour"
 msgstr "Jede Stunde"
 
-#: admin/security.php:65 admin/security.php:222 admin/security.php:334
+#: admin/security.php:77 admin/security.php:251 admin/security.php:377
+#: admin/tools.php:340 admin/tools.php:436
 msgid "One time per day"
 msgstr "Einmal am Tag"
 
-#: admin/security.php:66 admin/security.php:223 admin/security.php:335
+#: admin/security.php:78 admin/security.php:252 admin/security.php:378
+#: admin/tools.php:341 admin/tools.php:437
 msgid "One time per week"
 msgstr "Einmal die Woche"
 
-#: admin/security.php:70 admin/security.php:227 admin/security.php:339
+#: admin/security.php:82 admin/security.php:256 admin/security.php:382
 msgid "Use 0 minutes to disable auto unban"
 msgstr "Setze dies auf 0 um die automatische Entsperrung zu deaktivieren"
 
-#: admin/security.php:79 admin/security.php:236
+#: admin/security.php:91 admin/security.php:265
 msgid "Login limit reached"
 msgstr "Loginlimit erreicht"
 
-#: admin/security.php:93 admin/security.php:250
+#: admin/security.php:105 admin/security.php:279
 msgid "Inform user"
 msgstr "Benutzer informieren"
 
-#: admin/security.php:99
+#: admin/security.php:111
 msgid ""
 "This option allows to inform the user after each false login, how many tries "
 "are remainig, before your choosen action is done"
@@ -1965,7 +2070,7 @@ msgstr ""
 "Wenn diese Einstellung aktiviert ist, wird der Benutzer über die "
 "verbleibende Anzahl der möglichen Anmeldeversuche informiert."
 
-#: admin/security.php:107
+#: admin/security.php:119
 msgid ""
 "This Option ads a hidden form field to the login/register/recovery forms. "
 "After a bot tap into your trap, action following rules you have set above."
@@ -1974,19 +2079,23 @@ msgstr ""
 "Wiederherstellungsformularen hinzu. Fallen Bots drauf rein greifen die zuvor "
 "eingestellten Regeln."
 
-#: admin/security.php:111
+#: admin/security.php:123
 msgid "Login"
 msgstr "Anmeldung"
 
-#: admin/security.php:118
+#: admin/security.php:130
 msgid "Registration"
 msgstr "Registrierung"
 
-#: admin/security.php:125
+#: admin/security.php:137
 msgid "Password recovery"
 msgstr "Passwortwiederherstellung"
 
-#: admin/security.php:139
+#: admin/security.php:145
+msgid "Important Info"
+msgstr "Wichtige Information"
+
+#: admin/security.php:154
 msgid ""
 "To make this honeypot works for login and recover pages, you need to add one "
 "line of code in each of this files."
@@ -1994,21 +2103,21 @@ msgstr ""
 "Damit der Honeypot funktioniert, muss auf folgenden Seiten eine Codezeile "
 "hinzugefügt werden."
 
-#: admin/security.php:140
+#: admin/security.php:155
 msgid "Insert it right before the closing <em>form</em> tag &lt;/form&gt;"
 msgstr ""
 "Füge diese Zeile direkt vor dem schliessenden <em>form</em> tag &lt;/"
 "form&gt; ein"
 
-#: admin/security.php:151 admin/security.php:165
+#: admin/security.php:166 admin/security.php:180
 msgid "Example"
 msgstr "Beispiel"
 
-#: admin/security.php:190
+#: admin/security.php:205
 msgid "Activate the Admin Protection"
 msgstr "Administrator Sicherheit aktivieren"
 
-#: admin/security.php:192
+#: admin/security.php:207
 msgid ""
 "This Option activates the whole admin protection. Some features are optional "
 "and can be de/activated separetely"
@@ -2016,11 +2125,11 @@ msgstr ""
 "Diese Option aktiviert den Formularschutz für Administratoren, Einige Module "
 "sind separat aktivierbar"
 
-#: admin/security.php:254
+#: admin/security.php:283
 msgid "Inform admin how many tries are remaining"
 msgstr "Den Administrator über die verbleibenden Anmeldeversuche informieren"
 
-#: admin/security.php:256
+#: admin/security.php:285
 msgid ""
 "This option allows to inform the admin after each false login, how many "
 "tries are remainig, before your choosen action is done"
@@ -2028,11 +2137,11 @@ msgstr ""
 "Wenn diese Einstellung aktiviert ist, wird der Administrator über die "
 "verbleibende Anzahl der möglichen Anmeldeversuche informiert"
 
-#: admin/security.php:265
+#: admin/security.php:294
 msgid "Add Honeypot to admin login form"
 msgstr "Honeypot dem Administrator Loginformular hinzufügen"
 
-#: admin/security.php:267
+#: admin/security.php:296
 msgid ""
 "This Option ads a hidden form field to the admin login forms. After a bot "
 "tap into your trap, action following rules you have set above."
@@ -2040,23 +2149,23 @@ msgstr ""
 "Diese Option fügt ein verstecktes Eingabefeld dem Anmeldungsformular hinzu. "
 "Fallen Bots drauf rein greifen die zuvor eingestellten Regeln."
 
-#: admin/security.php:281
+#: admin/security.php:310
 msgid "Select type of registrations check"
 msgstr "Wähle den Typ der Registrierungsüberwachung"
 
-#: admin/security.php:284
+#: admin/security.php:313
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: admin/security.php:285
+#: admin/security.php:314
 msgid "Allow only following hoster"
 msgstr "Erlaube nur folgende Anbieter"
 
-#: admin/security.php:286
+#: admin/security.php:315
 msgid "Disallow following hoster"
 msgstr "Verbiete folgende Anbieter"
 
-#: admin/security.php:288
+#: admin/security.php:317
 msgid ""
 "This option allows to define which emails can be used for registering an "
 "account on your page."
@@ -2064,12 +2173,12 @@ msgstr ""
 "Dies erlaubt Dir zu bestimmen, welche E-Mail Adressen für eine Registrierung "
 "auf Deiner Seite verwendet werden dürfen."
 
-#: admin/security.php:291
+#: admin/security.php:320
 msgid "Enter email hoster, separated by , (e.g. mail.ru,gmail.com,yahoo.com)"
 msgstr ""
 "E-Mailanbieter angeben mit , getrennt (z.B. mail.ru,gmail.com,yahoo.com)"
 
-#: admin/security.php:311
+#: admin/security.php:340
 msgid ""
 "This options allows to check used emails and IP's against StopForumSpam for "
 "your registrations"
@@ -2077,7 +2186,7 @@ msgstr ""
 "Diese Einstellung erlaubt es, die verwendete E-Mail Adresse und IP bei "
 "StopForumSpam während den Registrierungen zu überwachen"
 
-#: admin/security.php:318
+#: admin/security.php:347
 msgid ""
 "This will prevent too much traffic on StopForumSpam and minimize your "
 "requests."
@@ -2085,15 +2194,23 @@ msgstr ""
 "Dies verhindert übermäßigen Traffic zu StopForumSpam und minimiert Deine "
 "Serveranfragen"
 
-#: admin/security.php:348
+#: admin/security.php:393
 msgid "(0 - 255)"
 msgstr "(0 - 255)"
 
-#: admin/security.php:354
+#: admin/security.php:394
+msgid "3 = Default"
+msgstr "3 = Standard"
+
+#: admin/security.php:404
 msgid "(0 = high confidence, 100 = low confidence)"
 msgstr "(0 = hohes Vertrauen, 100 = geringes Vertrauen)"
 
-#: admin/security.php:357
+#: admin/security.php:405
+msgid "50 = Default"
+msgstr "50 = Standard"
+
+#: admin/security.php:410
 msgid ""
 "Here you can define the max frequency of reports and the percentage of max "
 "suspiciousness"
@@ -2101,138 +2218,15 @@ msgstr ""
 "Hier kannst Du die maximale Anzahl an Meldungen und die Prozentzahl wie hoch "
 "das Misstrauen sein muss angeben"
 
-#: admin/security.php:374
-msgid "Activate the Bad/Trusted User Feature"
-msgstr "Aktiviere die Gute/Schlechte Benutzer Funktion"
-
-#: admin/security.php:377
-msgid ""
-"This Features allows you to set user to bad- or trusted lists. There you can "
-"define actions they are always trusted or forbidden."
-msgstr ""
-"Diese Funktion aktiviert die Gute/Schlechte Benutzer Listen. Hier kannst Du "
-"Aktionen bestimmen die immer erlaubt oder verboten sind."
-
-#: admin/security.php:379 admin/security.php:390
-#: classes/class.spamprotection.php:1763 classes/class.spamprotection.php:1766
-msgid "Trusted User"
-msgstr "Guter Benutzer"
-
-#: admin/security.php:379
-msgid "This actions are always trusted and won't checked for spam"
-msgstr ""
-"Diese Aktionen sind immer Vertrauenswürdig und werden nicht auf Spam "
-"überprüft."
-
-#: admin/security.php:380 admin/security.php:391
-#: classes/class.spamprotection.php:1764 classes/class.spamprotection.php:1769
-msgid "Bad User"
-msgstr "Schlechter Benutzer"
-
-#: admin/security.php:380
-msgid ""
-"This actions cannot be done anymore, the user will always be blocked for "
-"this."
-msgstr ""
-"Diese Aktionen können nicht mehr ausgeführt werden, der Benutzer wird immer "
-"dafür geblockt."
-
-#: admin/security.php:387
-msgid "Bad/Trusted User Lists"
-msgstr "Gute/Schlechte Benutzer Listen"
-
-#: admin/security.php:394
-msgid "Organize"
-msgstr "Organisieren"
-
-#: admin/security.php:400 admin/security.php:444 admin/security.php:502
-#: functions/searchUser.php:38
-msgid "Name"
-msgstr "Name"
-
-#: admin/security.php:402 admin/security.php:406 admin/security.php:446
-#: admin/security.php:450
-msgid "Ads"
-msgstr "Anz."
-
-#: admin/security.php:403 admin/security.php:407 admin/security.php:447
-#: admin/security.php:451
-msgid "Comm."
-msgstr "Komm."
-
-#: admin/security.php:405
-msgid "Trusted"
-msgstr "Erlaubt"
-
-#: admin/security.php:408 admin/security.php:452
-msgid "Cont."
-msgstr "Nachr."
-
-#: admin/security.php:449
-msgid "Forbidden"
-msgstr "Verboten"
-
-#: admin/security.php:485
-msgid "Organize bad and trusted user"
-msgstr "Organisiere Gute und Schlechte Benutzer"
-
-#: admin/security.php:490
-msgid "Search for name, email or location"
-msgstr "Suche nach Name, E-Mail oder Adresse"
-
-#: admin/security.php:534
-msgid "Activate the IP Ban Function"
-msgstr "IP Ban Funktion aktivieren"
-
-#: admin/security.php:537
-msgid ""
-"Check this option to activate the IP Ban. Choose your favorite action to the "
-"right and add unwanted IP's to the table."
-msgstr ""
-"Aktiviere diese Funktion um die IP Ban Tabelle zu nutzen. Hier kannst Du "
-"deine favorisierte Aktion wählen und unerwünschte Benutzer sperren."
-
-#: admin/security.php:555
-msgid "Create standard file"
-msgstr "Standarddatei erstellen"
-
-#: admin/security.php:556
-msgid "Create"
-msgstr "Erstellen"
-
-#: admin/security.php:582
-msgid "If you want to redirect users to another location, enter URL here."
-msgstr ""
-"Wenn Du den Benutzer auf eine andere Seite weiterleiten möchtest, gib den "
-"Link hier an."
-
-#: admin/security.php:583
-msgid "Don't use your base domain, it will cause redirect loops."
-msgstr ""
-"Verwende hier NICHT deine eigene Domain, dies verursacht "
-"Weiterleitungsschleifen."
-
-#: admin/security.php:589
-msgid "IP Ban Table"
-msgstr "IP Ban Liste"
-
-#: admin/security.php:592
-msgid "Enter IP"
-msgstr "IP angeben"
-
-#: admin/security.php:599
-msgid "Date added"
-msgstr "Hinzugefügt"
-
-#: admin/security.php:630
+#: admin/security.php:422
 msgid "Delete not activated user accounts"
 msgstr "Lösche nicht aktivierte Benutzerkonten"
 
-#: admin/security.php:635
+#: admin/security.php:427
 msgid "Delete not activated user"
 msgstr "Nicht aktivierte Benutzerkonten löschen"
 
-#: admin/security.php:637
+#: admin/security.php:429
 msgid ""
 "Here you can define if not activated user should be deleted automatically "
 "after x days."
@@ -2240,74 +2234,102 @@ msgstr ""
 "Hier kannst Du aktivieren, dass nicht aktivierte Benutzerkonten nach x Tagen "
 "automatisch gelöscht werden."
 
-#: admin/security.php:657
+#: admin/security.php:449
 msgid "Delete unused user accounts"
 msgstr "Lösche ungenutzte Benutzerkonten"
 
-#: admin/security.php:661
-msgid "Select last login date"
-msgstr "Wähle letztes Anmeldungsdatum"
+#: admin/security.php:454 functions/searchUser.php:34
+msgid "Last Login"
+msgstr "Letzter Login"
 
-#: admin/security.php:664
-msgid "Show max. x accounts"
-msgstr "Zeige maximal X Benutzerkonten"
+#: admin/security.php:458
+msgid "Limit"
+msgstr "Limit"
 
-#: admin/security.php:677
-msgid "Must be an activated account"
-msgstr "Muss aktiviert sein"
-
-#: admin/security.php:681
-msgid "Must be an enabled account"
-msgstr "Muss freigeschaltet sein"
-
-#: admin/security.php:685
-msgid "Must have 0 ads"
-msgstr "Muss 0 Anzeigen haben"
-
-#: admin/security.php:689
-msgid "User has no admin account"
-msgstr "Benutzer hat kein Adminkonto"
-
-#: admin/security.php:693
-msgid "User has never logged in"
-msgstr "Benutzer hat sich nie angemeldet"
-
-#: admin/security.php:699
+#: admin/security.php:469
 msgid "Search"
 msgstr "Suchen"
 
-#: admin/settings.php:37
+#: admin/security.php:485
+msgid "Must be banned"
+msgstr "Muss gesperrt sein"
+
+#: admin/security.php:489
+msgid "Must be an activated account"
+msgstr "Muss aktiviert sein"
+
+#: admin/security.php:493
+msgid "Must be an enabled account"
+msgstr "Muss freigeschaltet sein"
+
+#: admin/security.php:499
+msgid "Must have 0 ads"
+msgstr "Muss 0 Anzeigen haben"
+
+#: admin/security.php:503
+msgid "User has no admin account"
+msgstr "Benutzer hat kein Adminkonto"
+
+#: admin/security.php:507
+msgid "User has never logged in"
+msgstr "Benutzer hat sich nie angemeldet"
+
+#: admin/settings.php:36
 msgid ""
 "This Option activates the whole Spam Protection. Some features are optional "
 "and can be de/activated separately"
 msgstr ""
 "Diese Option aktiviert das System, Einige Module sind separat aktivierbar"
 
-#: admin/settings.php:42
+#: admin/settings.php:41
+msgid "Inform user about moderation."
+msgstr "Benutzer informieren, dass seine Anzeige moderiert werden muss."
+
+#: admin/settings.php:43
+msgid ""
+"This option activates a message for the user, that the ad has to be "
+"moderated if spam was found."
+msgstr ""
+"Dies aktiviert eine Nachricht für den Benutzer, dass seine Anzeige moderiert "
+"werden muss, wenn Spam gefunden wurde."
+
+#: admin/settings.php:48
+msgid "Block all other messages."
+msgstr "Alle anderen Hinweise blockieren."
+
+#: admin/settings.php:50
+msgid ""
+"This option will block all other messages they appear after posting/editing "
+"an ad."
+msgstr ""
+"Damit blockierst Du alle anderen Hinweise die erscheinen, nachdem eine "
+"Anzeige veröffentlicht wird."
+
+#: admin/settings.php:55
 msgid "Duplicates"
 msgstr "Duplikate"
 
-#: admin/settings.php:56
+#: admin/settings.php:69
 msgid "Search in"
 msgstr "Suchen in"
 
-#: admin/settings.php:64
+#: admin/settings.php:77
 msgid "Search in last x days"
 msgstr "Suche in den letzten x Tagen"
 
-#: admin/settings.php:64
+#: admin/settings.php:77
 msgid "(0 to disable)"
 msgstr "(0 zum deaktivieren)"
 
-#: admin/settings.php:72
+#: admin/settings.php:85
 msgid "Type of search"
 msgstr "Art der Suche"
 
-#: admin/settings.php:81
+#: admin/settings.php:94
 msgid "Similar percent"
 msgstr "Max. Prozent für Ähnlichkeit"
 
-#: admin/settings.php:86
+#: admin/settings.php:99
 msgid ""
 "This Option enables the System to check new ads for duplicates and mark them "
 "as spam"
@@ -2315,15 +2337,15 @@ msgstr ""
 "Dies gestattet dem System nach duplizierten Anzeigen zu suchen und "
 "gegebenenfalls als Spam zu markieren"
 
-#: admin/settings.php:91
+#: admin/settings.php:104
 msgid "MX Record"
 msgstr "MX Eintrag"
 
-#: admin/settings.php:95
+#: admin/settings.php:108
 msgid "Check MX Record of used Mail"
 msgstr "MX Eintrag der Benutzer-E-Mail Adresse überprüfen"
 
-#: admin/settings.php:97
+#: admin/settings.php:110
 msgid ""
 "This option enables the System to check the MX Record of the submitted Email "
 "address"
@@ -2331,7 +2353,7 @@ msgstr ""
 "Diese Einstellung ermöglicht die Überprüfung, ob die angegebene E-Mail "
 "Adresse einen authentischen MX Eintrag aufweisen kann"
 
-#: admin/settings.php:108
+#: admin/settings.php:121
 msgid ""
 "This Option ads a hidden form field to the post page. Bots tap into your "
 "trap and can be banned or ignored."
@@ -2340,7 +2362,7 @@ msgstr ""
 "bearbeiten Seite hinzu. Fallen Bots drauf rein wird die Anzeige als Spam "
 "markiert."
 
-#: admin/settings.php:112
+#: admin/settings.php:125
 msgid ""
 "Good names would be \"item_runtime, user_age, price_range or something else, "
 "dont name it honeypot ;)"
@@ -2348,13 +2370,13 @@ msgstr ""
 "Gute Namen sind unverfänglich (item_runtime, user_age, price_range oder "
 "ähnliches). Nenne es nicht Honigtopf ;)"
 
-#: admin/settings.php:126
+#: admin/settings.php:139
 msgid "This option enables the System to block ads from banned Email addresses"
 msgstr ""
 "Hier kannst Du E-Mailadressen definieren, die vom System als Spam erkannt "
 "werden"
 
-#: admin/settings.php:142
+#: admin/settings.php:155
 msgid ""
 "This Option enables the System to block ads from banned E-Mail Top-Level-"
 "Domains (e.g. mail.ru,gmail.com)"
@@ -2362,7 +2384,7 @@ msgstr ""
 "Diese Einstellung ermöglicht das blockieren von E-Mail Anbietern (z.B. mail."
 "ru, gmail.com)"
 
-#: admin/settings.php:162
+#: admin/settings.php:175
 msgid ""
 "<small>This method searches in Title/Description for substrings and if "
 "found, marks ads as spam (e.g. <em>`are`</em> will be found in <em>`care`</"
@@ -2371,7 +2393,7 @@ msgstr ""
 "<small>Diese Methode durchsucht den Titel und die Beschreibung nach "
 "Teilwörtern (z.B. <em>Birne</em> wird gefunden in <em>Glühbirne</em>)</small>"
 
-#: admin/settings.php:166
+#: admin/settings.php:179
 msgid ""
 "<small>This method searches in Title/Description for particular words and if "
 "found, marks ads as spam (e.g. <em>`are`</em> won't be found in <em>`care`</"
@@ -2380,7 +2402,15 @@ msgstr ""
 "<small>Diese Methode durchsucht Titel und Beschreibung nach ganzen Wörternd "
 "(ez.B. <em>Birne</em> wird NICHT gefunden in <em>Glühbirne</em>)</small>"
 
-#: admin/settings.php:174
+#: admin/settings.php:183
+msgid "Substrings"
+msgstr "Teilwörter"
+
+#: admin/settings.php:184
+msgid "Words"
+msgstr "Wörter"
+
+#: admin/settings.php:187
 msgid ""
 "<strong>Enter here the words to be blocked in title or descriptions "
 "(separated by ,)</strong>"
@@ -2388,41 +2418,15 @@ msgstr ""
 "<strong>Gib hier die zu blockierenden Wörter für Titel und Beschreibung an "
 "(getrennt mit ,)</strong>"
 
-#: admin/settings.php:186
-msgid "ATTENTION!!!"
-msgstr "ACHTUNG!!!"
-
-#: admin/settings.php:187
-msgid ""
-"Do not edit this file, unless you know what you do! Corrupt .htaccess files "
-"can cause errors for your whole webpage!"
-msgstr "Bearbeite diese Datei nur, wenn Du weisst was du tust!"
-
-#: admin/settings.php:189
-msgid "Ok"
-msgstr "Ok"
-
-#: admin/settings.php:190
-msgid "Don't remember"
-msgstr "Nicht erinnern"
-
-#: admin/settings.php:196
-msgid "(File is not writable)"
-msgstr "(Datei nicht beschreibbar)"
-
-#: admin/settings.php:199
-msgid "Beware of editing this file, unless you know what you're doing!!!"
-msgstr "Diese Datei nicht bearbeiten, wenn Du nicht weisst was Du tust!!!"
-
-#: admin/settings.php:209
+#: admin/settings.php:195
 msgid "Delete unwanted listings"
 msgstr "Nicht benötigte Anzeigen löschen"
 
-#: admin/settings.php:214
+#: admin/settings.php:200
 msgid "Delete expired listings"
 msgstr "Abgelaufene Anzeigen löschen"
 
-#: admin/settings.php:216
+#: admin/settings.php:202
 msgid ""
 "Here you can define if expired listings should be deleted automatically "
 "after x days."
@@ -2430,11 +2434,19 @@ msgstr ""
 "Hier kannst Du aktivieren, dass abgelaufene Anzeigen nach x Tagen "
 "automatisch gelöscht werden."
 
-#: admin/settings.php:240
+#: admin/settings.php:208 admin/settings.php:234 admin/settings.php:260
+msgid "Days"
+msgstr "Tage"
+
+#: admin/settings.php:214 admin/settings.php:240 admin/settings.php:266
+msgid "at once"
+msgstr "gleichzeitig"
+
+#: admin/settings.php:226
 msgid "Delete not activated listings"
 msgstr "Nicht aktivierte Anzeigen löschen"
 
-#: admin/settings.php:242
+#: admin/settings.php:228
 msgid ""
 "Here you can define if not activated listings should be deleted "
 "automatically after x days."
@@ -2442,11 +2454,11 @@ msgstr ""
 "Hier kannst Du aktivieren, dass nicht aktivierte Anzeigen nach x Tagen "
 "automatisch gelöscht werden."
 
-#: admin/settings.php:266
-msgid "Delete as spam marked listings"
+#: admin/settings.php:252
+msgid "Delete listings marked as spam"
 msgstr "Als Spam markierte Anzeigen löschen"
 
-#: admin/settings.php:268
+#: admin/settings.php:254
 msgid ""
 "Here you can define if as spam marked listings should be deleted "
 "automatically after x days."
@@ -2454,106 +2466,373 @@ msgstr ""
 "Hier kannst Du aktivieren, dass als Spam markierte Anzeigen nach x Tagen "
 "automatisch gelöscht werden."
 
-#: classes/class.spamprotection.php:228
+#: admin/tools.php:13 classes/class.spamprotection.php:2547
+msgid "Yes"
+msgstr "Ja"
+
+#: admin/tools.php:14 classes/class.spamprotection.php:2548
+msgid "No"
+msgstr "Nein"
+
+#: admin/tools.php:30
+msgid "TOR Network"
+msgstr "TOR Netzwerk"
+
+#: admin/tools.php:31
+msgid "File monitor"
+msgstr "Dateiüberwachung"
+
+#: admin/tools.php:43
+msgid "Activate the Bad/Trusted User Feature"
+msgstr "Aktiviere die Gute/Schlechte Benutzer Funktion"
+
+#: admin/tools.php:46
+msgid ""
+"This Features allows you to set user to bad- or trusted lists. There you can "
+"define actions they are always trusted or forbidden."
+msgstr ""
+"Diese Funktion aktiviert die Gute/Schlechte Benutzer Listen. Hier kannst Du "
+"Aktionen bestimmen die immer erlaubt oder verboten sind."
+
+#: admin/tools.php:48 admin/tools.php:59 classes/class.spamprotection.php:1857
+#: classes/class.spamprotection.php:1860
+msgid "Trusted User"
+msgstr "Guter Benutzer"
+
+#: admin/tools.php:48
+msgid "This actions are always trusted and won't checked for spam"
+msgstr ""
+"Diese Aktionen sind immer Vertrauenswürdig und werden nicht auf Spam "
+"überprüft."
+
+#: admin/tools.php:49 admin/tools.php:60 classes/class.spamprotection.php:1858
+#: classes/class.spamprotection.php:1863
+msgid "Bad User"
+msgstr "Schlechter Benutzer"
+
+#: admin/tools.php:49
+msgid ""
+"This actions cannot be done anymore, the user will always be blocked for "
+"this."
+msgstr ""
+"Diese Aktionen können nicht mehr ausgeführt werden, der Benutzer wird immer "
+"dafür geblockt."
+
+#: admin/tools.php:56
+msgid "Bad/Trusted User Lists"
+msgstr "Gute/Schlechte Benutzer Listen"
+
+#: admin/tools.php:63
+msgid "Organize"
+msgstr "Organisieren"
+
+#: admin/tools.php:69 admin/tools.php:113 admin/tools.php:171
+#: functions/searchUser.php:31
+msgid "Name"
+msgstr "Name"
+
+#: admin/tools.php:71 admin/tools.php:75 admin/tools.php:115
+#: admin/tools.php:119
+msgid "Ads"
+msgstr "Anz."
+
+#: admin/tools.php:72 admin/tools.php:76 admin/tools.php:116
+#: admin/tools.php:120
+msgid "Comm."
+msgstr "Komm."
+
+#: admin/tools.php:74
+msgid "Trusted"
+msgstr "Erlaubt"
+
+#: admin/tools.php:77 admin/tools.php:121
+msgid "Cont."
+msgstr "Nachr."
+
+#: admin/tools.php:118
+msgid "Forbidden"
+msgstr "Verboten"
+
+#: admin/tools.php:154
+msgid "Organize bad and trusted user"
+msgstr "Organisiere Gute und Schlechte Benutzer"
+
+#: admin/tools.php:159
+msgid "Search for name, email or location"
+msgstr "Suche nach Name, E-Mail oder Adresse"
+
+#: admin/tools.php:204
+msgid "Activate the IP Ban Function"
+msgstr "IP Ban Funktion aktivieren"
+
+#: admin/tools.php:207
+msgid ""
+"Check this option to activate the IP Ban. Choose your favorite action to the "
+"right and add unwanted IP's to the table."
+msgstr ""
+"Aktiviere diese Funktion um die IP Ban Tabelle zu nutzen. Hier kannst Du "
+"deine favorisierte Aktion wählen und unerwünschte Benutzer sperren."
+
+#: admin/tools.php:225
+msgid "Create standard file"
+msgstr "Standarddatei erstellen"
+
+#: admin/tools.php:226
+msgid "Create"
+msgstr "Erstellen"
+
+#: admin/tools.php:257
+msgid "If you want to redirect users to another location, enter URL here."
+msgstr "Du kannst den Benutzer auch auf eine beliebige Seite leiten."
+
+#: admin/tools.php:258
+msgid "Don't use your base domain, it will cause redirect loops."
+msgstr "Deine eigene Domain verursacht Weiterleitungsschleifen."
+
+#: admin/tools.php:276
+msgid "IP Ban Table"
+msgstr "IP Ban Liste"
+
+#: admin/tools.php:279
+msgid "Enter IP"
+msgstr "IP angeben"
+
+#: admin/tools.php:286
+msgid "Date added"
+msgstr "Hinzugefügt"
+
+#: admin/tools.php:318
+msgid "TOR Network Protection"
+msgstr "TOR Netzwerk Schutz"
+
+#: admin/tools.php:323
+msgid "Activate the TOR Network Protection"
+msgstr "TOR Netzwerk Schutz aktivieren"
+
+#: admin/tools.php:325
+msgid ""
+"This will activate the TOR Network Protection. Disable this to deactivate "
+"the whole Protection."
+msgstr ""
+"Dies aktiviert die TOR Netzwerk Sicherheit. Deaktiviere das um den gesamten "
+"Schutz abzuschalten."
+
+#: admin/tools.php:329
+msgid "Send notification"
+msgstr "Benachrichtigung senden"
+
+#: admin/tools.php:331
+msgid ""
+"Activate this to send a notification to the user that the action is blocked "
+"because of using TOR Network."
+msgstr ""
+"Altiviere dies um dem Nutzer eine Benachrichtigung zu senden, dass er wegen "
+"der Nutzung des TOR Netzwerks blockiert ist."
+
+#: admin/tools.php:335
+msgid "Refresh TOR Network Nodes list"
+msgstr "TOR Nodes Liste aktualisieren."
+
+#: admin/tools.php:355
+msgid "Disabled actions for TOR Network user"
+msgstr "Deaktivierte Funktionen für TOR Netzwerk Nutzer"
+
+#: admin/tools.php:360
+msgid "Disable new ads for TOR user"
+msgstr "Deaktiviere neue Anzeigen für TOR Nutzer"
+
+#: admin/tools.php:364
+msgid "Disable login for TOR user"
+msgstr "Deaktiviere die Anmeldung für TOR Nutzer"
+
+#: admin/tools.php:368
+msgid "Disable registration for TOR user"
+msgstr "Deaktiviere die Registrierung für TOR Nutzer"
+
+#: admin/tools.php:375
+msgid "Disable comments for TOR user"
+msgstr "Kommentar für TOR Nutzer deaktivieren"
+
+#: admin/tools.php:379
+msgid "Disable contact mails for TOR user"
+msgstr "Deaktiviere Kontaktnachrichten für TOR Nutzer"
+
+#: admin/tools.php:392
+msgid "File Monitor"
+msgstr "Dateiüberwachung"
+
+#: admin/tools.php:394 admin/tools.php:441
+#: classes/class.spamprotection.php:2616
+msgid "Check Now"
+msgstr "Jetzt überprüfen"
+
+#: admin/tools.php:410
+msgid "Activate file system monitor"
+msgstr "Aktiviere Dateiüberwachung"
+
+#: admin/tools.php:412
+msgid ""
+"If this option is activated, Osclass will check the whole file system for "
+"potentially changed files and inform you about."
+msgstr ""
+"Ist dies aktiviert, wird Osclass das gesamte Dateisystem nach Veränderungen "
+"untersuchen und Dich darüber informieren."
+
+#: admin/tools.php:417
+msgid "Scan path: "
+msgstr "Verzeichnis überprüfen:"
+
+#: admin/tools.php:418
+#, php-format
+msgid "Scanned path: %s"
+msgstr "Wird überprüft: %s"
+
+#: admin/tools.php:422
+msgid "Excluded file extensions"
+msgstr "Ausgeschlossene Dateiendungen"
+
+#: admin/tools.php:423
+msgid "Enter extensions you want to exclude (comma separated)"
+msgstr ""
+"Gib die Dateiendungen an, welche Du von der Überprüfung ausschliessen "
+"möchtest (Komma getrennt)"
+
+#: admin/tools.php:427
+msgid "Send alerts to"
+msgstr "Sende Alarm an"
+
+#: admin/tools.php:428
+msgid "Enter Email address where are alerts sended to."
+msgstr "E-Mail Adresse angeben, an die Alarme gesendet werden."
+
+#: admin/tools.php:432
+msgid "Check Filesystem"
+msgstr "Dateisystem überprüfen"
+
+#: admin/tools.php:447
+msgid "Exclude directories: "
+msgstr "Ausgeschlossene Verzeichnisse:"
+
+#: admin/tools.php:454 admin/tools.php:459 admin/tools.php:468
+msgid "Enter path you want to exclude from monitoring"
+msgstr "Verzeichnis angeben, welches von der Überprüfung ausgeschlossen wird"
+
+#: admin/tools.php:480 admin/tools.php:496
+msgid "<strong>Scanning...</strong>"
+msgstr "<strong>Überprüfe...</strong>"
+
+#: admin/tools.php:481 admin/tools.php:497
+msgid "Checking file system, please be patient."
+msgstr "Überprüfe Dateisystem. Bitte etwas Geduld."
+
+#: classes/class.spamprotection.php:256
 msgid "Actions"
 msgstr "Aktionen"
 
-#: classes/class.spamprotection.php:233
+#: classes/class.spamprotection.php:261
 #, php-format
 msgid "%s Spam found"
 msgstr "%s Spam gefunden"
 
-#: classes/class.spamprotection.php:239
-msgid "Spam found"
-msgstr "Spam gefunden"
+#: classes/class.spamprotection.php:267
+msgid "Spam ad"
+msgstr "Spamanzeigen"
 
-#: classes/class.spamprotection.php:248
+#: classes/class.spamprotection.php:276
 #, php-format
 msgid "%s Spam comment found"
 msgstr "%s Spamkommentare gefunden"
 
-#: classes/class.spamprotection.php:254
-msgid "Spam comment found"
-msgstr "Spamkommentar gefunden"
+#: classes/class.spamprotection.php:282
+msgid "Spam comment"
+msgstr "Spamkommentare"
 
-#: classes/class.spamprotection.php:263
+#: classes/class.spamprotection.php:291
 #, php-format
 msgid "%s Spam Contact Mail found"
 msgstr "%s Spam Kontaktnachrichten gefunden"
 
-#: classes/class.spamprotection.php:269
-msgid "Spam Contact Mail found"
-msgstr "Spam Kontaktnachricht gefunden"
+#: classes/class.spamprotection.php:297
+msgid "Spam Mail"
+msgstr "Spamnachrichten"
 
-#: classes/class.spamprotection.php:278
+#: classes/class.spamprotection.php:306
 #, php-format
 msgid "%s Banned user"
 msgstr "%s Gesperrte Benutzer"
 
-#: classes/class.spamprotection.php:284
+#: classes/class.spamprotection.php:312
 msgid "Banned user"
 msgstr "Gesperrte Benutzer"
 
-#: classes/class.spamprotection.php:310
+#: classes/class.spamprotection.php:335
 msgid "Spam ads"
 msgstr "Spamanzeigen"
 
-#: classes/class.spamprotection.php:313
+#: classes/class.spamprotection.php:338
 msgid "Spam comments"
 msgstr "Spamkommentare"
 
-#: classes/class.spamprotection.php:316
+#: classes/class.spamprotection.php:341
 msgid "Spam mails"
 msgstr "Spamnachrichten"
 
-#: classes/class.spamprotection.php:319
+#: classes/class.spamprotection.php:344
 msgid "Bans found"
 msgstr "Bans gefunden"
 
-#: classes/class.spamprotection.php:563
+#: classes/class.spamprotection.php:591
 msgid "Spam Protection - Banned because of spam ads"
 msgstr "Spam Protection - Wegen Spam gebannt"
 
-#: classes/class.spamprotection.php:1252
+#: classes/class.spamprotection.php:957
+msgid ""
+"Posting a new ad is not allowed because of using the TOR Network. Please "
+"disable TOR and try again."
+msgstr ""
+"Wegen der Nutzung des TOR Netzwerkes ist das veröffentlichen von neuen "
+"Anzeigen nicht möglich. Bitte TOR deaktivieren und erneut versuchen."
+
+#: classes/class.spamprotection.php:1319
 msgid "Spam Protection - Too many false login attempts"
 msgstr "Spam Protection - Zuviele falsche Anmeldeversuche"
 
-#: classes/class.spamprotection.php:1272
+#: classes/class.spamprotection.php:1368
 #, php-format
 msgid ""
 "Spam Protection - Admin/Mod %s blocked in due to too many false login "
 "attempts"
 msgstr "Spam Protection - Admin/Mod %s wegen Falschanmeldungen blockiert"
 
-#: classes/class.spamprotection.php:1430
+#: classes/class.spamprotection.php:1526
 msgid "User was blocked because of"
 msgstr "Benutzer wurde blockiert wegen"
 
-#: classes/class.spamprotection.php:1432
+#: classes/class.spamprotection.php:1528
 msgid "User was blocked and banned because of"
 msgstr "Benutzer wurde blockiert und gesperrt wegen"
 
-#: classes/class.spamprotection.php:1434
+#: classes/class.spamprotection.php:1530
 msgid "User was banned because of"
 msgstr "Benutzer wurde blockiert wegen"
 
-#: classes/class.spamprotection.php:1436
+#: classes/class.spamprotection.php:1532
 msgid "too many false logins"
 msgstr "zu vielen Falschanmeldungen"
 
-#: classes/class.spamprotection.php:1438
+#: classes/class.spamprotection.php:1534
 msgid "spam ads"
 msgstr "Spamanzeigen"
 
-#: classes/class.spamprotection.php:1595
+#: classes/class.spamprotection.php:1689
 msgid "False logins on {PAGE_NAME}"
 msgstr "Fehllogins auf {PAGE_NAME}"
 
-#: classes/class.spamprotection.php:1607 classes/class.spamprotection.php:1615
+#: classes/class.spamprotection.php:1701 classes/class.spamprotection.php:1709
 msgid "Hello {MAIL_USER},"
 msgstr "Hallo {MAIL_USER},"
 
-#: classes/class.spamprotection.php:1608 classes/class.spamprotection.php:1616
+#: classes/class.spamprotection.php:1702 classes/class.spamprotection.php:1710
 msgid ""
 "We have detected some false logins for your account {MAIL_USED} on "
 "{PAGE_NAME}. Last false login was on {MAIL_DATE} from IP {MAIL_IP}"
@@ -2562,7 +2841,7 @@ msgstr ""
 "fehlgeschlagene Loginversuche aufgefallen. Der letzte Versuch war am "
 "{MAIL_DATE} von IP {MAIL_IP}"
 
-#: classes/class.spamprotection.php:1609 classes/class.spamprotection.php:1617
+#: classes/class.spamprotection.php:1703 classes/class.spamprotection.php:1711
 msgid ""
 "In order to our security policy, we have temporarily disabled your account "
 "and banned the used IP in our System. You can use following link to unban "
@@ -2577,52 +2856,52 @@ msgstr ""
 "Passwort vergessen Funktion verwenden, solltest Du Dein Passwort vergessen "
 "haben."
 
-#: classes/class.spamprotection.php:1610
+#: classes/class.spamprotection.php:1704
 msgid "Unban your account: <a href=\"{UNBAN_LINK}\">{UNBAN_LINK}</a> "
 msgstr "Account freischalten: <a href=\"{UNBAN_LINK}\">{UNBAN_LINK}</a> "
 
-#: classes/class.spamprotection.php:1611
+#: classes/class.spamprotection.php:1705
 msgid "Password recovery: <a href=\"{PASSWORD_LINK}\">{PASSWORD_LINK}</a> "
 msgstr ""
 "Passwort wiederherstellen: <a href=\"{PASSWORD_LINK}\">{PASSWORD_LINK}</a> "
 
-#: classes/class.spamprotection.php:1612 classes/class.spamprotection.php:1620
+#: classes/class.spamprotection.php:1706 classes/class.spamprotection.php:1714
 msgid "Best regards"
 msgstr "Mit freundlichen Grüßen"
 
-#: classes/class.spamprotection.php:1618
+#: classes/class.spamprotection.php:1712
 msgid "Unban your account: {UNBAN_LINK} "
 msgstr "Account freischalten: {UNBAN_LINK} "
 
-#: classes/class.spamprotection.php:1619
+#: classes/class.spamprotection.php:1713
 msgid "Password recovery: {PASSWORD_LINK} "
 msgstr "Passwort wiederherstellen: {PASSWORD_LINK} "
 
-#: classes/class.spamprotection.php:1683
+#: classes/class.spamprotection.php:1777
 msgid "This user is on your bad user list"
 msgstr "Dieser Benutzer ist auf der \"Schlechte Benutzer\" Liste"
 
-#: classes/class.spamprotection.php:1689
+#: classes/class.spamprotection.php:1783
 msgid "This user is on your trusted user list"
 msgstr "Dieser Benutzer ist auf der \"Gute Benutzer\" Liste"
 
-#: classes/class.spamprotection.php:1767
+#: classes/class.spamprotection.php:1861
 msgid "Remove Bad User"
 msgstr "Entferne \"Schlechter Benutzer\""
 
-#: classes/class.spamprotection.php:1770
+#: classes/class.spamprotection.php:1864
 msgid "Remove Trusted User"
 msgstr "Entferne \"Guter Benutzer\""
 
-#: classes/class.spamprotection.php:1815
+#: classes/class.spamprotection.php:1909
 msgid "Add IP Ban"
 msgstr "IP zur Ban Liste hinzufügen"
 
-#: classes/class.spamprotection.php:1853
+#: classes/class.spamprotection.php:1947
 msgid "Spam Protection - Database need upgrade!"
 msgstr "Spam Protection - Datenbank benötigt upgrade"
 
-#: classes/class.spamprotection.php:1855
+#: classes/class.spamprotection.php:1949
 msgid ""
 "Since you have upgraded this plugin, the database need an upgrade also.<br /"
 "><strong>To upgrade it now, press the button below.</strong>"
@@ -2631,7 +2910,7 @@ msgstr ""
 "ein Upgrade.<br /><strong>Benutze untenstehenden Button um dies jetzt "
 "durchzuführen.</strong>"
 
-#: classes/class.spamprotection.php:1856
+#: classes/class.spamprotection.php:1950
 msgid ""
 "If you want to backup your data before, you can use the export function.<br /"
 ">You will find an import function in the plugin settings."
@@ -2639,7 +2918,7 @@ msgstr ""
 "Möchtest Du vorher ein Backup Deiner Daten vornehmen, nutze die Export "
 "Funktion.<br />Die Importfunktion findest Du in den Plugineinstellungen"
 
-#: classes/class.spamprotection.php:1857
+#: classes/class.spamprotection.php:1951
 msgid ""
 "Of course you can do the upgrade manually.<br /><em>For this case you will "
 "find the database tables here</em>"
@@ -2647,75 +2926,75 @@ msgstr ""
 "Natürlich kannst Du die Datenbank auch manuell upgraden<br /><em>Dafür "
 "findest Du die benötigten Tabellen hier</em>"
 
-#: classes/class.spamprotection.php:1867
+#: classes/class.spamprotection.php:1961
 msgid "Export Data"
 msgstr "Daten exportieren"
 
-#: classes/class.spamprotection.php:1868
+#: classes/class.spamprotection.php:1962
 msgid "Upgrade now"
 msgstr "Jetzt upgraden"
 
-#: classes/class.spamprotection.php:1869
+#: classes/class.spamprotection.php:1963
 msgid "Test again"
 msgstr "Erneut testen"
 
-#: classes/class.spamprotection.php:1983 classes/class.spamprotection.php:1993
+#: classes/class.spamprotection.php:2077 classes/class.spamprotection.php:2087
 msgid "Attention"
 msgstr "Achtung"
 
-#: classes/class.spamprotection.php:1984
+#: classes/class.spamprotection.php:2078
 msgid "The export file could not be created"
 msgstr "Die Exportdatei kann nicht erstellt werden"
 
-#: classes/class.spamprotection.php:1990
+#: classes/class.spamprotection.php:2084
 msgid "Success"
 msgstr "Erfolg"
 
-#: classes/class.spamprotection.php:1991
+#: classes/class.spamprotection.php:2085
 #, php-format
 msgid "Export file %s was created succesfully"
 msgstr "Exportdatei %s wurde erstellt"
 
-#: classes/class.spamprotection.php:1991
+#: classes/class.spamprotection.php:2085
 msgid "for database"
 msgstr "für Plugindaten"
 
-#: classes/class.spamprotection.php:1991
+#: classes/class.spamprotection.php:2085
 msgid "for plugin settings"
 msgstr "für Plugineinstellungen"
 
-#: classes/class.spamprotection.php:1994
+#: classes/class.spamprotection.php:2088
 msgid "There was an error while creating the export file"
 msgstr "Fehler während dem erstellen der Exportdatei"
 
-#: classes/class.spamprotection.php:2014
+#: classes/class.spamprotection.php:2108
 msgid "This is not a valid import file"
 msgstr "Dies ist keine gültige Datei für den Import"
 
-#: classes/class.spamprotection.php:2028
+#: classes/class.spamprotection.php:2122
 #, php-format
 msgid "Error while importing settings: %s cannot be saved correctly"
 msgstr "Fehler während dem Import: %s kann nicht gespeichert werden"
 
-#: classes/class.spamprotection.php:2046
+#: classes/class.spamprotection.php:2140
 #, php-format
 msgid "Error while importing data to table %s"
 msgstr "Fehler während dem Import in Tabelle %s"
 
-#: classes/class.spamprotection.php:2053
+#: classes/class.spamprotection.php:2147
 msgid "Import done"
 msgstr "Import erfolgreich"
 
-#: classes/class.spamprotection.php:2084
+#: classes/class.spamprotection.php:2178
 #, php-format
 msgid "Welcome to %s"
 msgstr "Willkommen zu %s"
 
-#: classes/class.spamprotection.php:2085
+#: classes/class.spamprotection.php:2179
 msgid "<strong>Please read this notice carefully.</strong>"
 msgstr "<strong>Lies diesen Hinweis bitte sorgfältig.</strong>"
 
-#: classes/class.spamprotection.php:2086
+#: classes/class.spamprotection.php:2180
 msgid ""
 "This plugin changes the behaviour of your whole OSClass installation,<br /"
 ">because of this please use it wise."
@@ -2723,7 +3002,7 @@ msgstr ""
 "Dieses Plugin beeinflusst das Verhalten der ganzen OSClass Installation,<br /"
 ">darum nutze es bitte Weise."
 
-#: classes/class.spamprotection.php:2089
+#: classes/class.spamprotection.php:2183
 msgid ""
 "Don't activate functions that you don't understand. Take a look in the help "
 "to learn more about."
@@ -2731,15 +3010,15 @@ msgstr ""
 "Aktiviere keine Funktionen die Du nicht verstehst. Schau in die Hilfe um "
 "mehr darüber zu erfahren."
 
-#: classes/class.spamprotection.php:2090
+#: classes/class.spamprotection.php:2184
 msgid ""
-"Don't overact if you get alot of spam. You just need to fine tune some "
+"Don't overreact if you get a lot of spam. You just need to fine tune some "
 "options here."
 msgstr ""
 "Übertreib es nicht, wenn Du viel Spam bekommst, Du musst nur ein paar "
 "Einstellungen fein einstellen."
 
-#: classes/class.spamprotection.php:2091
+#: classes/class.spamprotection.php:2185
 msgid ""
 "This Plugin can block or ban user and admins. Keep an eye of all actions "
 "done on your page."
@@ -2747,11 +3026,11 @@ msgstr ""
 "Dieses Plugin kann Benutzer oder Admins aussperren, halte also ein Auge auf "
 "Aktionen die auf Deiner Seite passieren."
 
-#: classes/class.spamprotection.php:2094
+#: classes/class.spamprotection.php:2188
 msgid "<em>We don't want, that you ban or annoy user without reason ;)</em>"
 msgstr "<em>Niemand will grundlos Benutzer bannen oder verärgern ;)</em>"
 
-#: classes/class.spamprotection.php:2097
+#: classes/class.spamprotection.php:2191
 msgid ""
 "<strong>If you are using the check for contact mails, please add some hints "
 "into your privacy policy that mails will be saved and moderated, if spam was "
@@ -2761,7 +3040,7 @@ msgstr ""
 "Deiner Datenschutzerklärung bitte einen Hinweis hinzu, dass diese "
 "gespeichert und moderiert werden, wenn Spam gefunden wurde</strong>"
 
-#: classes/class.spamprotection.php:2099
+#: classes/class.spamprotection.php:2193
 msgid ""
 "Feel free to contact me in OSClass-Forum for any kind of question.<br /><br /"
 ">Best regards<br />Liath"
@@ -2769,17 +3048,66 @@ msgstr ""
 "Solltest Du irgendwelche Fragen haben, kannst Du mich gerne im Forum "
 "kontaktieren<br /><br />Beste Grüße<br />Liath"
 
-#: classes/class.spamprotection.php:2103
+#: classes/class.spamprotection.php:2197
 msgid "Plugin Settings"
 msgstr "Plugin-Einstellungen"
 
-#: classes/class.spamprotection.php:2104
+#: classes/class.spamprotection.php:2198
 msgid "Go to Forum"
 msgstr "Gehe zum Forum"
 
-#: classes/class.spamprotection.php:2105
+#: classes/class.spamprotection.php:2199
 msgid "Close"
 msgstr "Schliessen"
+
+#: classes/class.spamprotection.php:2550
+msgid "New Files"
+msgstr "Neue Dateien"
+
+#: classes/class.spamprotection.php:2551
+msgid "Deleted Files"
+msgstr "Gelöschte Dateien"
+
+#: classes/class.spamprotection.php:2552
+msgid "Changed Files"
+msgstr "Geänderte Dateien"
+
+#: classes/class.spamprotection.php:2569
+msgid "File"
+msgstr "Datei"
+
+#: classes/class.spamprotection.php:2570
+msgid "Size changed"
+msgstr "veränderte Größe"
+
+#: classes/class.spamprotection.php:2571
+msgid "Last change"
+msgstr "Letzte Änderung"
+
+#: classes/class.spamprotection.php:2573
+msgid "Executable"
+msgstr "Ausführbar"
+
+#: classes/class.spamprotection.php:2574
+msgid "Writable"
+msgstr "Beschreibbar"
+
+#: classes/class.spamprotection.php:2575
+msgid "Readable"
+msgstr "Lesbar"
+
+#: classes/class.spamprotection.php:2615
+msgid "No changes found, all seems to be ok"
+msgstr "Keine Veränderungen gefunden, es sieht alles ok aus."
+
+#: classes/class.spamprotection.php:2715
+msgid "FILE SYSTEM INTEGRITY HURT"
+msgstr "DATEISYSTEMINTEGRITÄT VERLETZT"
+
+#: classes/class.spamprotection.php:2749
+#, php-format
+msgid "%s ATTENTION, FILE SYSTEM INTEGRITY HURT!!!"
+msgstr "%s ACHTUNG, DATEISYSTEMINTEGRITÄT WURDE VERLETZT"
 
 #: functions/backend.php:10
 msgid "Anti Spam & Protection System"
@@ -2835,8 +3163,8 @@ msgstr "AntiSpam & SysProt"
 msgid "Check Spam"
 msgstr "Spam überprüfen"
 
-#: functions/backend.php:193 functions/backend.php:203
-#: functions/backend.php:214
+#: functions/backend.php:203 functions/backend.php:213
+#: functions/backend.php:224
 msgid ""
 "<strong>Information!</strong> Your account is disabled due to too much of "
 "false login attempts. Please contact the webmaster."
@@ -2844,12 +3172,28 @@ msgstr ""
 "<strong>Information!</strong> Dein Account wurde wegen zuvieler falscher "
 "Anmeldeversuche gesperrt. Bitte kontaktiere den Support."
 
-#: functions/backend.php:219 functions/frontend.php:136
+#: functions/backend.php:229 functions/frontend.php:180
 #, php-format
 msgid "<strong>Warning!</strong> Only %d login attempts remaining"
 msgstr "<strong>Achtung!</strong> Nur noch %d Anmeldeversuche verbleibend."
 
-#: functions/frontend.php:85
+#: functions/frontend.php:23
+msgid ""
+"Your listing needs to be moderated, please have patience until it is "
+"released."
+msgstr ""
+"Deine Anzeige muss moderiert werden, habe bitte Geduld bis sie "
+"veröffentlicht wird."
+
+#: functions/frontend.php:43 functions/frontend.php:108
+msgid ""
+"Sending contact mails are not allowed because of using the TOR Network. "
+"Please disable TOR and try again."
+msgstr ""
+"Wegen der Nutzung des TOR Netzwerkes ist das senden von Kontaktnachrichten "
+"nicht möglich. Bitte TOR deaktivieren und erneut versuchen."
+
+#: functions/frontend.php:119
 #, php-format
 msgid ""
 "Your email must be verified by a moderator because it has been identified as "
@@ -2862,7 +3206,15 @@ msgstr ""
 "den Empfänger weitergeleitet. Möchtest Du nicht, dass Deine E-Mail moderiert "
 "wird, klicke hier auf <a href='%s'>Löschen</a>"
 
-#: functions/frontend.php:119 functions/frontend.php:131
+#: functions/frontend.php:149
+msgid ""
+"Login is not allowed because of using the TOR Network. Please disable TOR "
+"and try again."
+msgstr ""
+"Wegen der Nutzung des TOR Netzwerkes ist die Anmeldung nicht möglich. Bitte "
+"TOR deaktivieren und erneut versuchen."
+
+#: functions/frontend.php:165 functions/frontend.php:175
 msgid ""
 "<strong>Information!</strong> Your account is disabled due to too much of "
 "false login attempts. Please contact support."
@@ -2870,17 +3222,25 @@ msgstr ""
 "<strong>Information!</strong> Dein Account wurde wegen zuvieler falscher "
 "Anmeldeversuche gesperrt. Bitte kontaktiere den Support."
 
-#: functions/frontend.php:162 functions/frontend.php:164
+#: functions/frontend.php:206
+msgid ""
+"Registration is not allowed because of using the TOR Network. Please disable "
+"TOR and try again."
+msgstr ""
+"Wegen der Nutzung des TOR Netzwerkes ist die Registrierung nicht möglich. "
+"Bitte TOR deaktivieren und erneut versuchen."
+
+#: functions/frontend.php:220 functions/frontend.php:222
 #, php-format
 msgid "Sorry, but you cannot use this email address: %s"
 msgstr ""
 "Entschuldigung, aber diese E-Mail Adresse kann nicht verwendet werden: %s"
 
-#: functions/frontend.php:167
+#: functions/frontend.php:225
 msgid "Sorry, but you need to use a valid email address."
 msgstr "Entschuldigung, aber Du musst eine gültige E-Mail Adresse verwenden"
 
-#: functions/frontend.php:184
+#: functions/frontend.php:242
 msgid ""
 "Sorry, you are not allowed to register an account here. Feel free to contact "
 "the support team if you think this is a mistake."
@@ -2889,7 +3249,7 @@ msgstr ""
 "registrieren. Wenn Du denkst, dass das ein Versehen ist, wende Dich bitte an "
 "den Support."
 
-#: functions/frontend.php:220
+#: functions/frontend.php:278
 msgid ""
 "Sorry, but your email address is listed because of spam on <a href=\"https://"
 "www.stopforumspam.com\">StopForumSpam</a>. Due to this, you cannot register "
@@ -2903,7 +3263,7 @@ msgstr ""
 "werden, Du kannst aber die Löschung Deiner E-Mail Adresse <a href=\"https://"
 "www.stopforumspam.com/removal\">hier</a> beantragen"
 
-#: functions/frontend.php:241
+#: functions/frontend.php:299
 msgid ""
 "Sorry, but your IP is listed because of spam on <a href=\"https://www."
 "stopforumspam.com\">StopForumSpam</a>. Due to this, you cannot register your "
@@ -2915,7 +3275,7 @@ msgstr ""
 "Benutzerkonto hier registriert werden, Du kannst aber die Löschung Deiner IP "
 "<a href=\"https://www.stopforumspam.com/removal\">hier</a> beantragen"
 
-#: functions/frontend.php:251
+#: functions/frontend.php:309
 msgid ""
 "Sorry, but you are not allowed to post new ads here. If you think this is a "
 "mistake, feel free to contact the support team."
@@ -2924,7 +3284,7 @@ msgstr ""
 "veröffentlichen. Wenn Du denkst, dass das ein Versehen ist, wende Dich bitte "
 "an den Support."
 
-#: functions/frontend.php:258 functions/frontend.php:261
+#: functions/frontend.php:316 functions/frontend.php:319
 msgid ""
 "Sorry, but you are not allowed to send contact mails. If you think this is a "
 "mistake, feel free to contact the support team"
@@ -2932,7 +3292,7 @@ msgstr ""
 "Entschuldigung, aber Dir ist es nicht erlaubt Kontaktnachrichten zu senden. "
 "Wenn Du denkst, dass das ein Versehen ist, wende Dich bitte an den Support."
 
-#: functions/frontend.php:270
+#: functions/frontend.php:328
 msgid ""
 "Sorry, but you are not allowed to post new comments here. If you think this "
 "is a mistake, feel free to contact the support team."
@@ -2953,27 +3313,27 @@ msgstr "<strong>Pfad NICHT beschreibbar</strong>"
 msgid "Example content"
 msgstr "Beispielinhalt"
 
-#: functions/log.php:42
+#: functions/log.php:49
 msgid "Select Date"
 msgstr "Datum wählen"
 
-#: functions/log.php:44
+#: functions/log.php:51
 msgid "Search in logs"
 msgstr "Suche in Logs"
 
-#: functions/log.php:66
+#: functions/log.php:73
 msgid "Action"
 msgstr "Aktion"
 
-#: functions/log.php:67
+#: functions/log.php:74
 msgid "Info"
 msgstr "Info"
 
-#: functions/log.php:68
+#: functions/log.php:75
 msgid "Done by"
 msgstr "Ausgeführt durch"
 
-#: functions/params.php:49
+#: functions/params.php:63
 msgid ""
 "<strong>Info!</strong> Your account has been reactivated, you can login as "
 "usual."
@@ -2981,45 +3341,74 @@ msgstr ""
 "<strong>Info!</strong> Account wieder hergestellt. Du kannst Dich wie "
 "gewöhnlich anmelden."
 
-#: functions/searchUser.php:27
-msgid "Legend"
-msgstr "Legende"
-
-#: functions/searchUser.php:27
-msgid "Never logged in"
-msgstr "Benutzer hat sich nie angemeldet"
-
-#: functions/searchUser.php:27
-msgid "Has admin account"
-msgstr "Hat Adminkonto"
-
-#: functions/searchUser.php:27
-msgid "Normal user account"
-msgstr "Normales Benutzerkonto"
-
-#: functions/searchUser.php:30
-msgid "Selected accounts"
-msgstr "Gewählte Konten"
-
-#: functions/searchUser.php:40
+#: functions/searchUser.php:33
 msgid "Registered"
 msgstr "Registriert"
 
-#: functions/searchUser.php:41
-msgid "Last Login"
-msgstr "Letzter Login"
-
-#: functions/searchUser.php:42
+#: functions/searchUser.php:35
 msgid "Listings"
 msgstr "Anzeigen"
 
-#: functions/searchUser.php:43
+#: functions/searchUser.php:36
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions/searchUser.php:77
+#: functions/searchUser.php:70
 msgid "Delete Now"
 msgstr "Jetzt löschen"
+
+#~ msgid "ATTENTION!!!"
+#~ msgstr "ACHTUNG!!!"
+
+#~ msgid ""
+#~ "Do not edit this file, unless you know what you do! Corrupt .htaccess "
+#~ "files can cause errors for your whole webpage!"
+#~ msgstr "Bearbeite diese Datei nur, wenn Du weisst was du tust!"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Don't remember"
+#~ msgstr "Nicht erinnern"
+
+#~ msgid "(File is not writable)"
+#~ msgstr "(Datei nicht beschreibbar)"
+
+#~ msgid "Beware of editing this file, unless you know what you're doing!!!"
+#~ msgstr "Diese Datei nicht bearbeiten, wenn Du nicht weisst was Du tust!!!"
+
+#~ msgid "Delete as spam marked comments"
+#~ msgstr "Als Spam markierte Kommentare löschen"
+
+#~ msgid "Select last login date"
+#~ msgstr "Wähle letztes Anmeldungsdatum"
+
+#~ msgid "Show max. x accounts"
+#~ msgstr "Zeige maximal X Benutzerkonten"
+
+#~ msgid "Spam found"
+#~ msgstr "Spam gefunden"
+
+#~ msgid "Spam comment found"
+#~ msgstr "Spamkommentar gefunden"
+
+#~ msgid "Spam Contact Mail found"
+#~ msgstr "Spam Kontaktnachricht gefunden"
+
+#~ msgid "Legend"
+#~ msgstr "Legende"
+
+#~ msgid "Never logged in"
+#~ msgstr "Benutzer hat sich nie angemeldet"
+
+#~ msgid "Has admin account"
+#~ msgstr "Hat Adminkonto"
+
+#~ msgid "Normal user account"
+#~ msgstr "Normales Benutzerkonto"
+
+#~ msgid "Selected accounts"
+#~ msgstr "Gewählte Konten"
 
 #~ msgid "Ban User"
 #~ msgstr "Benutzer sperren"
@@ -3250,9 +3639,6 @@ msgstr "Jetzt löschen"
 
 #~ msgid "Preview"
 #~ msgstr "Vorschau"
-
-#~ msgid "Tools"
-#~ msgstr "Tools"
 
 #~ msgid "News Managment"
 #~ msgstr "News Managment"
