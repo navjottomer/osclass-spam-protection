@@ -1,4 +1,4 @@
-# OSClass - Anti Spam & Protection System v1.6.4
+# OSClass - Anti Spam & Protection System v1.7.4
 
 [![N|Solid](https://i.imgur.com/qFm5SWD.jpg)](http://amfearliath.tk/osclass-spam-protection/)
 
