@@ -458,7 +458,7 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param      $table
+     * @param            $table
      * @param bool|array $where
      *
      * @return bool
@@ -556,10 +556,10 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param        $table
-     * @param bool|array   $where
-     * @param bool   $orderBy
-     * @param string $orderDir
+     * @param            $table
+     * @param bool|array $where
+     * @param bool       $orderBy
+     * @param string     $orderDir
      *
      * @return bool
      */
@@ -854,11 +854,11 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param        $type
-     * @param        $reason
-     * @param bool   $email
-     * @param bool|string|array   $ip
-     * @param string $mode
+     * @param                   $type
+     * @param                   $reason
+     * @param bool              $email
+     * @param bool|string|array $ip
+     * @param string            $mode
      *
      * @return bool
      */
@@ -965,10 +965,10 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param        $table
-     * @param bool|array   $where
-     * @param bool   $orderBy
-     * @param string $orderDir
+     * @param            $table
+     * @param bool|array $where
+     * @param bool       $orderBy
+     * @param string     $orderDir
      *
      * @return bool
      */
@@ -2056,9 +2056,9 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param        $search
-     * @param string $type
-     * @param bool|string|array   $ip
+     * @param                   $search
+     * @param string            $type
+     * @param bool|string|array $ip
      *
      * @return bool
      */
@@ -2186,6 +2186,7 @@ class spam_prot extends DAO
             $this->_doIpBan('delete', $v['s_ip']);
             $this->dao->delete($this->_table_sp_logins, '`pk_i_id` = "' . $v['pk_i_id'] . '"');
         }
+
         return true;
     }
 
@@ -3066,7 +3067,7 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param      $table
+     * @param            $table
      * @param bool|array $where
      *
      * @return bool
@@ -3410,12 +3411,12 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param bool $age
+     * @param bool     $age
      * @param bool|int $max
-     * @param bool $activated
-     * @param bool $enabled
-     * @param bool $zero
-     * @param bool $logged
+     * @param bool     $activated
+     * @param bool     $enabled
+     * @param bool     $zero
+     * @param bool     $logged
      *
      * @return bool
      */
@@ -3561,6 +3562,7 @@ class spam_prot extends DAO
 
     /**
      * compare file system with saved hashes
+     *
      * @param bool $now
      *
      * @return bool|null
@@ -3746,6 +3748,7 @@ class spam_prot extends DAO
     }
 
     /** load master hashes from database for compare
+     *
      * @return mixed
      */
     public function _loadChangedHashes()
@@ -3893,9 +3896,11 @@ class spam_prot extends DAO
     }
 
     /** send email if changes are found
+     *
      * @param $hashes
+     *
      * @return bool
-*/
+     */
 
     public function _hasFilesChanges($hashes)
     {
@@ -3907,10 +3912,12 @@ class spam_prot extends DAO
     }
 
     /** human readable file size
+     *
      * @param $size
      * @param $compare
+     *
      * @return string
-*/
+     */
 
     public function _sizeFiles($size, $compare)
     {

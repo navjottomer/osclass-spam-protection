@@ -23,7 +23,7 @@
 }
 
 .row {
-    margin: 20px 0 !important;   
+    margin: 20px 0 !important;
 }
 
 .halfrow {
@@ -37,7 +37,7 @@
 }
 
 .settings input[type='text'], .settings textarea {
-    width: 100%;    
+    width: 100%;
 }
 
 #view_comment .author_info > p, #view_comment .comment_info > p {
@@ -56,6 +56,7 @@ div#blocked_ads {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
+
 div#blocked_ads_inner {
     position: fixed;
     top: 0;
@@ -74,15 +75,15 @@ div#blocked_ads_inner {
 }
 
 div#blocked_ads_inner table {
-    width: 100%;    
+    width: 100%;
 }
 
 div#blocked_ads_inner table tr {
-    height: 30px;    
+    height: 30px;
 }
 
 div#blocked_ads_inner table tr td {
-    padding: 3px 7px;    
+    padding: 3px 7px;
 }
 
 #sp_options {
@@ -126,18 +127,19 @@ div#blocked_ads_inner table tr td {
 
 input[name=honeypot_name].valid {
     border: 1px solid green;
-    outline: none;    
+    outline: none;
 }
 
 input[name=honeypot_name].invalid {
     border: 1px solid red;
-    outline: none;    
+    outline: none;
 }
 
-#spamprot { 
-    background: transparent; 
-    border: none; 
+#spamprot {
+    background: transparent;
+    border: none;
 }
+
 div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     position: relative;
     top: 50px;
@@ -149,10 +151,12 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     width: 200px;
     float: left;
 }
+
 .sp_options, .sp_comment_options, .sp_contact_options, .sp_help_section {
     width: calc(100% - 200px);
     float: left;
-} 
+}
+
 #spamprot ul.tabs {
     position: absolute;
     top: -15px;
@@ -162,8 +166,9 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     background: #000;
     border: none;
     margin-bottom: 20px;
-} 
-#spamprot ul.tabs li { 
+}
+
+#spamprot ul.tabs li {
     background: transparent;
     display: inline-block;
     border: none;
@@ -171,32 +176,36 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     position: relative;
     top: 1px;
     border-bottom: 0 !important;
-} 
+}
+
 #spamprot ul.tabs li a {
     color: #c0c0c0 !important;
     display: block;
     text-decoration: none !important;
     cursor: pointer !important;
     padding: .5em 1em;
-} 
-#spamprot ul.tabs li.current { 
-    background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center; 
+}
+
+#spamprot ul.tabs li.current {
+    background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center;
     border: none;
-} 
-#spamprot ul.tabs li.current a { 
-    color: #459e00 !important; 
+}
+
+#spamprot ul.tabs li.current a {
+    color: #459e00 !important;
 }
 
 
-#spamprot ul.langtabs { 
-    background: transparent; 
-    border: none; 
-    border-bottom: 1px solid #c0c0c0; 
-    -moz-border-radius: 0px; 
-    -webkit-border-radius: 0px; 
-    border-radius: 0px; 
-} 
-#spamprot ul.langtabs li { 
+#spamprot ul.langtabs {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#spamprot ul.langtabs li {
     background: transparent;
     display: inline-block;
     border: none;
@@ -204,29 +213,33 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     position: relative;
     top: 1px;
     border-bottom: 0 !important;
-} 
+}
+
 #spamprot ul.langtabs li a {
     color: #c0c0c0 !important;
     display: block;
     text-decoration: none !important;
     cursor: pointer !important;
     padding: .5em 1em;
-} 
-#spamprot ul.langtabs li.current { 
-    background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center; 
-    border: none;
-} 
-#spamprot ul.langtabs li.current a { 
-    color: #459e00 !important; 
 }
 
- 
+#spamprot ul.langtabs li.current {
+    background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center;
+    border: none;
+}
+
+#spamprot ul.langtabs li.current a {
+    color: #459e00 !important;
+}
+
+
 #spamprot ul.subtabs {
     background: transparent;
     border: none;
     padding: 0;
 }
-#spamprot ul.subtabs li { 
+
+#spamprot ul.subtabs li {
     background: transparent;
     display: block;
     border: none;
@@ -235,7 +248,8 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     top: 1px;
     border-bottom: 0 !important;
     text-align: center;
-} 
+}
+
 #spamprot ul.subtabs li a {
     color: #c0c0c0 !important;
     display: block;
@@ -243,23 +257,27 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     cursor: pointer !important;
     padding: 1em;
 }
+
 #spamprot ul.subtabs li button {
     margin-top: 20px;
-} 
-#spamprot ul.subtabs li.current {
-    border: none;
-} 
-#spamprot ul.subtabs li.current a { 
-    color: #459e00 !important; 
 }
 
- 
+#spamprot ul.subtabs li.current {
+    border: none;
+}
+
+#spamprot ul.subtabs li.current a {
+    color: #459e00 !important;
+}
+
+
 #spamprot ul.commtabs {
     background: transparent;
     border: none;
     padding: 0;
 }
-#spamprot ul.commtabs li { 
+
+#spamprot ul.commtabs li {
     background: transparent;
     display: block;
     border: none;
@@ -268,7 +286,8 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     top: 1px;
     border-bottom: 0 !important;
     text-align: center;
-} 
+}
+
 #spamprot ul.commtabs li a {
     color: #c0c0c0 !important;
     display: block;
@@ -276,23 +295,27 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     cursor: pointer !important;
     padding: 1em;
 }
+
 #spamprot ul.commtabs li button {
     margin-top: 20px;
-} 
-#spamprot ul.commtabs li.current {
-    border: none;
-} 
-#spamprot ul.commtabs li.current a { 
-    color: #459e00 !important; 
 }
 
- 
+#spamprot ul.commtabs li.current {
+    border: none;
+}
+
+#spamprot ul.commtabs li.current a {
+    color: #459e00 !important;
+}
+
+
 #spamprot ul.contacttabs {
     background: transparent;
     border: none;
     padding: 0;
 }
-#spamprot ul.contacttabs li { 
+
+#spamprot ul.contacttabs li {
     background: transparent;
     display: block;
     border: none;
@@ -301,7 +324,8 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     top: 1px;
     border-bottom: 0 !important;
     text-align: center;
-} 
+}
+
 #spamprot ul.contacttabs li a {
     color: #c0c0c0 !important;
     display: block;
@@ -309,23 +333,27 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     cursor: pointer !important;
     padding: 1em;
 }
+
 #spamprot ul.contacttabs li button {
     margin-top: 20px;
-} 
-#spamprot ul.contacttabs li.current {
-    border: none;
-} 
-#spamprot ul.contacttabs li.current a { 
-    color: #459e00 !important; 
 }
 
- 
+#spamprot ul.contacttabs li.current {
+    border: none;
+}
+
+#spamprot ul.contacttabs li.current a {
+    color: #459e00 !important;
+}
+
+
 #spamprot ul.helptabs {
     background: transparent;
     border: none;
     padding: 0;
 }
-#spamprot ul.helptabs li { 
+
+#spamprot ul.helptabs li {
     background: transparent;
     display: block;
     border: none;
@@ -334,7 +362,8 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     top: 1px;
     border-bottom: 0 !important;
     text-align: center;
-} 
+}
+
 #spamprot ul.helptabs li a {
     color: #c0c0c0 !important;
     display: block;
@@ -342,17 +371,20 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
     cursor: pointer !important;
     padding: 1em;
 }
+
 #spamprot ul.helptabs li button {
     margin-top: 20px;
-} 
-#spamprot ul.helptabs li.current {
-    border: none;
-} 
-#spamprot ul.helptabs li.current a { 
-    color: #459e00 !important; 
 }
 
- 
+#spamprot ul.helptabs li.current {
+    border: none;
+}
+
+#spamprot ul.helptabs li.current a {
+    color: #459e00 !important;
+}
+
+
 #spamprot .tab-content, #spamprot .subtab-content, #spamprot .commtab-content, #spamprot .contacttab-content, #spamprot .langtab-content, #spamprot .helptab-content {
     display: none;
 }
@@ -391,6 +423,7 @@ div#sp_settings, div#sp_comments, div#sp_contact, div#sp_help {
 #sp_help ul li p {
     margin: 0 0 10px;
 }
+
 div#flashmessage {
     position: absolute;
     right: 20px;
@@ -402,6 +435,7 @@ div#flashmessage {
     background: none;
     border: none;
 }
+
 div#flashmessage a {
     margin-left: 15px;
 }
@@ -415,6 +449,7 @@ div#attention {
     right: 0;
     background: rgba(0, 0, 0, 0.8);
 }
+
 #attention_content {
     display: none;
     margin: 150px auto;
@@ -425,21 +460,25 @@ div#attention {
     border-radius: 3px;
     box-shadow: 6px 6px 8px #000;
 }
+
 .viewToggle {
-  position: absolute;
-  right: 50px;
-  top: 100px;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
 }
+
 .viewToggle:hover {
-  background: #eee;
+    background: #eee;
 }
+
 textarea#descriptionCode {
     display: none;
 }
+
 div#descriptionHTML {
     display: block;
 }
@@ -470,11 +509,11 @@ div#descriptionHTML {
 }
 
 .table td.col-author {
-    width: 200px;    
+    width: 200px;
 }
 
 .table td.col-status {
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 0;
     width: 50px;
     padding: 0 10px;
@@ -493,7 +532,7 @@ div#descriptionHTML {
     display: none;
 }
 
-.table div.actions > ul{
+.table div.actions > ul {
     margin: 0;
     padding: 0;
 }

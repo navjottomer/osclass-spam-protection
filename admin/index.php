@@ -1,2 +1,2 @@
-<?php 
+<?php
 /* simple folder protection */ 

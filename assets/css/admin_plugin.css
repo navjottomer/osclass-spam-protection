@@ -1,9 +1,9 @@
- @import 'themes.css';
+@import 'themes.css';
 
 /* OSClass overrides */
 #content-head {
     border-bottom: solid 1px #ddd;
-    background-color: #f3f3f3;                                 
+    background-color: #f3f3f3;
     padding: 24px 30px;
 }
 
@@ -41,7 +41,7 @@
 
 /* Standards */
 .row {
-    margin: 20px 0 !important;   
+    margin: 20px 0 !important;
 }
 
 .halfrow {
@@ -57,7 +57,7 @@
 /* Spam Protection */
 
 .settings input[type='text'], .settings textarea {
-    width: 100%;    
+    width: 100%;
 }
 
 #view_comment .author_info > p, #view_comment .comment_info > p {
@@ -76,6 +76,7 @@ div#blocked_ads {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
+
 div#blocked_ads_inner {
     position: fixed;
     top: 0;
@@ -102,15 +103,15 @@ div#blocked_ads_close {
 }
 
 div#blocked_ads_inner table {
-    width: 100%;    
+    width: 100%;
 }
 
 div#blocked_ads_inner table tr {
-    height: 30px;    
+    height: 30px;
 }
 
 div#blocked_ads_inner table tr td {
-    padding: 3px 7px;    
+    padding: 3px 7px;
 }
 
 #sp_options,
@@ -150,27 +151,28 @@ div#blocked_ads_inner table tr td {
 
 input[name=honeypot_name].valid {
     border: 1px solid green;
-    outline: none;    
+    outline: none;
 }
 
 input[name=honeypot_name].invalid {
     border: 1px solid red;
-    outline: none;    
+    outline: none;
 }
 
-#spamprot { 
-    background: transparent; 
-    border: none; 
+#spamprot {
+    background: transparent;
+    border: none;
 }
+
 #spamprot div.row.form-group {
     border-bottom: 1px dashed #ccc;
     padding-bottom: 20px;
 }
 
-div#sp_settings, 
-div#sp_comments, 
-div#sp_contact, 
-div#sp_security, 
+div#sp_settings,
+div#sp_comments,
+div#sp_contact,
+div#sp_security,
 div#sp_help,
 div#sp_log,
 div#sp_tools,
@@ -197,18 +199,17 @@ div#sp_config {
 }
 
 
-
-#spamprot ul.langtabs { 
-    background: transparent; 
-    border: none; 
-    border-bottom: 1px solid #c0c0c0; 
-    -moz-border-radius: 0px; 
-    -webkit-border-radius: 0px; 
-    border-radius: 0px; 
+#spamprot ul.langtabs {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
 }
 
 #spamprot ul.tabs li,
-#spamprot ul.langtabs li { 
+#spamprot ul.langtabs li {
     background: transparent;
     display: inline-block;
     border: none;
@@ -216,7 +217,7 @@ div#sp_config {
     position: relative;
     top: 0px;
     border-bottom: 0 !important;
-} 
+}
 
 #spamprot ul.tabs li a,
 #spamprot ul.langtabs li a {
@@ -225,17 +226,17 @@ div#sp_config {
     text-decoration: none !important;
     cursor: pointer !important;
     padding: .5em 1em;
-} 
+}
 
 #spamprot ul.tabs li.current,
-#spamprot ul.langtabs li.current { 
-    background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center; 
+#spamprot ul.langtabs li.current {
+    background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center;
     border: none;
 }
 
-#spamprot ul.tabs li.current a, 
-#spamprot ul.langtabs li.current a { 
-    color: #459e00 !important; 
+#spamprot ul.tabs li.current a,
+#spamprot ul.langtabs li.current a {
+    color: #459e00 !important;
 }
 
 .sp_tabs {
@@ -243,28 +244,30 @@ div#sp_config {
     float: left;
     padding: 0;
 }
-.sp_options, 
-.sp_comment_options, 
-.sp_contact_options, 
-.sp_security_options, 
-.sp_admin_options, 
-.sp_register_options, 
-.sp_global_log, 
-.sp_help_section, 
+
+.sp_options,
+.sp_comment_options,
+.sp_contact_options,
+.sp_security_options,
+.sp_admin_options,
+.sp_register_options,
+.sp_global_log,
+.sp_help_section,
 .sp_config_options,
 .sp_badtrusted_options,
 .sp_ipban_options,
 .sp_cleaner_options {
     width: calc(100% - 200px);
     float: left;
-} 
+}
 
 #spamprot ul.subtabs {
     background: #000;
     border: none;
     padding: 0;
 }
-#spamprot ul.subtabs li { 
+
+#spamprot ul.subtabs li {
     background: transparent;
     display: block;
     border: none;
@@ -273,7 +276,8 @@ div#sp_config {
     top: 1px;
     border-bottom: 0 !important;
     text-align: center;
-} 
+}
+
 #spamprot ul.subtabs li a {
     color: #c0c0c0 !important;
     display: block;
@@ -281,23 +285,26 @@ div#sp_config {
     cursor: pointer !important;
     padding: 1em;
 }
+
 #spamprot ul.subtabs li button {
     margin-top: 20px;
-} 
-#spamprot ul.subtabs li.current {
-    border: none;
-} 
-#spamprot ul.subtabs li.current a { 
-    color: #459e00 !important; 
 }
 
-#spamprot .tab-content, 
+#spamprot ul.subtabs li.current {
+    border: none;
+}
+
+#spamprot ul.subtabs li.current a {
+    color: #459e00 !important;
+}
+
+#spamprot .tab-content,
 #spamprot .langtab-content,
 #spamprot .subtab-content {
     display: none;
 }
 
-#spamprot .tab-content.current, 
+#spamprot .tab-content.current,
 #spamprot .langtab-content.current,
 #spamprot .subtab-content.current {
     display: inherit;
@@ -336,6 +343,7 @@ div#sp_config {
 #sp_help ul li p {
     margin: 0 0 10px;
 }
+
 /*
 div#flashmessage {
     position: absolute;
@@ -397,6 +405,7 @@ div#attention {
     right: 0;
     background: rgba(0, 0, 0, 0.8);
 }
+
 #attention_content {
     display: none;
     margin: 150px auto;
@@ -407,6 +416,7 @@ div#attention {
     border-radius: 3px;
     box-shadow: 6px 6px 8px #000;
 }
+
 .viewToggle {
     position: absolute;
     right: 50px;
@@ -416,12 +426,15 @@ div#attention {
     border-radius: 3px;
     cursor: pointer;
 }
+
 .viewToggle:hover {
     background: #eee;
 }
+
 textarea#descriptionCode {
     display: none;
 }
+
 div#descriptionHTML {
     display: block;
 }
@@ -452,11 +465,11 @@ div#descriptionHTML {
 }
 
 .table td.col-author {
-    width: 200px;    
+    width: 200px;
 }
 
 .table td.col-status {
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 0;
     width: 50px;
     padding: 0 10px;
@@ -475,7 +488,7 @@ div#descriptionHTML {
     display: none;
 }
 
-.table div.actions > ul{
+.table div.actions > ul {
     margin: 0;
     padding: 0;
 }
@@ -546,7 +559,7 @@ span.sp_review_close {
     border-left: 11px solid #666;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;    
+    -moz-border-radius: 4px 4px 0 0;
 }
 
 #sp_security_login_honeypots > div > pre {
@@ -565,7 +578,7 @@ span.sp_review_close {
     white-space: pre-wrap;
     border-radius: 0 0 4px 4px;
     -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;    
+    -moz-border-radius: 0 0 4px 4px;
 }
 
 #sp_security_login_honeypots code {
@@ -574,7 +587,7 @@ span.sp_review_close {
     font-family: "Courier New", Courier, monospace, sans-serif;
     text-align: left;
     color: #555;
-    border: 0;    
+    border: 0;
 }
 
 .spamprot_bans > table > tbody > tr {
@@ -590,8 +603,9 @@ span.sp_review_close {
 }
 
 .file-button {
-    background-image: url(../img/bnt-overlay.png);    
+    background-image: url(../img/bnt-overlay.png);
 }
+
 .file-upload-override-button {
     position: relative;
     float: left;
@@ -607,13 +621,17 @@ span.sp_review_close {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
+
 .file-upload-override-button:hover {
     background-color: #00b3c1;
     border-color: #2f96b4;
 }
+
 .file-upload-override-button:active {
-    position:relative; top:1px;
+    position: relative;
+    top: 1px;
 }
+
 .file-upload-button {
     position: absolute;
     height: 50px;
@@ -621,8 +639,9 @@ span.sp_review_close {
     left: -10px;
     cursor: pointer;
     opacity: 0;
-    filter:alpha(opacity=0);
+    filter: alpha(opacity=0);
 }
+
 .file-upload-filename {
     float: left;
     margin-left: 10px;
@@ -631,11 +650,9 @@ span.sp_review_close {
 }
 
 
-
-
 #spamprot fieldset {
-    border: 1px solid #bbb; 
-    padding: 0 15px; 
+    border: 1px solid #bbb;
+    padding: 0 15px;
     margin: 25px 0;
     transition: ease all .4s;
 }
@@ -669,8 +686,6 @@ span.sp_review_close {
 }
 
 
-
-
 #spamprot table.badtrusted {
     width: 100%;
 }
@@ -680,7 +695,7 @@ span.sp_review_close {
 }
 
 #spamprot table.badtrusted thead
- tr td {
+tr td {
     font-weight: bold;
 }
 
@@ -689,7 +704,7 @@ span.sp_review_close {
 }
 
 #spamprot table.badtrusted tr td.name {
-    
+
 }
 
 #spamprot table.badtrusted tr td.email {
@@ -700,7 +715,7 @@ span.sp_review_close {
     width: 55px;
     text-align: center;
 }
- 
+
 #spamprot table.badtrusted tr td.comments {
     width: 55px;
     text-align: center;
@@ -715,7 +730,7 @@ span.sp_review_close {
     margin: 5px 12px;
 }
 
-#spamprot a#add_bad_or_trusted{
+#spamprot a#add_bad_or_trusted {
     position: absolute;
     top: -10px;
     right: 0;
@@ -766,7 +781,7 @@ div.addBadOrTrusted div#BadOrTrusted-head {
 }
 
 div.addBadOrTrusted div#BadOrTrusted-body {
-    
+
 }
 
 div.addBadOrTrusted div#BadOrTrusted-body table thead tr {
@@ -784,9 +799,6 @@ div.addBadOrTrusted div#BadOrTrusted-body table tr td {
 div.addBadOrTrusted div#BadOrTrusted-body table tbody tr:nth-child(even) td {
     background: #eee;
 }
-
-
-
 
 
 #sp_config_mailtemplates table td {
@@ -814,7 +826,6 @@ button.ratenow {
     padding: 2px 10px;
     line-height: 30px;
 }
-
 
 
 div#printUnwantedUser {

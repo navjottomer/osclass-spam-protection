@@ -78,18 +78,18 @@ div#osc_toolbar_spamprotection:hover > nav.osc_admin_submenu {
     background-image: url(../img/admin.png) !important;
     background-size: 150px 50px;
     background-position: -105px -9px;
-    opacity: 1;    
+    opacity: 1;
 }
 
 #spamprotection.highlight .ico-spamprotection {
     background-position: -100px 0;
-    opacity: 1;    
+    opacity: 1;
 }
 
-#spamprotection.highlight.pulse .ico-spamprotection, #osc_toolbar_spamprotection .ico-spamprotection.highlight.pulse {    
+#spamprotection.highlight.pulse .ico-spamprotection, #osc_toolbar_spamprotection .ico-spamprotection.highlight.pulse {
     animation-name: pulse_button;
     animation-duration: 1500ms;
-    transform-origin:70% 70%;
+    transform-origin: 70% 70%;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -150,15 +150,37 @@ div#spamprot_upgrade_close, div.spamprot_installed_close {
 }
 
 @keyframes pulse_button {
-    0% { opacity: 0.5; }
-    10% { opacity: 0.6; }
-    20% { opacity: 0.7; }
-    30% { opacity: 0.8; }
-    40% { opacity: 0.9; }
-    50% { opacity: 1; }
-    60% { opacity: 0.9; }
-    70% { opacity: 0.8; }
-    80% { opacity: 0.7; }
-    90% { opacity: 0.6; }
-    100% { opacity: 0.5; }
+    0% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    30% {
+        opacity: 0.8;
+    }
+    40% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0.9;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
