@@ -6,4 +6,3 @@ if (!defined('ABS_PATH')) {
 require('backend.php');
 require('frontend.php');
 require('params.php');
-?>
