@@ -526,11 +526,9 @@ $table = Params::getParam('table');
                     <div id="sp_stopforumspam_settings"
                          class="halfrow" <?php
                     if (!isset($data['sp_check_stopforumspam_mail'])
-                        && $data['sp_check_stopforumspam_mail'] != '1'
                         && !isset($data['sp_check_stopforumspam_ip'])
-                        && $data['sp_check_stopforumspam_ip'] != '1'
                     ) {
-                        echo ' style="display: none;';
+                        echo 'cond2 style="display: none;';
                     } ?>>
                         <label for="sp_stopforumspam_freq">
                             <?php _e('Max frequency of reports', 'spamprotection'); ?>
