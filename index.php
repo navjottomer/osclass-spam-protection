@@ -9,9 +9,9 @@
  * Description: Anti Spam & Protection System for Osclass. Secures your ads, comments and contact mails against spam.
  * Protects your login/registration processes and many other features.
  *
- * Version: 1.7.4
+ * Version: 1.7.5
  *
- * Author: Liath
+ * Author: Liath (updated by navjottomer)
  *
  * Author URI: http://amfearliath.ml
  *
@@ -112,6 +112,9 @@
  * 1.7.3 - Added file system monitor, fixed file creation for ip ban redirecting
  *
  * 1.7.4 - Fixed some Bugs: https://forums.osclass.org/plugins/(plugin)-spam-protection/msg155084/#msg155084
+ *
+ * 1.7.5 - Fixed compatibility issue with osclass v3.9.0
+ *
  */
 
 require(__DIR__ . '/classes/class.spamprotection.php');

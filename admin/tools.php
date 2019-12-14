@@ -597,13 +597,15 @@ if ($files === 'clear') {
                                 <?php
                                 if (isset($data['sp_files_exclude'])) {
                                     $dirs = unserialize($data['sp_files_exclude']);
-                                    foreach ($dirs as $exclude) {
-                                        ?>
-                                        <input type="text" name="sp_files_exclude[]"
-                                               value="<?php echo(isset($exclude) ? $exclude : ''); ?>"
-                                               placeholder="<?php _e('Enter path you want to exclude from monitoring',
-                                                   'spamprotection'); ?>"/>
-                                        <?php
+                                    if (is_array($dirs)) {
+                                        foreach ($dirs as $exclude) {
+                                            ?>
+                                            <input type="text" name="sp_files_exclude[]"
+                                                   value="<?php echo(isset($exclude) ? $exclude : ''); ?>"
+                                                   placeholder="<?php _e('Enter path you want to exclude from monitoring',
+                                                       'spamprotection'); ?>"/>
+                                            <?php
+                                        }
                                     }
                                 } else {
                                     ?>
@@ -660,5 +662,5 @@ if ($files === 'clear') {
                     'spamprotection'); ?></div>
         </div>
     </div>
-    
+
 </div>
