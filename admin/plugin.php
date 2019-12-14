@@ -18,7 +18,7 @@ if (isset($data['sp_mailtemplates'])) {
 
 if (Params::getParam('subtab')) {
     $subtab = Params::getParam('subtab');        
-} if (Params::getParam('create_path') == 'true') {
+} if (Params::getParam('create_path') === 'true') {
     $path = osc_plugin_path('spamprotection/export/');
     if (!mkdir($path, 0755)) {
         $create_error = '<div id="flash">'.$sp->_showPopup(
@@ -31,7 +31,7 @@ if (Params::getParam('subtab')) {
             'style="width: 400px;"'
         ).'</div>';
     }        
-} elseif (Params::getParam('chmod_path') == 'true') {
+} elseif (Params::getParam('chmod_path') === 'true') {
     $path = osc_plugin_path('spamprotection/export/');
     $chmod = Params::getParam('chmod');
     
@@ -107,7 +107,7 @@ if (Params::getParam('subtab')) {
     }
 }
 
-if (Params::getParam('plugin_settings') == 'save') {
+if (Params::getParam('plugin_settings') === 'save') {
     $params = Params::getParamsAsArray('', false);
     if ($sp->_saveSettings($params, 'plugin')) {
         ob_get_clean();
@@ -140,7 +140,7 @@ if (Params::getParam('plugin_settings') == 'save') {
     }      
 }
 
-if (Params::getParam('save_mailtemplates') == 'true') {
+if (Params::getParam('save_mailtemplates') === 'true') {
     $params = Params::getParamsAsArray();
     $subtab = Params::getParam('subtab');
     
@@ -203,16 +203,16 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
 <div class="settings">
 
     <ul class="subtabs sp_tabs">
-        <li class="subtab-link <?php echo (!isset($subtab) || $subtab == 'settings' ? 'current' : ''); ?>" data-tab="sp_config_settings"><a><?php _e('Settings', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (isset($subtab) && $subtab == 'mailtemplates' ? 'current' : ''); ?>" data-tab="sp_config_mailtemplates"><a><?php _e('Mailtemplates', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (isset($subtab) && $subtab == 'export' ? 'current' : ''); ?>" data-tab="sp_config_export"><a><?php _e('Export', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (isset($subtab) && $subtab == 'import' ? 'current' : ''); ?>" data-tab="sp_config_import"><a><?php _e('Import', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (isset($subtab) && $subtab == 'log' ? 'current' : ''); ?>" data-tab="sp_config_log"><a><?php _e('Global Log', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (!isset($subtab) || $subtab === 'settings' ? 'current' : ''); ?>" data-tab="sp_config_settings"><a><?php _e('Settings', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (isset($subtab) && $subtab === 'mailtemplates' ? 'current' : ''); ?>" data-tab="sp_config_mailtemplates"><a><?php _e('Mailtemplates', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (isset($subtab) && $subtab === 'export' ? 'current' : ''); ?>" data-tab="sp_config_export"><a><?php _e('Export', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (isset($subtab) && $subtab === 'import' ? 'current' : ''); ?>" data-tab="sp_config_import"><a><?php _e('Import', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (isset($subtab) && $subtab === 'log' ? 'current' : ''); ?>" data-tab="sp_config_log"><a><?php _e('Global Log', 'spamprotection'); ?></a></li>
     </ul>
 
     <div id="sp_config_options" class="sp_config_options">
 
-        <div id="sp_config_settings" class="subtab-content <?php echo (!isset($subtab) || $subtab == 'settings' ? 'current' : ''); ?>">
+        <div id="sp_config_settings" class="subtab-content <?php echo (!isset($subtab) || $subtab === 'settings' ? 'current' : ''); ?>">
             <form action="<?php echo osc_admin_render_plugin_url('spamprotection/admin/config.php'); ?>" method="post">
                 <input type="hidden" name="page" value="plugins" />
                 <input type="hidden" name="tab" id="sp_tab" value="sp_config" />
@@ -231,8 +231,8 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
                             <?php _e('Theme', 'spamprotection'); ?>
                         </label><br />
                         <select id="sp_theme" name="sp_theme">
-                            <option value="black"<?php if (empty($data['sp_theme']) || $data['sp_theme'] == 'black') { echo ' selected="selected"'; } ?>><?php _e('Dark', 'spamprotection'); ?></option>
-                            <option value="white"<?php if (!empty($data['sp_theme']) && $data['sp_theme'] == 'white') { echo ' selected="selected"'; } ?>><?php _e('White', 'spamprotection'); ?></option>
+                            <option value="black"<?php if (empty($data['sp_theme']) || $data['sp_theme'] === 'black') { echo ' selected="selected"'; } ?>><?php _e('Dark', 'spamprotection'); ?></option>
+                            <option value="white"<?php if (!empty($data['sp_theme']) && $data['sp_theme'] === 'white') { echo ' selected="selected"'; } ?>><?php _e('White', 'spamprotection'); ?></option>
                         </select>
                     </div>
                 </fieldset>
@@ -252,16 +252,26 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
                                 <?php _e('Show icon after', 'spamprotection'); ?>
                             </label><br />
                             <select id="sp_menu_after" name="sp_menu_after">
-                                <option value="menu_dash"<?php if (empty($data['sp_menu_after']) || $data['sp_menu_after'] == 'menu_dash') { echo ' selected="selected"'; } ?>><?php _e('Dashboard', 'spamprotection'); ?></option>
-                                <option value="menu_items"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_items') { echo ' selected="selected"'; } ?>><?php _e('Items', 'spamprotection'); ?></option>
-                                <option value="menu_market"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_market') { echo ' selected="selected"'; } ?>><?php _e('Market', 'spamprotection'); ?></option>
-                                <option value="menu_appearance"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_appearance') { echo ' selected="selected"'; } ?>><?php _e('Appearance', 'spamprotection'); ?></option>
-                                <option value="menu_plugins"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_plugins') { echo ' selected="selected"'; } ?>><?php _e('Plugins', 'spamprotection'); ?></option>
-                                <option value="menu_stats"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_stats') { echo ' selected="selected"'; } ?>><?php _e('Statistics', 'spamprotection'); ?></option>
-                                <option value="menu_settings"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_settings') { echo ' selected="selected"'; } ?>><?php _e('Settings', 'spamprotection'); ?></option>
-                                <option value="menu_pages"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_pages') { echo ' selected="selected"'; } ?>><?php _e('Pages', 'spamprotection'); ?></option>
-                                <option value="menu_users"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'menu_users') { echo ' selected="selected"'; } ?>><?php _e('Users', 'spamprotection'); ?></option>
-                                <option value="anywhere"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after'] == 'anywhere') { echo ' selected="selected"'; } ?>><?php _e('Anywhere', 'spamprotection'); ?></option>
+                                <option value="menu_dash"<?php if (empty($data['sp_menu_after']) || $data['sp_menu_after']
+                                    === 'menu_dash') { echo ' selected="selected"'; } ?>><?php _e('Dashboard', 'spamprotection'); ?></option>
+                                <option value="menu_items"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_items') { echo ' selected="selected"'; } ?>><?php _e('Items', 'spamprotection'); ?></option>
+                                <option value="menu_market"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_market') { echo ' selected="selected"'; } ?>><?php _e('Market', 'spamprotection'); ?></option>
+                                <option value="menu_appearance"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_appearance') { echo ' selected="selected"'; } ?>><?php _e('Appearance', 'spamprotection'); ?></option>
+                                <option value="menu_plugins"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_plugins') { echo ' selected="selected"'; } ?>><?php _e('Plugins', 'spamprotection'); ?></option>
+                                <option value="menu_stats"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_stats') { echo ' selected="selected"'; } ?>><?php _e('Statistics', 'spamprotection'); ?></option>
+                                <option value="menu_settings"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_settings') { echo ' selected="selected"'; } ?>><?php _e('Settings', 'spamprotection'); ?></option>
+                                <option value="menu_pages"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_pages') { echo ' selected="selected"'; } ?>><?php _e('Pages', 'spamprotection'); ?></option>
+                                <option value="menu_users"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'menu_users') { echo ' selected="selected"'; } ?>><?php _e('Users', 'spamprotection'); ?></option>
+                                <option value="anywhere"<?php if (!empty($data['sp_menu_after']) && $data['sp_menu_after']
+                                    === 'anywhere') { echo ' selected="selected"'; } ?>><?php _e('Anywhere', 'spamprotection'); ?></option>
                             </select>
                         </div>
                         
@@ -281,8 +291,10 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
                                 <?php _e('Show icon', 'spamprotection'); ?>
                             </label><br />
                             <select id="sp_topicon_position" name="sp_topicon_position">
-                                <option value="left"<?php if (empty($data['sp_topicon_position']) || $data['sp_topicon_position'] == 'left') { echo ' selected="selected"'; } ?>><?php _e('Left', 'spamprotection'); ?></option>
-                                <option value="right"<?php if (!empty($data['sp_topicon_position']) && $data['sp_topicon_position'] == 'right') { echo ' selected="selected"'; } ?>><?php _e('Right', 'spamprotection'); ?></option>
+                                <option value="left"<?php if (empty($data['sp_topicon_position']) || $data['sp_topicon_position']
+                                    === 'left') { echo ' selected="selected"'; } ?>><?php _e('Left', 'spamprotection'); ?></option>
+                                <option value="right"<?php if (!empty($data['sp_topicon_position']) && $data['sp_topicon_position']
+                                    === 'right') { echo ' selected="selected"'; } ?>><?php _e('Right', 'spamprotection'); ?></option>
                             </select>
                         </div>
                         
@@ -316,8 +328,10 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
                             <?php _e('Show Buttons as', 'spamprotection'); ?>
                         </label><br />
                         <select id="sp_topbar_type" name="sp_topbar_type">
-                            <option value="text"<?php if (empty($data['sp_topbar_type']) || $data['sp_topbar_type'] == 'text') { echo ' selected="selected"'; } ?>><?php _e('Text', 'spamprotection'); ?></option>
-                            <option value="icon"<?php if (!empty($data['sp_topbar_type']) && $data['sp_topbar_type'] == 'icon') { echo ' selected="selected"'; } ?>><?php _e('Icon', 'spamprotection'); ?></option>
+                            <option value="text"<?php if (empty($data['sp_topbar_type']) || $data['sp_topbar_type']
+                                === 'text') { echo ' selected="selected"'; } ?>><?php _e('Text', 'spamprotection'); ?></option>
+                            <option value="icon"<?php if (!empty($data['sp_topbar_type']) && $data['sp_topbar_type']
+                                === 'icon') { echo ' selected="selected"'; } ?>><?php _e('Icon', 'spamprotection'); ?></option>
                         </select>
                     </div>
                 </fieldset>
@@ -339,7 +353,8 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
             </form>
         </div>
 
-        <div id="sp_config_mailtemplates" class="subtab-content <?php echo (isset($subtab) && $subtab == 'mailtemplates' ? 'current' : ''); ?>">
+        <div id="sp_config_mailtemplates" class="subtab-content <?php echo (isset($subtab) && $subtab
+        === 'mailtemplates' ? 'current' : ''); ?>">
             
             <h3><?php _e("Here you can edit the mailtemplates, which will be used to inform the user about false login attempts", "spamprotection"); ?></h3>
             <p><?php echo sprintf(__("If you dont want to generate your own templates, the standard mail templates will be used. The mails for admins will be always sended to: %s", "spamprotection"), osc_contact_email()); ?></p>
@@ -438,7 +453,7 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
             
         </div>
         
-        <div id="sp_config_export" class="subtab-content <?php echo (isset($subtab) && $subtab == 'export' ? 'current' : ''); ?>">
+        <div id="sp_config_export" class="subtab-content <?php echo (isset($subtab) && $subtab === 'export' ? 'current' : ''); ?>">
             <h2><?php _e("Export settings and data", "spamprotection"); ?></h2>
             <fieldset id="#sp_export_file" style="border: 1px solid #bbb; padding: 15px; margin: 15px 0;">
             <?php if (!is_dir($path)) { ?>
@@ -526,7 +541,7 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
             </fieldset>
         </div>
 
-        <div id="sp_config_import" class="subtab-content <?php echo (isset($subtab) && $subtab == 'import' ? 'current' : ''); ?>">
+        <div id="sp_config_import" class="subtab-content <?php echo (isset($subtab) && $subtab === 'import' ? 'current' : ''); ?>">
             <h2><?php _e("Import settings and data", "spamprotection"); ?></h2>                
             
             <fieldset id="#sp_import_file" style="border: 1px solid #bbb; padding: 15px; margin: 15px 0;">
@@ -578,7 +593,7 @@ $import_files = array_diff(scandir($path), array('..', '.', 'index.php'));
             <?php if (!empty($import)) { echo $import; } ?>
         </div>
 
-        <div id="sp_config_log" class="subtab-content <?php echo (isset($subtab) && $subtab == 'log' ? 'current' : ''); ?>">
+        <div id="sp_config_log" class="subtab-content <?php echo (isset($subtab) && $subtab === 'log' ? 'current' : ''); ?>">
             <?php include_once(osc_plugin_path('spamprotection/functions/log.php')); ?>
         </div>
     </div>

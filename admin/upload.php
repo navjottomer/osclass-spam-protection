@@ -8,7 +8,7 @@ $upload_dir = 'uploads/';
 $allowed_ext = array('jpg','jpeg','png','gif');
 
 
-if(strtolower($_SERVER['REQUEST_METHOD']) != 'post'){
+if(strtolower($_SERVER['REQUEST_METHOD']) !== 'post'){
     exit_status('Error! Wrong HTTP method!');
 }
 

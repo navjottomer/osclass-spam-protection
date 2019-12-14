@@ -152,7 +152,7 @@ function sp_check_user_login() {
         }    
     }
     
-    if ($action == 'login_post' && !empty($email) && !empty($password)) {
+    if ($action === 'login_post' && !empty($email) && !empty($password)) {
         
         spam_prot::newInstance()->_increaseUserLogin($email);
         $ip = spam_prot::newInstance()->_IpUserLogin();
@@ -209,7 +209,7 @@ function sp_check_user_registrations() {
         }    
     }
     
-    if (Params::getParam('action') == 'register_post' && spam_prot::newInstance()->_get('sp_check_registrations') >= '2') {
+    if (Params::getParam('action') === 'register_post' && spam_prot::newInstance()->_get('sp_check_registrations') >= '2') {
         if (($email = filter_var($email, FILTER_VALIDATE_EMAIL)) !== false) {        
             $check = spam_prot::newInstance()->_get('sp_check_registrations');
             $mails = explode(",", spam_prot::newInstance()->_get('sp_check_registration_mails'));

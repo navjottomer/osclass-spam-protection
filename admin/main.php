@@ -8,42 +8,42 @@ $data     = $sp->_get();
 $settings = false;
 $help     = false;
 
-if (Params::getParam('globallog') == 'clear') {
+if (Params::getParam('globallog') === 'clear') {
     $admin = Admin::newInstance()->findByPrimaryKey(osc_logged_admin_id());
     $sp->_clearGlobalLog($admin['s_name'], false);
 }
 
-if (Params::getParam('spam') == 'activate') {
+if (Params::getParam('spam') === 'activate') {
     $sp->_spamAction('activate', Params::getParam('item'));
     osc_redirect_to(osc_admin_base_url(true) . '?page=items');
-} elseif (Params::getParam('spam') == 'block') {
+} elseif (Params::getParam('spam') === 'block') {
     $sp->_spamAction('block', Params::getParam('user'));
     osc_redirect_to(osc_admin_base_url(true) . '?page=items');
-} elseif (Params::getParam('htaccess') == 'save') {
+} elseif (Params::getParam('htaccess') === 'save') {
     osc_set_preference('htaccess_warning', '1', 'plugin_spamprotection', 'BOOLEAN');
 
     return true;
 }
 
-if (Params::getParam('tab') == 'sp_contact') {
+if (Params::getParam('tab') === 'sp_contact') {
     $contact = true;
-} elseif (Params::getParam('tab') == 'sp_comments') {
+} elseif (Params::getParam('tab') === 'sp_comments') {
     $comments = true;
-} elseif (Params::getParam('tab') == 'sp_security') {
+} elseif (Params::getParam('tab') === 'sp_security') {
     $security = true;
-} elseif (Params::getParam('tab') == 'sp_tools') {
+} elseif (Params::getParam('tab') === 'sp_tools') {
     $tools = true;
-} elseif (Params::getParam('tab') == 'sp_help') {
+} elseif (Params::getParam('tab') === 'sp_help') {
     $help = true;
-} elseif (Params::getParam('tab') == 'sp_config') {
+} elseif (Params::getParam('tab') === 'sp_config') {
     $config = true;
-} elseif (Params::getParam('tab') == 'sp_log') {
+} elseif (Params::getParam('tab') === 'sp_log') {
     $log = true;
 } else {
     $settings = true;
 }
 
-if (Params::getParam('settings') == 'save') {
+if (Params::getParam('settings') === 'save') {
     $params = Params::getParamsAsArray('', false);
     print_r($params);
     if ($sp->_saveSettings($params)) {

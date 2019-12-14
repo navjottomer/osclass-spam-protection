@@ -264,7 +264,7 @@ $table = Params::getParam('table');
 
     <div id="sp_admin_options" class="sp_admin_options">
         <div id="sp_security_mainfeatures_admin"
-             class="subtab-content <?php echo(isset($sub) && $sub == 'admin' ? 'current'
+             class="subtab-content <?php echo(isset($sub) && $sub === 'admin' ? 'current'
                  : ''); ?> <?php echo(empty($data['sp_admin_activate']) || $data['sp_admin_activate'] == '0'
                  ? 'disabled' : 'enabled'); ?>">
 
@@ -401,7 +401,7 @@ $table = Params::getParam('table');
 
     <div id="sp_register_options" class="sp_register_options">
         <div id="sp_security_mainfeatures_register"
-             class="subtab-content <?php echo(isset($sub) && $sub == 'register' ? 'current' : ''); ?>">
+             class="subtab-content <?php echo(isset($sub) && $sub === 'register' ? 'current' : ''); ?>">
 
             <fieldset>
                 <legend><?php _e("Check registrations", "spamprotection"); ?></legend>
@@ -561,7 +561,7 @@ $table = Params::getParam('table');
 
     <div id="sp_badtrusted_options" class="sp_badtrusted_options">
         <div id="sp_security_badtrusted"
-             class="subtab-content <?php echo(isset($sub) && $sub == 'badtrusted' ? 'current' : ''); ?>">
+             class="subtab-content <?php echo(isset($sub) && $sub === 'badtrusted' ? 'current' : ''); ?>">
 
             <fieldset>
                 <legend><?php _e("Bad/Trusted User", "spamprotection"); ?></legend>
@@ -593,16 +593,16 @@ $table = Params::getParam('table');
                 <legend><?php _e("Bad/Trusted User Lists", "spamprotection"); ?></legend>
                 <div class="row form-group" style="position: relative;">
                     <ul class="langtabs" style="padding: 0;">
-                        <li class="langtab-link <?php echo(empty($table) || $table == 'trusteduser' ? 'current'
+                        <li class="langtab-link <?php echo(empty($table) || $table === 'trusteduser' ? 'current'
                             : ''); ?>" data-tab="trusteduser"><a><?php _e('Trusted User', 'spamprotection'); ?></a></li>
-                        <li class="langtab-link <?php echo(isset($table) && $table == 'baduser' ? 'current' : ''); ?>"
+                        <li class="langtab-link <?php echo(isset($table) && $table === 'baduser' ? 'current' : ''); ?>"
                             data-tab="baduser"><a><?php _e('Bad User', 'spamprotection'); ?></a></li>
                     </ul>
 
                     <a id="add_bad_or_trusted" class="btn btn-green"><?php _e("Organize", "spamprotection"); ?></a>
 
                     <div id="trusteduser"
-                         class="langtab-content <?php echo(empty($table) || $table == 'trusteduser' ? 'current'
+                         class="langtab-content <?php echo(empty($table) || $table === 'trusteduser' ? 'current'
                              : ''); ?>">
                         <table class="badtrusted">
                             <thead>
@@ -656,7 +656,7 @@ $table = Params::getParam('table');
                     </div>
 
                     <div id="baduser"
-                         class="langtab-content <?php echo(isset($table) && $table == 'baduser' ? 'current' : ''); ?>">
+                         class="langtab-content <?php echo(isset($table) && $table === 'baduser' ? 'current' : ''); ?>">
                         <table class="badtrusted">
                             <thead>
                             <tr>
@@ -754,7 +754,7 @@ $table = Params::getParam('table');
 
     <div id="sp_ipban_options" class="sp_ipban_options">
         <div id="sp_security_ipban"
-             class="subtab-content <?php echo(isset($sub) && $sub == 'ipban' ? 'current' : ''); ?>">
+             class="subtab-content <?php echo(isset($sub) && $sub === 'ipban' ? 'current' : ''); ?>">
 
             <fieldset>
                 <legend><?php _e("IP Ban", "spamprotection"); ?></legend>
@@ -893,7 +893,7 @@ $table = Params::getParam('table');
 
     <div id="sp_cleaner_options" class="sp_cleaner_options">
         <div id="sp_security_cleaner"
-             class="subtab-content <?php echo(isset($sub) && $sub == 'cleaner' ? 'current' : ''); ?>">
+             class="subtab-content <?php echo(isset($sub) && $sub === 'cleaner' ? 'current' : ''); ?>">
             <fieldset>
                 <legend><?php _e("Delete not activated user accounts", "spamprotection"); ?></legend>
                 <div class="row form-group">

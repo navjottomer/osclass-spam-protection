@@ -13,9 +13,9 @@ $files = Params::getParam('files');
 $yes = '<span class="true">'.__("Yes", "spamprotection").'</span>';
 $no  = '<span class="false">'.__("No", "spamprotection").'</span>';
 
-if ($files == 'clear') {
+if ($files === 'clear') {
     $sp->_clearAlertFiles();
-} elseif ($files == 'check') {
+} elseif ($files === 'check') {
     if ($sp->_checkFiles(true)) {
         header('Location: '.osc_admin_base_url(true)."?page=plugins&action=renderplugin&file=spamprotection/admin/main.php&tab=sp_tools&sub=files");
         exit;    
@@ -25,15 +25,15 @@ if ($files == 'clear') {
 <div class="settings">
 
     <ul class="subtabs sp_tabs">
-        <li class="subtab-link <?php echo (empty($sub) || $sub == 'badtrusted' ? 'current' : ''); ?>" data-tab="sp_tools_badtrusted"><a><?php _e('Bad/Trusted User', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (!isset($sub) || $sub == 'ipban' ? 'current' : ''); ?>" data-tab="sp_tools_ipban"><a><?php _e('IP Ban', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (!isset($sub) || $sub == 'tor' ? 'current' : ''); ?>" data-tab="sp_tools_tor"><a><?php _e('TOR Network', 'spamprotection'); ?></a></li>
-        <li class="subtab-link <?php echo (!isset($sub) || $sub == 'files' ? 'current' : ''); ?>" data-tab="sp_tools_files"><a><?php _e('File monitor', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (empty($sub) || $sub === 'badtrusted' ? 'current' : ''); ?>" data-tab="sp_tools_badtrusted"><a><?php _e('Bad/Trusted User', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (!isset($sub) || $sub === 'ipban' ? 'current' : ''); ?>" data-tab="sp_tools_ipban"><a><?php _e('IP Ban', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (!isset($sub) || $sub === 'tor' ? 'current' : ''); ?>" data-tab="sp_tools_tor"><a><?php _e('TOR Network', 'spamprotection'); ?></a></li>
+        <li class="subtab-link <?php echo (!isset($sub) || $sub === 'files' ? 'current' : ''); ?>" data-tab="sp_tools_files"><a><?php _e('File monitor', 'spamprotection'); ?></a></li>
         <li class="subtab-link" data-tab="sp_tools_save"><button type="submit" class="btn btn-info"><?php _e('Save', 'spamprotection'); ?></button></li>
     </ul>
     
     <div id="sp_badtrusted_options" class="sp_badtrusted_options">
-        <div id="sp_tools_badtrusted" class="subtab-content <?php echo (empty($sub) || $sub == 'badtrusted' ? 'current' : ''); ?>">
+        <div id="sp_tools_badtrusted" class="subtab-content <?php echo (empty($sub) || $sub === 'badtrusted' ? 'current' : ''); ?>">
             
             <fieldset>
                 <legend><?php _e("Bad/Trusted User", "spamprotection"); ?></legend>
@@ -56,13 +56,13 @@ if ($files == 'clear') {
                 <legend><?php _e("Bad/Trusted User Lists", "spamprotection"); ?></legend>
                 <div class="row form-group" style="position: relative;">
                     <ul class="langtabs" style="padding: 0;">
-                        <li class="langtab-link <?php echo (empty($table) || $table == 'trusteduser' ? 'current' : ''); ?>" data-tab="trusteduser"><a><?php _e('Trusted User', 'spamprotection'); ?></a></li>
-                        <li class="langtab-link <?php echo (isset($table) && $table == 'baduser' ? 'current' : ''); ?>" data-tab="baduser"><a><?php _e('Bad User', 'spamprotection'); ?></a></li>
+                        <li class="langtab-link <?php echo (empty($table) || $table === 'trusteduser' ? 'current' : ''); ?>" data-tab="trusteduser"><a><?php _e('Trusted User', 'spamprotection'); ?></a></li>
+                        <li class="langtab-link <?php echo (isset($table) && $table === 'baduser' ? 'current' : ''); ?>" data-tab="baduser"><a><?php _e('Bad User', 'spamprotection'); ?></a></li>
                     </ul>
                     
                     <a id="add_bad_or_trusted" class="btn btn-green"><?php _e("Organize", "spamprotection"); ?></a>
                     
-                    <div id="trusteduser" class="langtab-content <?php echo (empty($table) || $table == 'trusteduser' ? 'current' : ''); ?>">
+                    <div id="trusteduser" class="langtab-content <?php echo (empty($table) || $table === 'trusteduser' ? 'current' : ''); ?>">
                         <table class="badtrusted">
                             <thead>
                                 <tr>
@@ -106,7 +106,7 @@ if ($files == 'clear') {
                         </table>
                     </div>
                     
-                    <div id="baduser" class="langtab-content <?php echo (isset($table) && $table == 'baduser' ? 'current' : ''); ?>">
+                    <div id="baduser" class="langtab-content <?php echo (isset($table) && $table === 'baduser' ? 'current' : ''); ?>">
                         <table class="badtrusted">
                             <thead>
                                 <tr>
@@ -193,7 +193,7 @@ if ($files == 'clear') {
     </div>
     
     <div id="sp_ipban_options" class="sp_ipban_options">
-        <div id="sp_tools_ipban" class="subtab-content <?php echo (isset($sub) && $sub == 'ipban' ? 'current' : ''); ?>">
+        <div id="sp_tools_ipban" class="subtab-content <?php echo (isset($sub) && $sub === 'ipban' ? 'current' : ''); ?>">
             
             <fieldset>
                 <legend><?php _e("IP Ban", "spamprotection"); ?></legend>
@@ -312,7 +312,7 @@ if ($files == 'clear') {
     </div>
         
     <div id="sp_tor_options" class="sp_tor_options">
-        <div id="sp_tools_tor" class="subtab-content <?php echo (isset($sub) && $sub == 'ipban' ? 'current' : ''); ?>">
+        <div id="sp_tools_tor" class="subtab-content <?php echo (isset($sub) && $sub === 'ipban' ? 'current' : ''); ?>">
             
             <fieldset>
                 <legend><?php _e("TOR Network Protection"); ?></legend>
@@ -386,7 +386,7 @@ if ($files == 'clear') {
     </div>
         
     <div id="sp_files_options" class="sp_files_options">
-        <div id="sp_tools_files" class="subtab-content <?php echo (isset($sub) && $sub == 'files' ? 'current' : ''); ?>">
+        <div id="sp_tools_files" class="subtab-content <?php echo (isset($sub) && $sub === 'files' ? 'current' : ''); ?>">
             
             <ul class="langtabs">
                 <li class="langtab-link current" data-tab="tab-file-monitor"><a><?php _e("File Monitor", "spamprotection"); ?></a></li>

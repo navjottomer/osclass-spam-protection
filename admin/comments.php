@@ -103,8 +103,10 @@ $sp = new spam_prot;
                         </li>
                     </ol>
                     <select name="sp_comment_blockedtype">
-                        <option value="substr"<?php if (empty($data['sp_comment_blockedtype']) || !empty($data['sp_comment_blockedtype']) && $data['sp_comment_blockedtype'] == 'substr') { echo ' selected="selected"'; } ?>>Substrings</option>
-                        <option value="words"<?php if (!empty($data['sp_comment_blockedtype']) && $data['sp_comment_blockedtype'] == 'words') { echo ' selected="selected"'; } ?>>Words</option>
+                        <option value="substr"<?php if (empty($data['sp_comment_blockedtype']) || !empty($data['sp_comment_blockedtype']) && $data['sp_comment_blockedtype']
+                            === 'substr') { echo ' selected="selected"'; } ?>>Substrings</option>
+                        <option value="words"<?php if (!empty($data['sp_comment_blockedtype']) && $data['sp_comment_blockedtype']
+                            === 'words') { echo ' selected="selected"'; } ?>>Words</option>
                     </select>
                     <br /><br />
                     <?php _e('<strong>Enter here the words to be blocked in title or comments (separated by ,)</strong>', 'spamprotection'); ?>

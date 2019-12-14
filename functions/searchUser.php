@@ -44,7 +44,7 @@ if (isset($user) && !empty($user)) {
         
         if ($isAdmin) {
             $color = 'red';
-        } elseif ($v['dt_access_date'] == "0000-00-00 00:00:00" || $v['dt_reg_date'] == $v['dt_access_date']) {
+        } elseif ($v['dt_access_date'] === "0000-00-00 00:00:00" || $v['dt_reg_date'] == $v['dt_access_date']) {
             $color = '#00bf00';
         }
         

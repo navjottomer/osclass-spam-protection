@@ -55,7 +55,7 @@ function sprot_style_admin() {
     if (isset($params['file'])) {
         $plugin = explode("/", $params['file']);
         $file = explode(".", $plugin[2]);
-        if ($plugin[0] == 'spamprotection') {
+        if ($plugin[0] === 'spamprotection') {
             
             osc_enqueue_style('spam_protection-styles_admin', osc_plugin_url('spamprotection/assets/css/admin_plugin.css').'admin_plugin.css?'.time());
             
@@ -89,7 +89,7 @@ function sprot_style_admin_footer() {
         echo '
         <script>
         $(document).ready(function(){
-            '.($toppos == 'left' ? 
+            '.($toppos === 'left' ?
             '$("#osc_toolbar_spamprotection").insertBefore("#osc_toolbar_home");' : 
             '$("#osc_toolbar_spamprotection").insertBefore("#osc_toolbar_logout").css({"float" : "right", "margin-right": "15px"});'
             ).'                            
@@ -107,7 +107,7 @@ function sprot_style_admin_footer() {
         ';        
     }
     
-    if ($menu == '1' && $order != 'anywhere') {
+    if ($menu == '1' && $order !== 'anywhere') {
         echo '
         <script>
         $(document).ready(function(){
