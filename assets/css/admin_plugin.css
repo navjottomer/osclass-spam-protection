@@ -173,6 +173,7 @@ div#sp_contact,
 div#sp_security, 
 div#sp_help,
 div#sp_log,
+div#sp_tools,
 div#sp_config {
     position: relative;
     top: 35px;
