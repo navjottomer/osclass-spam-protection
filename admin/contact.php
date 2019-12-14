@@ -22,7 +22,7 @@ $sp = new spam_prot;
         <div id="sp_contact_mainfeatures" class="subtab-content current">
         
             <fieldset>
-                <legend><?php _e("Contact Settings", "spamprotection"); ?></legend>
+                <legend><?php _e('Contact Settings', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_contact_activate" value="1"<?php if (!empty($data['sp_contact_activate'])) { echo ' checked="checked"'; } ?> />
@@ -33,7 +33,7 @@ $sp = new spam_prot;
             </fieldset>
         
             <fieldset>
-                <legend><?php _e("Check for Links", "spamprotection"); ?></legend>
+                <legend><?php _e('Check for Links', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div>
                         <select name="sp_contact_links">
@@ -46,7 +46,7 @@ $sp = new spam_prot;
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Honeypot", "spamprotection"); ?></legend>
+                <legend><?php _e('Honeypot', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_contact_honeypot" value="1"<?php if (!empty($data['sp_contact_honeypot'])) { echo ' checked="checked"'; } ?> />
@@ -74,7 +74,7 @@ $sp = new spam_prot;
         <div id="sp_contact_emailblock" class="subtab-content">
         
             <fieldset>
-                <legend><?php _e("Blocked Mails", "spamprotection"); ?></legend>
+                <legend><?php _e('Blocked Mails', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_contact_blocked" value="1"<?php if (!empty($data['sp_contact_blocked'])) { echo ' checked="checked"'; } ?> />
@@ -90,7 +90,7 @@ $sp = new spam_prot;
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Blocked Mail Hoster", "spamprotection"); ?></legend>
+                <legend><?php _e('Blocked Mail Hoster', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_contact_blocked_tld" value="1"<?php if (!empty($data['sp_contact_blocked_tld'])) { echo ' checked="checked"'; } ?> />
@@ -109,7 +109,7 @@ $sp = new spam_prot;
         <div id="sp_contact_stopwords" class="subtab-content">
             
             <fieldset>
-                <legend><?php _e("Stop Words", "spamprotection"); ?></legend>
+                <legend><?php _e('Stop Words', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <p>
                         <?php _e('Here you can define the search mechanism, how stopwords are checked. You can search for substrings or particular words', 'spamprotection'); ?>

@@ -38,7 +38,7 @@ $table = Params::getParam('table');
                  ? 'disabled' : 'enabled'); ?>">
 
             <fieldset>
-                <legend><?php _e("User Protection", "spamprotection"); ?></legend>
+                <legend><?php _e('User Protection', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_security_activate"
@@ -53,7 +53,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("False logins", "spamprotection"); ?></legend>
+                <legend><?php _e('False logins', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div class="halfrow" style="padding: 0;">
                         <label>
@@ -110,7 +110,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("Login limit reached", "spamprotection"); ?></legend>
+                <legend><?php _e('Login limit reached', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <?php _e('Action done after false logins', 'spamprotection'); ?>
@@ -136,7 +136,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("Inform user", "spamprotection"); ?></legend>
+                <legend><?php _e('Inform user', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_security_login_inform"
@@ -151,7 +151,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("Honeypot", "spamprotection"); ?></legend>
+                <legend><?php _e('Honeypot', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label><?php _e('Add Honeypot to login/register/recover forms', 'spamprotection'); ?></label><br/>
                     <small><?php _e('This Option ads a hidden form field to the login/register/recovery forms. After a bot tap into your trap, action following rules you have set above.',
@@ -269,7 +269,7 @@ $table = Params::getParam('table');
                  ? 'disabled' : 'enabled'); ?>">
 
             <fieldset>
-                <legend><?php _e("Admin Protection", "spamprotection"); ?></legend>
+                <legend><?php _e('Admin Protection', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_admin_activate"
@@ -284,7 +284,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("False logins", "spamprotection"); ?></legend>
+                <legend><?php _e('False logins', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div class="halfrow" style="padding: 0;">
                         <label>
@@ -341,7 +341,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("Login limit reached", "spamprotection"); ?></legend>
+                <legend><?php _e('Login limit reached', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <?php _e('Action done after false logins', 'spamprotection'); ?>
@@ -367,7 +367,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("Inform user", "spamprotection"); ?></legend>
+                <legend><?php _e('Inform user', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_admin_login_inform"
@@ -382,7 +382,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("Honeypot", "spamprotection"); ?></legend>
+                <legend><?php _e('Honeypot', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_admin_login_hp"
@@ -404,7 +404,7 @@ $table = Params::getParam('table');
              class="subtab-content <?php echo(isset($sub) && $sub === 'register' ? 'current' : ''); ?>">
 
             <fieldset>
-                <legend><?php _e("Check registrations", "spamprotection"); ?></legend>
+                <legend><?php _e('Check registrations', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <?php _e('Select type of registrations check', 'spamprotection'); ?>
@@ -447,7 +447,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset>
-                <legend><?php _e("StopForumSpam", "spamprotection"); ?></legend>
+                <legend><?php _e('StopForumSpam', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div class="halfrow">
                         <label>
@@ -536,8 +536,8 @@ $table = Params::getParam('table');
                         <input type="text" name="sp_stopforumspam_freq" style="width: 50px;"
                                value="<?php echo(isset($data['sp_stopforumspam_freq']) ? $data['sp_stopforumspam_freq']
                                    : '3'); ?>"/>
-                        <span style="line-height: 28px;"><small><?php _e("(0 - 255)",
-                                    "spamprotection"); ?></small></span>
+                        <span style="line-height: 28px;"><small><?php _e('(0 - 255)',
+                                    'spamprotection'); ?></small></span>
                         <br/>
                         <label for="sp_stopforumspam_susp">
                             <?php _e('Max percentage of suspiciousness', 'spamprotection'); ?>
@@ -545,8 +545,8 @@ $table = Params::getParam('table');
                         <input type="text" name="sp_stopforumspam_susp" style="width: 50px;"
                                value="<?php echo(isset($data['sp_stopforumspam_susp']) ? $data['sp_stopforumspam_susp']
                                    : '50'); ?>"/>
-                        <span style="line-height: 28px;"><small><?php _e("(0 = high confidence, 100 = low confidence)",
-                                    "spamprotection"); ?></small></span>
+                        <span style="line-height: 28px;"><small><?php _e('(0 = high confidence, 100 = low confidence)',
+                                    'spamprotection'); ?></small></span>
                         <br/><br/>
 
                         <small><?php _e('Here you can define the max frequency of reports and the percentage of max suspiciousness',
@@ -564,7 +564,7 @@ $table = Params::getParam('table');
              class="subtab-content <?php echo(isset($sub) && $sub === 'badtrusted' ? 'current' : ''); ?>">
 
             <fieldset>
-                <legend><?php _e("Bad/Trusted User", "spamprotection"); ?></legend>
+                <legend><?php _e('Bad/Trusted User', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_badtrusted_activate"
@@ -590,7 +590,7 @@ $table = Params::getParam('table');
 
             <fieldset id="bot_table"<?php echo(empty($data['sp_badtrusted_activate'])
             || $data['sp_badtrusted_activate'] == '0' ? ' style="display: none;"' : ''); ?>>
-                <legend><?php _e("Bad/Trusted User Lists", "spamprotection"); ?></legend>
+                <legend><?php _e('Bad/Trusted User Lists', 'spamprotection'); ?></legend>
                 <div class="row form-group" style="position: relative;">
                     <ul class="langtabs" style="padding: 0;">
                         <li class="langtab-link <?php echo(empty($table) || $table === 'trusteduser' ? 'current'
@@ -599,7 +599,7 @@ $table = Params::getParam('table');
                             data-tab="baduser"><a><?php _e('Bad User', 'spamprotection'); ?></a></li>
                     </ul>
 
-                    <a id="add_bad_or_trusted" class="btn btn-green"><?php _e("Organize", "spamprotection"); ?></a>
+                    <a id="add_bad_or_trusted" class="btn btn-green"><?php _e('Organize', 'spamprotection'); ?></a>
 
                     <div id="trusteduser"
                          class="langtab-content <?php echo(empty($table) || $table === 'trusteduser' ? 'current'
@@ -708,13 +708,13 @@ $table = Params::getParam('table');
 
                     <div id="addBadOrTrustedUser" class="addBadOrTrusted" style="display: none;">
                         <div id="BadOrTrusted-inner">
-                            <span><?php _e("Organize bad and trusted user", "spamprotection"); ?></span>
-                            <a href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__))
+                            <span><?php _e('Organize bad and trusted user', 'spamprotection'); ?></span>
+                            <a href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(__DIR__)
                                 . 'admin/config.php&tab=sp_security&sub=badtrusted'); ?>" id="BadOrTrusted-close">x</a>
 
                             <div id="BadOrTrusted-head">
                                 <div class="form-group" style="width: 50%; float: right; padding-right: 20px;">
-                                    <label><?php _e("Search for name, email or location", "spamprotection"); ?></label>
+                                    <label><?php _e('Search for name, email or location', 'spamprotection'); ?></label>
                                     <input type="text" name="searchNewTrusted"/>
                                     <input type="hidden" id="search_file"
                                            value="<?php echo osc_ajax_plugin_url('spamprotection/functions/search.php'); ?>"/>
@@ -757,7 +757,7 @@ $table = Params::getParam('table');
              class="subtab-content <?php echo(isset($sub) && $sub === 'ipban' ? 'current' : ''); ?>">
 
             <fieldset>
-                <legend><?php _e("IP Ban", "spamprotection"); ?></legend>
+                <legend><?php _e('IP Ban', 'spamprotection'); ?></legend>
                 <div class="halfrow">
                     <label>
                         <input type="checkbox" name="sp_ipban_activate"
@@ -768,7 +768,7 @@ $table = Params::getParam('table');
                     </label><br/>
                     <small>
                         <?php _e("Check this option to activate the IP Ban. Choose your favorite action to the right and add unwanted IP's to the table.",
-                            "spamprotection"); ?>
+                            'spamprotection'); ?>
                     </small>
                 </div>
                 <div class="halfrow">
@@ -847,7 +847,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset style="position: relative;">
-                <legend><?php _e("IP Ban Table", "spamprotection"); ?></legend>
+                <legend><?php _e('IP Ban Table', 'spamprotection'); ?></legend>
                 <div style="position: absolute; top: 10px; right: 0;">
                     <a id="addIpToBan"
                        href="<?php echo osc_ajax_plugin_url('spamprotection/functions/ipban.php&do=add'); ?>"><i
@@ -860,8 +860,8 @@ $table = Params::getParam('table');
                     <table class="ipban" style="margin-top: 30px;">
                         <thead>
                         <td style="width: 40px;"></td>
-                        <td style="width: 200px;"><?php _e("IP", "spamprotection"); ?></td>
-                        <td><?php _e("Date added", "spamprotection"); ?></td>
+                        <td style="width: 200px;"><?php _e('IP', 'spamprotection'); ?></td>
+                        <td><?php _e('Date added', 'spamprotection'); ?></td>
                         </thead>
                         <tbody id="dataIpBan">
                         <?php
@@ -874,7 +874,7 @@ $table = Params::getParam('table');
                                     . osc_ajax_plugin_url('spamprotection/functions/ipban.php&do=delete')
                                     . '" data-ip="' . $k . '"><i class="sp-icon delete xs"></i></a></td>
                                         <td>' . $k . '</td>
-                                        <td>' . date("d.m.Y H:i:s", $v) . '</td>
+                                        <td>' . date('d.m.Y H:i:s', $v) . '</td>
                                     </tr>
                                     ';
                             }
@@ -895,7 +895,7 @@ $table = Params::getParam('table');
         <div id="sp_security_cleaner"
              class="subtab-content <?php echo(isset($sub) && $sub === 'cleaner' ? 'current' : ''); ?>">
             <fieldset>
-                <legend><?php _e("Delete not activated user accounts", "spamprotection"); ?></legend>
+                <legend><?php _e('Delete not activated user accounts', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div style="float: left; width: calc(50% - 20px); padding: 10px;">
                         <label>
@@ -934,7 +934,7 @@ $table = Params::getParam('table');
             </fieldset>
 
             <fieldset id="settingsUnwantedUser">
-                <legend><?php _e("Delete unused user accounts", "spamprotection"); ?></legend>
+                <legend><?php _e('Delete unused user accounts', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div style="float: left; width: calc(45% - 20px); padding: 0 10px;">
                         <br/>
@@ -978,8 +978,8 @@ $table = Params::getParam('table');
                         <br/>
                         <label>&nbsp;</label><br/>
                         <a id="searchUnwantedUser" class="btn btn-blue"
-                           data-link="<?php echo osc_ajax_plugin_url('spamprotection/functions/searchUser.php'); ?>"><?php _e("Search",
-                                "spamprotection"); ?></a>
+                           data-link="<?php echo osc_ajax_plugin_url('spamprotection/functions/searchUser.php'); ?>"><?php _e('Search',
+                                'spamprotection'); ?></a>
                     </div>
 
                     <div style="clear: both;"></div>

@@ -41,10 +41,13 @@ if (isset($params['action']) && is_numeric($params['id'])) {
                             <a href="'.osc_admin_base_url(true).'?page=users&action=edit&id='.$user['pk_i_id'].'">'.$user['s_name'].'</a>
                             <div class="actions">
                                 <ul>
-                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_view.php?id='.$value['pk_i_id']).'">'.__('View', 'spamprotection').'</a></li>
-                                    <li><a onclick="javascript:return confirm("'.__("Are you sure you want to forward this mail to the user?", "spamprotection").'");" href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_check.php?action=forward&id='.$value['pk_i_id']).'">'.__('Forward', 'spamprotection').'</a></li>
-                                    <li><a onclick="javascript:return confirm("'.__("Are you sure you want to delete this mail?", "spamprotection").'");" href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_check.php?action=delete&id='.$value['pk_i_id']).'">'.__('Delete', 'spamprotection').'</a></li>
-                                    <li><a onclick="javascript:return confirm("'.__("Are you sure you want to delete this mail and block this user for contact mails?", "spamprotection").'");" href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_check.php?action=block&id='.$value['pk_i_id']).'">'.__('Block', 'spamprotection').'</a></li>
+                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_view.php?id='. $value['pk_i_id']).'">'.__('View', 'spamprotection').'</a></li>
+                                    <li><a onclick="javascript:return confirm("'.__('Are you sure you want to forward this mail to the user?',
+                            'spamprotection').'");" href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_check.php?action=forward&id='. $value['pk_i_id']).'">'.__('Forward', 'spamprotection').'</a></li>
+                                    <li><a onclick="javascript:return confirm("'.__('Are you sure you want to delete this mail?',
+                            'spamprotection').'");" href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_check.php?action=delete&id='. $value['pk_i_id']).'">'.__('Delete', 'spamprotection').'</a></li>
+                                    <li><a onclick="javascript:return confirm("'.__('Are you sure you want to delete this mail and block this user for contact mails?',
+                            'spamprotection').'");" href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_check.php?action=block&id='. $value['pk_i_id']).'">'.__('Block', 'spamprotection').'</a></li>
                                 </ul>
                             </div>
                         </td>

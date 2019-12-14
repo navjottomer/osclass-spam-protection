@@ -10,14 +10,14 @@ $sub = Params::getParam('sub');
 $table = Params::getParam('table');
 $files = Params::getParam('files');
 
-$yes = '<span class="true">'.__("Yes", "spamprotection").'</span>';
-$no  = '<span class="false">'.__("No", "spamprotection").'</span>';
+$yes = '<span class="true">'.__('Yes', 'spamprotection').'</span>';
+$no  = '<span class="false">'.__('No', 'spamprotection').'</span>';
 
 if ($files === 'clear') {
     $sp->_clearAlertFiles();
 } elseif ($files === 'check') {
     if ($sp->_checkFiles(true)) {
-        header('Location: '.osc_admin_base_url(true)."?page=plugins&action=renderplugin&file=spamprotection/admin/main.php&tab=sp_tools&sub=files");
+        header('Location: '.osc_admin_base_url(true). '?page=plugins&action=renderplugin&file=spamprotection/admin/main.php&tab=sp_tools&sub=files');
         exit;    
     }
 }
@@ -36,7 +36,7 @@ if ($files === 'clear') {
         <div id="sp_tools_badtrusted" class="subtab-content <?php echo (empty($sub) || $sub === 'badtrusted' ? 'current' : ''); ?>">
             
             <fieldset>
-                <legend><?php _e("Bad/Trusted User", "spamprotection"); ?></legend>
+                <legend><?php _e('Bad/Trusted User', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_badtrusted_activate" value="1"<?php if (!empty($data['sp_badtrusted_activate'])) { echo ' checked="checked"'; } ?> />
@@ -53,14 +53,14 @@ if ($files === 'clear') {
             </fieldset>
             
             <fieldset id="bot_table"<?php echo (empty($data['sp_badtrusted_activate']) || $data['sp_badtrusted_activate'] == '0' ? ' style="display: none;"' : ''); ?>>
-                <legend><?php _e("Bad/Trusted User Lists", "spamprotection"); ?></legend>
+                <legend><?php _e('Bad/Trusted User Lists', 'spamprotection'); ?></legend>
                 <div class="row form-group" style="position: relative;">
                     <ul class="langtabs" style="padding: 0;">
                         <li class="langtab-link <?php echo (empty($table) || $table === 'trusteduser' ? 'current' : ''); ?>" data-tab="trusteduser"><a><?php _e('Trusted User', 'spamprotection'); ?></a></li>
                         <li class="langtab-link <?php echo (isset($table) && $table === 'baduser' ? 'current' : ''); ?>" data-tab="baduser"><a><?php _e('Bad User', 'spamprotection'); ?></a></li>
                     </ul>
                     
-                    <a id="add_bad_or_trusted" class="btn btn-green"><?php _e("Organize", "spamprotection"); ?></a>
+                    <a id="add_bad_or_trusted" class="btn btn-green"><?php _e('Organize', 'spamprotection'); ?></a>
                     
                     <div id="trusteduser" class="langtab-content <?php echo (empty($table) || $table === 'trusteduser' ? 'current' : ''); ?>">
                         <table class="badtrusted">
@@ -151,12 +151,12 @@ if ($files === 'clear') {
                     
                     <div id="addBadOrTrustedUser" class="addBadOrTrusted" style="display: none;">
                         <div id="BadOrTrusted-inner">
-                            <span><?php _e("Organize bad and trusted user", "spamprotection"); ?></span>
-                            <a href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/main.php&tab=sp_security&sub=badtrusted'); ?>" id="BadOrTrusted-close">x</a>
+                            <span><?php _e('Organize bad and trusted user', 'spamprotection'); ?></span>
+                            <a href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/main.php&tab=sp_security&sub=badtrusted'); ?>" id="BadOrTrusted-close">x</a>
                         
                             <div id="BadOrTrusted-head">
                                 <div class="form-group" style="width: 50%; float: right; padding-right: 20px;">
-                                    <label><?php _e("Search for name, email or location", "spamprotection"); ?></label>
+                                    <label><?php _e('Search for name, email or location', 'spamprotection'); ?></label>
                                     <input type="text" name="searchNewTrusted" />
                                     <input type="hidden" id="search_file" value="<?php echo osc_ajax_plugin_url('spamprotection/functions/search.php'); ?>" />
                                 </div>
@@ -196,7 +196,7 @@ if ($files === 'clear') {
         <div id="sp_tools_ipban" class="subtab-content <?php echo (isset($sub) && $sub === 'ipban' ? 'current' : ''); ?>">
             
             <fieldset>
-                <legend><?php _e("IP Ban", "spamprotection"); ?></legend>
+                <legend><?php _e('IP Ban', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div class="halfrow" style="width: 44%;">
                         <label>
@@ -204,7 +204,8 @@ if ($files === 'clear') {
                             <?php _e('Activate the IP Ban Function', 'spamprotection'); ?>
                         </label><br />
                         <small>
-                            <?php _e("Check this option to activate the IP Ban. Choose your favorite action to the right and add unwanted IP's to the table.", "spamprotection"); ?>
+                            <?php _e("Check this option to activate the IP Ban. Choose your favorite action to the right and add unwanted IP's to the table.",
+                                'spamprotection'); ?>
                         </small>
                     </div>
                     <div class="halfrow" style="width: 48%;">
@@ -273,7 +274,7 @@ if ($files === 'clear') {
             </fieldset>
             
             <fieldset style="position: relative;">
-                <legend><?php _e("IP Ban Table", "spamprotection"); ?></legend>
+                <legend><?php _e('IP Ban Table', 'spamprotection'); ?></legend>
                 <div style="position: absolute;top: 15px;right: 0;">
                     <a id="addIpToBan" href="<?php echo osc_ajax_plugin_url('spamprotection/functions/ipban.php&do=add'); ?>"><i class="btn btn-green ico ico-32 ico-add-white float-right" style="float: right;width: 11px;height: 16px;margin-top: 5px;"></i></a>
                     <input id="addIpBan" name="addIpBan" placeholder="<?php _e('Enter IP', 'spamprotection'); ?>" style="float: right;margin: 5px 5px 0 0;height: 29px;border-radius: 3px;border: 1px solid #999;padding: 2px;" />    
@@ -282,8 +283,8 @@ if ($files === 'clear') {
                     <table class="ipban" style="margin-top: 50px;">
                         <thead>
                             <td style="width: 40px;"></td>
-                            <td style="width: 200px;"><?php _e("IP", "spamprotection"); ?></td>
-                            <td><?php _e("Date added", "spamprotection"); ?></td>
+                            <td style="width: 200px;"><?php _e('IP', 'spamprotection'); ?></td>
+                            <td><?php _e('Date added', 'spamprotection'); ?></td>
                         </thead>
                         <tbody id="dataIpBan">
                         <?php
@@ -294,7 +295,7 @@ if ($files === 'clear') {
                                     <tr>
                                         <td><a class="deleteIpBan" href="'.osc_ajax_plugin_url('spamprotection/functions/ipban.php&do=delete').'" data-ip="'.$k.'"><i class="sp-icon delete xs"></i></a></td>
                                         <td>'.$k.'</td>
-                                        <td>'.date("d.m.Y H:i:s", $v).'</td>
+                                        <td>'.date('d.m.Y H:i:s', $v).'</td>
                                     </tr>
                                     ';
                                 }
@@ -315,7 +316,7 @@ if ($files === 'clear') {
         <div id="sp_tools_tor" class="subtab-content <?php echo (isset($sub) && $sub === 'ipban' ? 'current' : ''); ?>">
             
             <fieldset>
-                <legend><?php _e("TOR Network Protection"); ?></legend>
+                <legend><?php _e('TOR Network Protection'); ?></legend>
                 <div class="row form-group">
                     <div class="halfrow">
                         <label>
@@ -352,7 +353,7 @@ if ($files === 'clear') {
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Disabled actions for TOR Network user"); ?></legend>
+                <legend><?php _e('Disabled actions for TOR Network user'); ?></legend>
                 <div class="row form-group">
                     <div class="halfrow">
                         <label>
@@ -389,9 +390,11 @@ if ($files === 'clear') {
         <div id="sp_tools_files" class="subtab-content <?php echo (isset($sub) && $sub === 'files' ? 'current' : ''); ?>">
             
             <ul class="langtabs">
-                <li class="langtab-link current" data-tab="tab-file-monitor"><a><?php _e("File Monitor", "spamprotection"); ?></a></li>
-                <li class="langtab-link" data-tab="tab-file-settings"><a><?php _e("Settings", "spamprotection"); ?></a></li>
-                <li class="langtab-link" data-tab="tab-file-check" style="float: right;"><a href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/main.php&tab=sp_tools&sub=files&files=check'); ?>" class="btn btn-red" style="padding: 3px 8px; color: white !important;"><?php _e("Check Now", "spamprotection"); ?></a></li>
+                <li class="langtab-link current" data-tab="tab-file-monitor"><a><?php _e('File Monitor',
+                            'spamprotection'); ?></a></li>
+                <li class="langtab-link" data-tab="tab-file-settings"><a><?php _e('Settings', 'spamprotection'); ?></a></li>
+                <li class="langtab-link" data-tab="tab-file-check" style="float: right;"><a href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/main.php&tab=sp_tools&sub=files&files=check'); ?>" class="btn btn-red" style="padding: 3px 8px; color: white !important;"><?php _e('Check Now',
+                            'spamprotection'); ?></a></li>
             </ul>
             
             <div id="tab-file-monitor" class="langtab-content current">                
@@ -402,7 +405,7 @@ if ($files === 'clear') {
             
             <div id="tab-file-settings" class="langtab-content">
                 <fieldset>
-                    <legend><?php _e("Settings", "spamprotection"); ?></legend>
+                    <legend><?php _e('Settings', 'spamprotection'); ?></legend>
                     
                     <div class="row form-group" style="padding: 25px;">
                         <label>
@@ -414,22 +417,24 @@ if ($files === 'clear') {
                     <div class="row form-group">
                     
                         <div class="halfrow">
-                            <label><?php _e("Scan path: ", "spamprotection"); echo '<small>'.osc_base_path().'</small>'; ?></label><br />
+                            <label><?php _e('Scan path: ', 'spamprotection'); echo '<small>'.osc_base_path().'</small>'; ?></label><br />
                             <input type="text" name="sp_files_directory" value="<?php echo (isset($data['sp_files_directory']) ? $data['sp_files_directory'] : osc_base_path()); ?>" placeholder="<?php echo sprintf(__('Scanned path: %s', 'spamprotection'), osc_base_path()); ?>" />
                         
                             <br /><br />
                             
-                            <label><?php _e("Excluded file extensions", "spamprotection"); ?></label><br />
-                            <input type="text" name="sp_files_extensions" value="<?php echo (isset($data['sp_files_extensions']) ? $data['sp_files_extensions'] : 'jpg,jpeg,gif,png,css,scss,zip,txt,log'); ?>" placeholder="<?php _e("Enter extensions you want to exclude (comma separated)", "spamprotection"); ?>" />
+                            <label><?php _e('Excluded file extensions', 'spamprotection'); ?></label><br />
+                            <input type="text" name="sp_files_extensions" value="<?php echo (isset($data['sp_files_extensions']) ? $data['sp_files_extensions'] : 'jpg,jpeg,gif,png,css,scss,zip,txt,log'); ?>" placeholder="<?php _e('Enter extensions you want to exclude (comma separated)',
+                                'spamprotection'); ?>" />
                         
                             <br /><br />
                             
-                            <label><?php _e("Send alerts to", "spamprotection"); ?></label><br />
-                            <input type="text" name="sp_files_alerts" value="<?php echo (isset($data['sp_files_alerts']) ? $data['sp_files_alerts'] : osc_contact_email()); ?>" placeholder="<?php _e("Enter Email address where are alerts sended to.", "spamprotection"); ?>" />
+                            <label><?php _e('Send alerts to', 'spamprotection'); ?></label><br />
+                            <input type="text" name="sp_files_alerts" value="<?php echo (isset($data['sp_files_alerts']) ? $data['sp_files_alerts'] : osc_contact_email()); ?>" placeholder="<?php _e('Enter Email address where are alerts sended to.',
+                                'spamprotection'); ?>" />
                         
                             <br /><br />
                             
-                            <label><?php _e("Check Filesystem", "spamprotection"); ?></label><br />
+                            <label><?php _e('Check Filesystem', 'spamprotection'); ?></label><br />
                             <div class="floating">
                                 <select id="sp_files_interval" name="sp_files_interval">
                                     <option value="1"<?php if (empty($data['sp_files_interval']) || $data['sp_files_interval'] == '1') { echo ' selected="selected"'; } ?>><?php _e('Every hour', 'spamprotection'); ?></option>
@@ -438,25 +443,28 @@ if ($files === 'clear') {
                                 </select>
                             </div>
                             <div class="floating" style="float: right; margin: 0;">
-                                <a id="sp_files_check" class="btn btn-info" style="padding: 5px;" href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/main.php&tab=sp_tools&sub=files&files=check'); ?>"><?php _e("Check Now", "spamprotection"); ?></a>
+                                <a id="sp_files_check" class="btn btn-info" style="padding: 5px;" href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/main.php&tab=sp_tools&sub=files&files=check'); ?>"><?php _e('Check Now',
+                                        'spamprotection'); ?></a>
                             </div>
                         </div>
                         
                         <div class="halfrow" style="position: relative;">
                             <i id="sp_add_exclude_dir" class="btn btn-green ico ico-32 ico-add-white float-right" style="position: absolute;width: 11px;height: 16px;top: 0;right: 0;transform: scale(0.5);"></i>
-                            <label><?php _e("Exclude directories: ", "spamprotection"); echo '<small>'.osc_base_path().'</small>'; ?></label><br />
+                            <label><?php _e('Exclude directories: ', 'spamprotection'); echo '<small>'.osc_base_path().'</small>'; ?></label><br />
                             <div id="sp_excluded_directories">
                             <?php
                             if (isset($data['sp_files_exclude'])) {
                                 $dirs = unserialize($data['sp_files_exclude']);
                                 foreach($dirs as $exclude) {
                                 ?>
-                                <input type="text" name="sp_files_exclude[]" value="<?php echo (isset($exclude) ? $exclude : ''); ?>" placeholder="<?php _e("Enter path you want to exclude from monitoring", "spamprotection"); ?>" />
+                                <input type="text" name="sp_files_exclude[]" value="<?php echo (isset($exclude) ? $exclude : ''); ?>" placeholder="<?php _e('Enter path you want to exclude from monitoring',
+                                    'spamprotection'); ?>" />
                                 <?php    
                                 } 
                             } else {
                                 ?>
-                                <input type="text" name="sp_files_exclude[]" value="oc-content/uploads" placeholder="<?php _e("Enter path you want to exclude from monitoring", "spamprotection"); ?>" />
+                                <input type="text" name="sp_files_exclude[]" value="oc-content/uploads" placeholder="<?php _e('Enter path you want to exclude from monitoring',
+                                    'spamprotection'); ?>" />
                                 <?php
                             }
                             ?>
@@ -465,7 +473,8 @@ if ($files === 'clear') {
                             $(document).ready(function(){
                                 $(document).on("click", "#sp_add_exclude_dir", function(event){
                                     event.preventDefault();
-                                    $("#sp_excluded_directories").append('<input type="text" name="sp_files_exclude[]" value="" placeholder="<?php _e("Enter path you want to exclude from monitoring", "spamprotection"); ?>" />');
+                                    $("#sp_excluded_directories").append('<input type="text" name="sp_files_exclude[]" value="" placeholder="<?php _e('Enter path you want to exclude from monitoring',
+                                        'spamprotection'); ?>" />');
                                 });
                             });
                             </script>    
@@ -477,8 +486,9 @@ if ($files === 'clear') {
             </div>
             
             <div id="tab-file-check" class="langtab-content" style="width: 250px; margin: 10% auto; text-align: center;">
-                <h1 style="display: inline-block;"><i style="margin: 0 20px 0 -20px" class="sp-icon download margin-right float-left rotateY"></i><?php _e("<strong>Scanning...</strong>", "spamprotection"); ?></h1> 
-                <div style="font-size: 18px;"><?php _e("Checking file system, please be patient.", "spamprotection"); ?></div> 
+                <h1 style="display: inline-block;"><i style="margin: 0 20px 0 -20px" class="sp-icon download margin-right float-left rotateY"></i><?php _e('<strong>Scanning...</strong>',
+                        'spamprotection'); ?></h1>
+                <div style="font-size: 18px;"><?php _e('Checking file system, please be patient.', 'spamprotection'); ?></div>
             </div>
             
         </div>
@@ -486,15 +496,17 @@ if ($files === 'clear') {
         
     <div class="sp_tools_save">
         <div id="sp_tools_save" class="subtab-content" style="width: 250px; margin: 10% auto; text-align: center;">
-            <h1 style="display: inline-block;"><i style="margin: 0 20px 0 -20px" class="sp-icon attention margin-right float-left rotateX"></i><?php _e("<strong>Saving</strong>", "spamprotection"); ?></h1> 
-            <div style="font-size: 18px;"><?php _e("Saving data, please be patient.", "spamprotection"); ?></div> 
+            <h1 style="display: inline-block;"><i style="margin: 0 20px 0 -20px" class="sp-icon attention margin-right float-left rotateX"></i><?php _e('<strong>Saving</strong>',
+                    'spamprotection'); ?></h1>
+            <div style="font-size: 18px;"><?php _e('Saving data, please be patient.', 'spamprotection'); ?></div>
         </div>
     </div>
         
     <div class="sp_tools_filessave">
         <div id="sp_tools_filessave" class="subtab-content" style="width: 250px; margin: 10% auto; text-align: center;">
-            <h1 style="display: inline-block;"><i style="margin: 0 20px 0 -20px" class="sp-icon download margin-right float-left rotateY"></i><?php _e("<strong>Scanning...</strong>", "spamprotection"); ?></h1> 
-            <div style="font-size: 18px;"><?php _e("Checking file system, please be patient.", "spamprotection"); ?></div> 
+            <h1 style="display: inline-block;"><i style="margin: 0 20px 0 -20px" class="sp-icon download margin-right float-left rotateY"></i><?php _e('<strong>Scanning...</strong>',
+                    'spamprotection'); ?></h1>
+            <div style="font-size: 18px;"><?php _e('Checking file system, please be patient.', 'spamprotection'); ?></div>
         </div>
     </div>
         

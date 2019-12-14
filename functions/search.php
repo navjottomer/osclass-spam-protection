@@ -1,14 +1,14 @@
 <?php
 
-$u = Params::getParam("user");
-$set = Params::getParam("set");
+$u = Params::getParam('user');
+$set = Params::getParam('set');
 
 if (!empty($u) && !empty($set)) {
     spam_prot::newInstance()->_userManageAjax($set, $u);    
 }
 
 
-$search = Params::getParam("searchNewTrusted");
+$search = Params::getParam('searchNewTrusted');
 $user = spam_prot::newInstance()->_searchBadOrTrustedUser($search);
 
 if (isset($user) && !empty($user)) {
@@ -35,4 +35,3 @@ if (isset($user) && !empty($user)) {
         ';
     }
 }
-?>

@@ -28,7 +28,7 @@ if ($htaccess_writable) {
         <div id="sp_mainfeatures" class="subtab-content current">
         
             <fieldset>
-                <legend><?php _e("Ad Settings", "spamprotection"); ?></legend>
+                <legend><?php _e('Ad Settings', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_activate" value="1"<?php if (!empty($data['sp_activate'])) { echo ' checked="checked"'; } ?> />
@@ -39,7 +39,7 @@ if ($htaccess_writable) {
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Duplicates", "spamprotection"); ?></legend>
+                <legend><?php _e('Duplicates', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div class="floating">
                         <label>
@@ -88,7 +88,7 @@ if ($htaccess_writable) {
             </fieldset>
         
             <fieldset>
-                <legend><?php _e("MX Record", "spamprotection"); ?></legend>
+                <legend><?php _e('MX Record', 'spamprotection'); ?></legend>
                 <div class="row form-group">                    
                     <label>
                         <input type="checkbox" name="sp_mxr" value="1"<?php if (!empty($data['sp_mxr'])) { echo ' checked="checked"'; } ?> />
@@ -99,7 +99,7 @@ if ($htaccess_writable) {
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Honeypot", "spamprotection"); ?></legend>
+                <legend><?php _e('Honeypot', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_honeypot" value="1"<?php if (!empty($data['sp_honeypot'])) { echo ' checked="checked"'; } ?> />
@@ -117,7 +117,7 @@ if ($htaccess_writable) {
         
         <div id="sp_emailblock" class="subtab-content">
             <fieldset>
-                <legend><?php _e("Blocked Mails", "spamprotection"); ?></legend>
+                <legend><?php _e('Blocked Mails', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_blocked" value="1"<?php if (!empty($data['sp_blocked'])) { echo ' checked="checked"'; } ?> />
@@ -133,7 +133,7 @@ if ($htaccess_writable) {
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Blocked Mail Hoster", "spamprotection"); ?></legend>
+                <legend><?php _e('Blocked Mail Hoster', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_blocked_tld" value="1"<?php if (!empty($data['sp_blocked_tld'])) { echo ' checked="checked"'; } ?> />
@@ -151,7 +151,7 @@ if ($htaccess_writable) {
         
         <div id="sp_stopwords" class="subtab-content">
             <fieldset>
-                <legend><?php _e("Stop Words", "spamprotection"); ?></legend>
+                <legend><?php _e('Stop Words', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <p>
                         <?php _e('Here you can define the search mechanism, how stopwords are checked. You can search for substrings or particular words', 'spamprotection'); ?>
@@ -181,7 +181,7 @@ if ($htaccess_writable) {
         
         <div id="sp_htaccess" class="subtab-content">            
             <fieldset>
-                <legend><?php _e(".htaccess Editor", "spamprotection"); ?></legend>
+                <legend><?php _e('.htaccess Editor', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div id="attention">
                         <div id="attention_content">
@@ -194,21 +194,21 @@ if ($htaccess_writable) {
                         </div>
                     </div>
                     <?php 
-                    if (!$htaccess_writable) { 
-                        echo '<h3>'.__('(File is not writable)', 'spamprotection').'</h3>'; 
-                    } else { 
+                    if ($htaccess_writable) {
                     ?>
                     <small><?php _e('Beware of editing this file, unless you know what you\'re doing!!!', 'spamprotection'); ?></small>
                     <textarea class="form-control" name="sp_htaccess" style="height: 200px;"<?php //if (!$htaccess_writable) { echo ' disabled="disabled"'; } ?>><?php if (!empty($htaccess_content)) { echo $htaccess_content; } ?></textarea>
                     <?php if (osc_get_preference('htaccess_warning', 'plugin_spamprotection') == '1') { echo '<input type="hidden" name="attention_htaccess" value="1" />'; } ?>
-                    <?php } ?>
+                    <?php } else {
+                        echo '<h3>'.__('(File is not writable)', 'spamprotection').'</h3>';
+                    } ?>
                 </div>
             </fieldset>        
         </div>
         
         <div id="sp_cleaner" class="subtab-content">            
             <fieldset>
-                <legend><?php _e("Delete unwanted listings", "spamprotection"); ?></legend>
+                <legend><?php _e('Delete unwanted listings', 'spamprotection'); ?></legend>
                 <div class="row form-group">                
                     <div style="float: left; width: calc(50% - 20px); padding: 10px;">
                         <label>

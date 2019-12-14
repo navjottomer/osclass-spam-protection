@@ -10,6 +10,10 @@ function sprot_style() {
     
 }
 
+
+/**
+ * @param $item
+ */
 function sp_check_item($item) {
     $check = spam_prot::newInstance()->_checkForSpam($item);
     if (is_array($check)) {
@@ -20,7 +24,8 @@ function sp_check_item($item) {
         
         if (isset($clear) && $clear == '1') { ob_clean(); }
         if (isset($inform) && $inform == '1') {
-            osc_add_flash_error_message(__("Your listing needs to be moderated, please have patience until it is released.", "spamprotection"));
+            osc_add_flash_error_message(__('Your listing needs to be moderated, please have patience until it is released.',
+                'spamprotection'));
         }
         if (isset($clear) && $clear == '1') {
             header('Location: '.osc_base_url()); 
@@ -30,20 +35,24 @@ function sp_check_item($item) {
     }
 }
 
+
+/**
+ * @param $id
+ */
 function sp_check_comment($id) {
     $user = osc_logged_user_id();
     $check = spam_prot::newInstance()->_checkComment($id);
 
-    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_comments')) {
-        if (spam_prot::newInstance()->_checkTOR(true)) {
-            spam_prot::newInstance()->_addGlobalLog('Comment blocked for item:', $id, 'TOR Block');
-            spam_prot::newInstance()->_markCommentAsSpam($check['params'], $check['reason']);
-            
-            ob_get_clean();
-            osc_add_flash_error_message(__("Sending contact mails are not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
-            header('Location: '.osc_base_url());
-            exit;
-        }    
+    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_comments')
+        && spam_prot::newInstance()->_checkTOR(true)
+    ) {
+        spam_prot::newInstance()->_addGlobalLog('Comment blocked for item:', $id, 'TOR Block');
+        spam_prot::newInstance()->_markCommentAsSpam($check['params'], $check['reason']);
+
+        ob_get_clean();
+        osc_add_flash_error_message(__("Sending contact mails are not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
+        header('Location: '.osc_base_url());
+        exit;
     }
     
     if (is_array($check)) {
@@ -51,6 +60,10 @@ function sp_check_comment($id) {
     }
 }
 
+
+/**
+ * @param $id
+ */
 function sp_delete_comment($id) {
     $table = spam_prot::newInstance()->_table_sp_comments;
     spam_prot::newInstance()->dao->delete($table, 'fk_i_comment_id = '.$id);
@@ -92,6 +105,10 @@ function sp_contact_form() {
     }    
 }
 
+
+/**
+ * @param $data
+ */
 function sp_check_contact_item($data) {
                     
     $item  = Item::newInstance()->findByPrimaryKey($data['item']['fk_i_item_id']);
@@ -100,29 +117,38 @@ function sp_check_contact_item($data) {
     $params = Params::getParamsAsArray();    
     $check = spam_prot::newInstance()->_checkContact($params);
 
-    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_contact')) {
-        if (spam_prot::newInstance()->_checkTOR(true)) {
-            spam_prot::newInstance()->_addGlobalLog('Contact mail blocked', $check['reason'], 'TOR Block');
-            
-            ob_get_clean();
-            osc_add_flash_error_message(__("Sending contact mails are not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
-            header('Location: '.osc_base_url());
-            exit;
-        }    
+    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_contact')
+        && spam_prot::newInstance()->_checkTOR(true)
+    ) {
+        spam_prot::newInstance()->_addGlobalLog('Contact mail blocked', $check['reason'], 'TOR Block');
+
+        ob_get_clean();
+        osc_add_flash_error_message(__("Sending contact mails are not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
+        header('Location: '.osc_base_url());
+        exit;
     }
         
     if (is_array($check)) {        
-        $uniqid = uniqid();
+        $uniqid = uniqid('', true);
         spam_prot::newInstance()->_markContactAsSpam($check['params'], $check['reason'], $uniqid);
         
         $contactID = spam_prot::newInstance()->_searchSpamContact($uniqid);
-        osc_add_flash_error_message(sprintf(__("Your email must be verified by a moderator because it has been identified as spam. After successful verification we will forward your e-mail to the user. Click Delete if you do not want your message to be moderated. <a href='%s'>Delete</a>", "spamprotection"), '/?delete_contact_mail='.$contactID.'&token='.$uniqid));
+        osc_add_flash_error_message(sprintf(__("Your email must be verified by a moderator because it has been identified as spam. After successful verification we will forward your e-mail to the user. Click Delete if you do not want your message to be moderated. <a href='%s'>Delete</a>",
+            'spamprotection'), '/?delete_contact_mail='.$contactID.'&token='.$uniqid));
 
         header('Location: '.osc_item_url());
         exit;
     }       
 }
 
+
+/**
+ * @param $id
+ * @param $yourEmail
+ * @param $yourName
+ * @param $phoneNumber
+ * @param $message
+ */
 function sp_check_contact_user($id, $yourEmail, $yourName, $phoneNumber, $message) {
     $data = array(
         'id'          => $id,
@@ -141,15 +167,15 @@ function sp_check_user_login() {
     $email = Params::getParam('email');
     $password = Params::getParam('password', false, false);
 
-    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_login')) {
-        if (spam_prot::newInstance()->_checkTOR(true)) {
-            spam_prot::newInstance()->_addGlobalLog('Login blocked', $email, 'TOR Block');
-            
-            ob_get_clean();
-            osc_add_flash_error_message(__("Login is not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
-            header('Location: '.osc_base_url());
-            exit;
-        }    
+    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_login')
+        && spam_prot::newInstance()->_checkTOR(true)
+    ) {
+        spam_prot::newInstance()->_addGlobalLog('Login blocked', $email, 'TOR Block');
+
+        ob_get_clean();
+        osc_add_flash_error_message(__("Login is not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
+        header('Location: '.osc_base_url());
+        exit;
     }
     
     if ($action === 'login_post' && !empty($email) && !empty($password)) {
@@ -159,31 +185,35 @@ function sp_check_user_login() {
                 
         $logins = spam_prot::newInstance()->_countLogin($email, 'user', $ip);
         $max_logins = spam_prot::newInstance()->_get('sp_security_login_count');
-        
+
         if (spam_prot::newInstance()->_checkUserBan($email, $ip) || !empty($data_token)) {
             ob_get_clean();
-            osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact support.', 'spamprotection'));    
+            osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact support.', 'spamprotection'));
             header('Location: '.osc_base_url());
             exit;
-        } elseif (!spam_prot::newInstance()->_checkUserLogin($email, $password)) {
+        }
+
+        if (!spam_prot::newInstance()->_checkUserLogin($email, $password)) {
             if ($logins >= $max_logins) {
                 spam_prot::newInstance()->_handleUserLogin($email, $ip);
                 if ($logins == $max_logins) {
-                    spam_prot::newInstance()->_informUser($email, 'user');    
-                } if (spam_prot::newInstance()->_get('sp_security_login_inform') == '1') {                
+                    spam_prot::newInstance()->_informUser($email, 'user');
+                } if (spam_prot::newInstance()->_get('sp_security_login_inform') == '1') {
                     ob_get_clean();
                     osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact support.', 'spamprotection'));
                 }
             } elseif (empty($logins) || $logins < $max_logins) {
                 if (spam_prot::newInstance()->_get('sp_security_login_inform') == '1') {
                     ob_get_clean();
-                    osc_add_flash_error_message(sprintf(__('<strong>Warning!</strong> Only %d login attempts remaining', 'spamprotection'), ($max_logins-$logins)));    
+                    osc_add_flash_error_message(sprintf(__('<strong>Warning!</strong> Only %d login attempts remaining', 'spamprotection'), ($max_logins-$logins)));
                 }
             }
             header('Location: '.osc_user_login_url());
-            exit;   
-        } elseif ($logins <= $max_logins && spam_prot::newInstance()->_checkUserLogin($email, $password)) {            
-            spam_prot::newInstance()->_resetUserLogin($email);    
+            exit;
+        }
+
+        if ($logins <= $max_logins && spam_prot::newInstance()->_checkUserLogin($email, $password)) {
+            spam_prot::newInstance()->_resetUserLogin($email);
         }
     }
 }
@@ -198,31 +228,33 @@ function sp_check_user_registrations() {
     $check_mail = spam_prot::newInstance()->_get('sp_check_stopforumspam_mail');
     $check_ip = spam_prot::newInstance()->_get('sp_check_stopforumspam_ip');
 
-    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_registration')) {
-        if (spam_prot::newInstance()->_checkTOR(true)) {
-            spam_prot::newInstance()->_addGlobalLog('Registration blocked', $check_ip, 'TOR Block');
-            
-            ob_get_clean();
-            osc_add_flash_error_message(__("Registration is not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
-            header('Location: '.osc_base_url());
-            exit;
-        }    
+    if (spam_prot::newInstance()->_get('sp_tor_activate') && spam_prot::newInstance()->_get('sp_tor_registration')
+        && spam_prot::newInstance()->_checkTOR(true)
+    ) {
+        spam_prot::newInstance()->_addGlobalLog('Registration blocked', $check_ip, 'TOR Block');
+
+        ob_get_clean();
+        osc_add_flash_error_message(__("Registration is not allowed because of using the TOR Network. Please disable TOR and try again.", "spamprotection"));
+        header('Location: '.osc_base_url());
+        exit;
     }
     
     if (Params::getParam('action') === 'register_post' && spam_prot::newInstance()->_get('sp_check_registrations') >= '2') {
         if (($email = filter_var($email, FILTER_VALIDATE_EMAIL)) !== false) {        
             $check = spam_prot::newInstance()->_get('sp_check_registrations');
-            $mails = explode(",", spam_prot::newInstance()->_get('sp_check_registration_mails'));
-            $domain = substr(strrchr($email, "@"), 1);
+            $mails = explode(',', spam_prot::newInstance()->_get('sp_check_registration_mails'));
+            $domain = substr(strrchr($email, '@'), 1);
             $error = false;
             
             if ($check == '2') {
-                if (!in_array($domain, $mails)) { $error = sprintf(__("Sorry, but you cannot use this email address: %s", "spamprotection"), $domain); }   
+                if (!in_array($domain, $mails)) { $error = sprintf(__('Sorry, but you cannot use this email address: %s',
+                    'spamprotection'), $domain); }
             } elseif ($check == '3') {
-                if (in_array($domain, $mails)) { $error = sprintf(__("Sorry, but you cannot use this email address: %s", "spamprotection"), $domain); }            
+                if (in_array($domain, $mails)) { $error = sprintf(__('Sorry, but you cannot use this email address: %s',
+                    'spamprotection'), $domain); }
             }
         } else {
-            $error = __("Sorry, but you need to use a valid email address.", "spamprotection"); 
+            $error = __('Sorry, but you need to use a valid email address.', 'spamprotection');
         }
         
         if ($error) {
@@ -239,7 +271,8 @@ function sp_check_user_registrations() {
     if ($check_ban) {
         ob_get_clean();
         spam_prot::newInstance()->_addGlobalLog('Registration blocked because of existing ban', $email.'/'.$ip, 'System');
-        osc_add_flash_error_message(__("Sorry, you are not allowed to register an account here. Feel free to contact the support team if you think this is a mistake.", "spamprotection"));        
+        osc_add_flash_error_message(__('Sorry, you are not allowed to register an account here. Feel free to contact the support team if you think this is a mistake.',
+            'spamprotection'));
         header('Location: '.osc_register_account_url());
         exit;    
     } 
@@ -275,7 +308,8 @@ function sp_check_user_registrations() {
                 }
                                 
                 ob_get_clean();
-                osc_add_flash_error_message(__("Sorry, but your email address is listed because of spam on <a href=\"https://www.stopforumspam.com\">StopForumSpam</a>. Due to this, you cannot register your Account here using this email address, but you can request the deleting of your email address <a href=\"https://www.stopforumspam.com/removal\">Here</a>", "spamprotection"));        
+                osc_add_flash_error_message(__('Sorry, but your email address is listed because of spam on <a href="https://www.stopforumspam.com">StopForumSpam</a>. Due to this, you cannot register your Account here using this email address, but you can request the deleting of your email address <a href="https://www.stopforumspam.com/removal">Here</a>',
+                    'spamprotection'));
                 header('Location: '.osc_register_account_url());
                 exit;    
             }
@@ -296,7 +330,8 @@ function sp_check_user_registrations() {
                 }
                                 
                 ob_get_clean();
-                osc_add_flash_error_message(__("Sorry, but your IP is listed because of spam on <a href=\"https://www.stopforumspam.com\">StopForumSpam</a>. Due to this, you cannot register your Account here, but you can request the deleting of your IP <a href=\"https://www.stopforumspam.com/removal\">Here</a>", "spamprotection"));        
+                osc_add_flash_error_message(__('Sorry, but your IP is listed because of spam on <a href="https://www.stopforumspam.com">StopForumSpam</a>. Due to this, you cannot register your Account here, but you can request the deleting of your IP <a href="https://www.stopforumspam.com/removal">Here</a>',
+                    'spamprotection'));
                 header('Location: '.osc_register_account_url());
                 exit;    
             }
@@ -306,26 +341,32 @@ function sp_check_user_registrations() {
 
 function sp_block_baduser_ads() {
     ob_get_clean();
-    osc_add_flash_error_message(__("Sorry, but you are not allowed to post new ads here. If you think this is a mistake, feel free to contact the support team.", "spamprotection"));        
+    osc_add_flash_error_message(__('Sorry, but you are not allowed to post new ads here. If you think this is a mistake, feel free to contact the support team.',
+        'spamprotection'));
     osc_redirect_to(osc_base_url());
     exit;    
 }
 
 function sp_block_baduser_contact() {
     echo '
-    <p>'.__("Sorry, but you are not allowed to send contact mails. If you think this is a mistake, feel free to contact the support team").'</p>
+    <p>'.__('Sorry, but you are not allowed to send contact mails. If you think this is a mistake, feel free to contact the support team').'</p>
     <script>
         $(document).ready(function(){
-            $("form#contact_form").html("").append("<p>'.__("Sorry, but you are not allowed to send contact mails. If you think this is a mistake, feel free to contact the support team").'</p>");
+            $("form#contact_form").html("").append("<p>'.__('Sorry, but you are not allowed to send contact mails. If you think this is a mistake, feel free to contact the support team').'</p>");
         });
     </script>
     ';    
 }
 
+
+/**
+ * @param $id
+ */
 function sp_block_baduser_comment($id) {
     spam_prot::newInstance()->_deleteComment($id);
     ob_get_clean();
-    osc_add_flash_error_message(__("Sorry, but you are not allowed to post new comments here. If you think this is a mistake, feel free to contact the support team.", "spamprotection"));        
+    osc_add_flash_error_message(__('Sorry, but you are not allowed to post new comments here. If you think this is a mistake, feel free to contact the support team.',
+        'spamprotection'));
     osc_redirect_to(osc_item_url());
     exit;    
 }
@@ -333,4 +374,3 @@ function sp_block_baduser_comment($id) {
 function sp_unban_cron() {
     spam_prot::newInstance()->_unbanUser();    
 }
-?>

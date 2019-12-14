@@ -148,7 +148,7 @@ class spam_prot extends DAO
         $sql  = file_get_contents($file);
 
         if (!$this->dao->importSQL($sql)) {
-            throw new \RuntimeException('Error importSQL::spam_prot<br>' . $file);
+            throw new RuntimeException('Error importSQL::spam_prot<br>' . $file);
         }
 
         $this->_correctDatabase();
@@ -698,10 +698,10 @@ class spam_prot extends DAO
                 $opt = $this->_opt($k);
                 if (isset($params[$k]) || in_array($k, $null)) {
 
-                    if (!isset($params[$k])) {
-                        $value = '0';
-                    } else {
+                    if (isset($params[$k])) {
                         $value = $params[$k];
+                    } else {
+                        $value = '0';
                     }
 
                     if (in_array($k, $sort)) {
@@ -1183,15 +1183,13 @@ class spam_prot extends DAO
         }
 
         // Check for Honeypot
-        if ($this->_get('sp_honeypot') == '1') {
-            if ($this->_checkHoneypot($params)) {
-                $this->_addGlobalLog('Honeypot detected while posting ad', $item['pk_i_id'], 'System');
+        if (($this->_get('sp_honeypot') == '1') && $this->_checkHoneypot($params)) {
+            $this->_addGlobalLog('Honeypot detected while posting ad', $item['pk_i_id'], 'System');
 
-                return array(
-                    'params' => $item,
-                    'reason' => 'Bot detected. The Honeypot was filled while creating an ad'
-                );
-            }
+            return array(
+                'params' => $item,
+                'reason' => 'Bot detected. The Honeypot was filled while creating an ad'
+            );
         }
 
         // Check for blocked mailaddresses
@@ -1611,22 +1609,22 @@ class spam_prot extends DAO
 
         // Check for blocked mailaddresses
         $blocked = $this->_get('comment_blocked');
-        if ($this->_get('sp_comment_blocked') == '1' && !empty($blocked)) {
-            if ($this->_checkBlocked($comment['s_author_email'], 'comment')) {
-                $this->_addGlobalLog('Blocked email address found in comment', $comment['s_author_email'], 'System');
+        if ($this->_get('sp_comment_blocked') == '1' && !empty($blocked)
+            && $this->_checkBlocked($comment['s_author_email'], 'comment')
+        ) {
+            $this->_addGlobalLog('Blocked email address found in comment', $comment['s_author_email'], 'System');
 
-                return array('params' => $comment, 'reason' => 'Blocked E-Mail-Address found.');
-            }
+            return array('params' => $comment, 'reason' => 'Blocked E-Mail-Address found.');
         }
 
         // Check for blocked mailaddress tld
         $blocked_tld = $this->_get('comment_blocked_tld');
-        if ($this->_get('sp_comment_blocked_tld') == '1' && !empty($blocked_tld)) {
-            if ($this->_checkBlockedTLD($comment['s_author_email'], 'comment')) {
-                $this->_addGlobalLog('Blocked email hoster found in comment', $comment['s_author_email'], 'System');
+        if ($this->_get('sp_comment_blocked_tld') == '1' && !empty($blocked_tld)
+            && $this->_checkBlockedTLD($comment['s_author_email'], 'comment')
+        ) {
+            $this->_addGlobalLog('Blocked email hoster found in comment', $comment['s_author_email'], 'System');
 
-                return array('params' => $comment, 'reason' => 'Blocked E-Mail-Address TLD found.');
-            }
+            return array('params' => $comment, 'reason' => 'Blocked E-Mail-Address TLD found.');
         }
 
         // Check for stopwords
@@ -1676,10 +1674,10 @@ class spam_prot extends DAO
         foreach ($stopwords as $sk => $sv) {
             $search = strtolower(trim($sv));
             if ($this->_get('sp_comment_blockedtype') === 'words') {
-                if (!!preg_match('#\b' . preg_quote($search, '#') . '\b#i', $title)) {
+                if ((bool)preg_match('#\b' . preg_quote($search, '#') . '\b#i', $title)) {
                     return $sv;
                 }
-                if (!!preg_match('#\b' . preg_quote($search, '#') . '\b#i', $description)) {
+                if ((bool)preg_match('#\b' . preg_quote($search, '#') . '\b#i', $description)) {
                     return $sv;
                 }
             } elseif (isset($search)) {
@@ -1799,7 +1797,7 @@ class spam_prot extends DAO
         foreach ($stopwords as $sk => $sv) {
             $search = strtolower(trim($sv));
             if ($this->_get('sp_contact_blockedtype') === 'words') {
-                if (!!preg_match('#\b' . preg_quote($search, '#') . '\b#i', $message)) {
+                if ((bool)preg_match('#\b' . preg_quote($search, '#') . '\b#i', $message)) {
                     return $sv;
                 }
             } elseif (isset($search)) {
@@ -2028,11 +2026,8 @@ class spam_prot extends DAO
         $this->dao->like('s_name', 'Admin/Mod');
 
         $result = $this->dao->get();
-        if ($result && $result->numRows() > 0) {
-            return true;
-        }
 
-        return false;
+        return $result && $result->numRows() > 0;
     }
 
     /**
@@ -2616,10 +2611,8 @@ class spam_prot extends DAO
                     if (isset($reputation[$bad[$type]]) && $reputation[$bad[$type]] == '1') {
                         return true;
                     }
-                } else {
-                    if (isset($reputation[$trusted[$type]]) && $reputation[$trusted[$type]] == '1') {
-                        return true;
-                    }
+                } elseif (isset($reputation[$trusted[$type]]) && $reputation[$trusted[$type]] == '1') {
+                    return true;
                 }
             }
 
@@ -2651,7 +2644,7 @@ class spam_prot extends DAO
     /**
      * @param $table \UsersDataTable
      */
-    function _userBadTrusted($table)
+    public function _userBadTrusted($table)
     {
         $table->addColumn('reputation', '');
     }
@@ -2915,7 +2908,7 @@ class spam_prot extends DAO
         $sql  = file_get_contents($file);
 
         if (!$this->dao->importSQL($sql)) {
-            throw new \RuntimeException('Error importSQL::spam_prot<br>' . $file);
+            throw new RuntimeException('Error importSQL::spam_prot<br>' . $file);
         }
     }
 
@@ -3034,11 +3027,11 @@ class spam_prot extends DAO
     {
         foreach ($array as $key => $value) {
             if (is_array($value)) {
-                if (!is_numeric($key)) {
-                    $subnode = $xml_info->addChild((string)$key);
+                if (is_numeric($key)) {
+                    $subnode = $xml_info->addChild('data');
                     $this->array_to_xml($value, $subnode);
                 } else {
-                    $subnode = $xml_info->addChild('data');
+                    $subnode = $xml_info->addChild((string)$key);
                     $this->array_to_xml($value, $subnode);
                 }
             } else {
@@ -3163,11 +3156,11 @@ class spam_prot extends DAO
         if ($type === 'settings') {
             if (!empty($array['data'])) {
                 foreach ($array['data'] as $v) {
-                    if (!empty($v['s_value'])) {
-                        if (!osc_set_preference($v['s_name'], $v['s_value'], $v['s_section'], $v['e_type'])) {
-                            $error .= sprintf(__('Error while importing settings: %s cannot be saved correctly',
-                                    'spamprotection'), $v['s_name']) . "\n";
-                        }
+                    if (!empty($v['s_value'])
+                        && !osc_set_preference($v['s_name'], $v['s_value'], $v['s_section'], $v['e_type'])
+                    ) {
+                        $error .= sprintf(__('Error while importing settings: %s cannot be saved correctly',
+                                'spamprotection'), $v['s_name']) . "\n";
                     }
                 }
             }
@@ -3337,11 +3330,9 @@ class spam_prot extends DAO
             } elseif ($type === 'user') {
                 foreach ($clean as $id) {
                     $user = User::newInstance()->findByPrimaryKey($id['pk_i_id']);
-                    if (isset($user['pk_i_id'])) {
-                        if (User::newInstance()->deleteUser($user['pk_i_id'])) {
-                            $this->_addGlobalLog('User account deleted by Cleaner (Account ID: ' . $user['pk_i_id']
-                                . ')', (isset($user['s_email']) ? $user['s_email'] : 'No Email address'), 'Cron');
-                        }
+                    if (isset($user['pk_i_id']) && User::newInstance()->deleteUser($user['pk_i_id'])) {
+                        $this->_addGlobalLog('User account deleted by Cleaner (Account ID: ' . $user['pk_i_id']
+                            . ')', (isset($user['s_email']) ? $user['s_email'] : 'No Email address'), 'Cron');
                     }
                 }
             }
@@ -3420,7 +3411,7 @@ class spam_prot extends DAO
 
     /**
      * @param bool $age
-     * @param bool $max
+     * @param bool|int $max
      * @param bool $activated
      * @param bool $enabled
      * @param bool $zero
@@ -3659,23 +3650,21 @@ class spam_prot extends DAO
             $data     = array();
 
             foreach (new RecursiveIteratorIterator($iterator, RecursiveIteratorIterator::CHILD_FIRST) as $file) {
-                if (!$this->_excludedPath($file->getPathname(), $config['excludeDir'])) {
-                    if (!$file->isDir()) {
-                        $extension = pathinfo($file->getFilename(), PATHINFO_EXTENSION);
-                        if (!in_array(strtolower($extension), $config['excludeFile'])) {
+                if (!$this->_excludedPath($file->getPathname(), $config['excludeDir']) && !$file->isDir()) {
+                    $extension = pathinfo($file->getFilename(), PATHINFO_EXTENSION);
+                    if (!in_array(strtolower($extension), $config['excludeFile'])) {
 
-                            $name = $file->getPathname();
-                            $hash = sha1_file($file->getPathname());
+                        $name = $file->getPathname();
+                        $hash = sha1_file($file->getPathname());
 
-                            $data[$name] = array(
-                                'hash'  => $hash,
-                                'time'  => $file->getCTime(),
-                                'size'  => $file->getSize(),
-                                'exec'  => $file->isExecutable(),
-                                'read'  => $file->isReadable(),
-                                'write' => $file->isWritable()
-                            );
-                        }
+                        $data[$name] = array(
+                            'hash'  => $hash,
+                            'time'  => $file->getCTime(),
+                            'size'  => $file->getSize(),
+                            'exec'  => $file->isExecutable(),
+                            'read'  => $file->isReadable(),
+                            'write' => $file->isWritable()
+                        );
                     }
                 }
             }
@@ -3766,7 +3755,12 @@ class spam_prot extends DAO
         return unserialize($hashes);
     }
 
-    /** save array of file hashes */
+    /** save array of file hashes
+     *
+     * @param $data
+     *
+     * @return bool
+     */
 
     public function _emailFiles($data)
     {
@@ -3898,7 +3892,10 @@ class spam_prot extends DAO
         ';
     }
 
-    /** send email if changes are found */
+    /** send email if changes are found
+     * @param $hashes
+     * @return bool
+*/
 
     public function _hasFilesChanges($hashes)
     {
@@ -3910,8 +3907,10 @@ class spam_prot extends DAO
     }
 
     /** human readable file size
-     *
-     */
+     * @param $size
+     * @param $compare
+     * @return string
+*/
 
     public function _sizeFiles($size, $compare)
     {

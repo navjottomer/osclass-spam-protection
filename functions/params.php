@@ -9,11 +9,9 @@ $ipBan = Params::getParam('addIpBan');
 
 $admin = Admin::newInstance()->findByPrimaryKey(osc_logged_admin_id());
 
-if ($page === 'items') {
-     if (Params::getParam('spam') === 'delete') {
-        $sp->_spamAction('delete', Params::getParam('item'));
-        osc_redirect_to(osc_admin_base_url(true).'?page=items');    
-    }    
+if (($page === 'items') && Params::getParam('spam') === 'delete') {
+   $sp->_spamAction('delete', Params::getParam('item'));
+   osc_redirect_to(osc_admin_base_url(true).'?page=items');
 }
 if (($page === 'items' || $page === 'users')) {
     if ($page === 'items') {
@@ -80,4 +78,4 @@ if (is_numeric($delete_mail)) {
         exit;
     }    
 }
-?>
+

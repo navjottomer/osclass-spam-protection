@@ -1,10 +1,10 @@
 <?php
 $sp = new spam_prot; 
 
-$limit = Params::getParam("logLimit");
-$page = Params::getParam("logPage");
-$date = Params::getParam("logDate");
-$search = Params::getParam("logSearch");
+$limit = Params::getParam('logLimit');
+$page = Params::getParam('logPage');
+$date = Params::getParam('logDate');
+$search = Params::getParam('logSearch');
 
 if (!isset($limit) || !is_numeric($limit)) {
     $limit = $sp->_get('sp_globallog_limit');
@@ -39,16 +39,20 @@ $pages = ceil($count/$limit);
     
     <div id="logLimitation" class="form-group" style="float: left;">
         <select name="logLimit">
-            <option value="25"<?php echo ($limit == '25' ? ' selected="selected"' : ''); ?>><?php _e("Show 25 log entries", "spamprotection"); ?></option>
-            <option value="50"<?php echo ($limit == '50' ? ' selected="selected"' : ''); ?>><?php _e("Show 50 log entries", "spamprotection"); ?></option>
-            <option value="100"<?php echo ($limit == '100' ? ' selected="selected"' : ''); ?>><?php _e("Show 100 log entries", "spamprotection"); ?></option>
+            <option value="25"<?php echo ($limit == '25' ? ' selected="selected"' : ''); ?>><?php _e('Show 25 log entries',
+                    'spamprotection'); ?></option>
+            <option value="50"<?php echo ($limit == '50' ? ' selected="selected"' : ''); ?>><?php _e('Show 50 log entries',
+                    'spamprotection'); ?></option>
+            <option value="100"<?php echo ($limit == '100' ? ' selected="selected"' : ''); ?>><?php _e('Show 100 log entries',
+                    'spamprotection'); ?></option>
         </select>
     </div>
     <div class="form-group" style="float: right;">
 
-        <input type="text" name="logDate" style="width: 150px;" placeholder="<?php _e("Select Date", "spamprotection"); ?>" />
+        <input type="text" name="logDate" style="width: 150px;" placeholder="<?php _e('Select Date', 'spamprotection'); ?>" />
         
-        <input type="text" name="logSearch" style="width: 150px;" value="<?php echo $search; ?>" placeholder="<?php _e("Search in logs", "spamprotection"); ?>" />
+        <input type="text" name="logSearch" style="width: 150px;" value="<?php echo $search; ?>" placeholder="<?php _e('Search in logs',
+            'spamprotection'); ?>" />
         
         <a class="logSearch btn btn-blue" style="float: right; margin-left: 3px; padding: 5px; position: relative; width: 30px; height: 16px;">
             <i class="sp-icon search" style="position: absolute;top: -3px;left: 5px;transform: scale(0.7);"></i>
@@ -69,10 +73,10 @@ $pages = ceil($count/$limit);
     <table>
         <thead>
             <tr>
-                <td style="width: 180px; text-align: left;"><?php _e("Date", "spamprotection"); ?></td>
-                <td><?php _e("Action", "spamprotection"); ?></td>
-                <td style="width: 130px; text-align: right;"><?php _e("Info", "spamprotection"); ?></td>
-                <td style="width: 130px; text-align: right;"><?php _e("Done by", "spamprotection"); ?></td>
+                <td style="width: 180px; text-align: left;"><?php _e('Date', 'spamprotection'); ?></td>
+                <td><?php _e('Action', 'spamprotection'); ?></td>
+                <td style="width: 130px; text-align: right;"><?php _e('Info', 'spamprotection'); ?></td>
+                <td style="width: 130px; text-align: right;"><?php _e('Done by', 'spamprotection'); ?></td>
             </tr>
         </thead>
         <tbody>

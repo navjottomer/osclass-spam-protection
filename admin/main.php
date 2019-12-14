@@ -50,8 +50,8 @@ if (Params::getParam('settings') === 'save') {
         ob_get_clean();
         $message = $sp->_showPopup(
             '<h1 style="display: inline-block;"><i class="sp-icon attention margin-right float-left"></i>'
-            . __("<strong>Success.</strong>", "spamprotection") . '</h1>',
-            '<div style="font-size: 18px;">' . __("Settings saved.", "spamprotection") . '</div>',
+            . __('<strong>Success.</strong>', 'spamprotection') . '</h1>',
+            '<div style="font-size: 18px;">' . __('Settings saved.', 'spamprotection') . '</div>',
             '',
             1500,
             false,
@@ -65,8 +65,8 @@ if (Params::getParam('settings') === 'save') {
         ob_get_clean();
         $message = $sp->_showPopup(
             '<h1 style="display: inline-block;"><i class="sp-icon attention margin-right float-left"></i>'
-            . __("<strong>Error.</strong>", "spamprotection") . '</h1>',
-            '<div style="font-size: 18px;">' . __("Your settings can not be saved.", "spamprotection") . '</div>',
+            . __('<strong>Error.</strong>', 'spamprotection') . '</h1>',
+            '<div style="font-size: 18px;">' . __('Your settings can not be saved.', 'spamprotection') . '</div>',
             '',
             false,
             true,
@@ -77,41 +77,41 @@ if (Params::getParam('settings') === 'save') {
         osc_add_flash_ok_message($message, 'admin');
         osc_admin_render_plugin(osc_plugin_folder(__FILE__) . 'main.php&tab=' . $params['tab']);
     }
-} elseif (Params::getParam("createFileNow") == '1') {
+} elseif (Params::getParam('createFileNow') == '1') {
     $file = file_get_contents(osc_plugin_path('spamprotection/assets/forbidden.php'));
     if (!empty($file)) {
         $write_file = osc_base_path() . 'forbidden.php';
         if (is_writable(osc_base_path())) {
-            if (!file_put_contents($write_file, $file)) {
+            if (file_put_contents($write_file, $file)) {
                 echo '
                 <div id="flash">' . spam_prot::newInstance()->_showPopup(
                         '<h1 style="display: inline-block;"><i class="sp-icon attention margin-right float-left"></i>'
-                        . __("<strong>Error</strong>", "spamprotection") . '</h1>',
-                        '<div style="font-size: 18px;">' . __("Could not create file", "spamprotection") . '</div>',
+                        . __('<strong>Success</strong>', 'spamprotection') . '</h1>',
+                        '<div style="font-size: 18px;">' . __('File created', 'spamprotection') . '</div>',
                         '', 1500, false, false, 'style="margin-top: 50px; width: 400px;"') . '</div>';
             } else {
                 echo '
                 <div id="flash">' . spam_prot::newInstance()->_showPopup(
                         '<h1 style="display: inline-block;"><i class="sp-icon attention margin-right float-left"></i>'
-                        . __("<strong>Success</strong>", "spamprotection") . '</h1>',
-                        '<div style="font-size: 18px;">' . __("File created", "spamprotection") . '</div>',
+                        . __('<strong>Error</strong>', 'spamprotection') . '</h1>',
+                        '<div style="font-size: 18px;">' . __('Could not create file', 'spamprotection') . '</div>',
                         '', 1500, false, false, 'style="margin-top: 50px; width: 400px;"') . '</div>';
             }
         } else {
             echo '
             <div id="flash">' . spam_prot::newInstance()->_showPopup(
                     '<h1 style="display: inline-block;"><i class="sp-icon attention margin-right float-left"></i>'
-                    . __("<strong>Error</strong>", "spamprotection") . '</h1>',
-                    '<div style="font-size: 18px;">' . __("Path not writable", "spamprotection") . '</div>',
+                    . __('<strong>Error</strong>', 'spamprotection') . '</h1>',
+                    '<div style="font-size: 18px;">' . __('Path not writable', 'spamprotection') . '</div>',
                     '', 1500, false, false, 'style="margin-top: 50px; width: 400px;"') . '</div>';
         }
     } else {
         echo '
         <div id="flash">' . spam_prot::newInstance()->_showPopup(
                 '<h1 style="display: inline-block;"><i class="sp-icon attention margin-right float-left"></i>'
-                . __("<strong>Error</strong>", "spamprotection") . '</h1>',
-                '<div style="font-size: 18px;">' . __("Source file is empty. You have to create your own standard file",
-                    "spamprotection") . '</div>',
+                . __('<strong>Error</strong>', 'spamprotection') . '</h1>',
+                '<div style="font-size: 18px;">' . __('Source file is empty. You have to create your own standard file',
+                    'spamprotection') . '</div>',
                 '', 1500, false, false, 'style="margin-top: 50px; width: 400px;"') . '</div>';
     }
     echo '

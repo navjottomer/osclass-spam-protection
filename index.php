@@ -179,7 +179,7 @@ if ((!osc_is_admin_user_logged_in() && !OC_ADMIN)
 
             spam_prot::newInstance()->_addGlobalLog('Banned IP. Redirected to: 404', $ip, 'IP Ban');
 
-            header("HTTP/1.0 404 Not Found");
+            header('HTTP/1.0 404 Not Found');
 
             exit;
 

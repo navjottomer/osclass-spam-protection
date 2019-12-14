@@ -38,9 +38,9 @@ if (isset($params['action']) && is_numeric($params['id'])) {
                             <a href="'.osc_admin_base_url(true).'?page=users&action=edit&id='.$user['pk_i_id'].'">'.$user['s_name'].'</a>
                             <div class="actions">
                                 <ul>
-                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/comments_view.php?id='.$value['pk_i_id']).'">'.__('View', 'spamprotection').'</a></li>
-                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/comments_check.php?action=activate&id='.$value['pk_i_id']).'">'.__('Activate', 'spamprotection').'</a></li>
-                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/comments_check.php?action=delete&id='.$value['pk_i_id']).'">'.__('Delete', 'spamprotection').'</a></li>
+                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/comments_view.php?id='. $value['pk_i_id']).'">'.__('View', 'spamprotection').'</a></li>
+                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/comments_check.php?action=activate&id='. $value['pk_i_id']).'">'.__('Activate', 'spamprotection').'</a></li>
+                                    <li><a href="'.osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/comments_check.php?action=delete&id='. $value['pk_i_id']).'">'.__('Delete', 'spamprotection').'</a></li>
                                 </ul>
                             </div>
                         </td>

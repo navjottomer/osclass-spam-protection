@@ -8,7 +8,7 @@
     $sp = new spam_prot;
     $params = Params::getParamsAsArray();
 
-    if (isset($params['action']) && isset($params['id'])) {
+    if (isset($params['action'], $params['id'])) {
         $sp->_handleBanLog($params['action'], $params['id']);
     }
 
@@ -18,11 +18,11 @@
     <table class="table" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th class="col-name"><?php _e("User", "spamprotection"); ?></th>
-                <th class="col-name"><?php _e("Reason", "spamprotection"); ?></th>
-                <th class="col-ip"><?php _e("IP", "spamprotection"); ?></th>
-                <th class="col-email "><?php _e("Email", "spamprotection"); ?></th>
-                <th class="col-date "><?php _e("Date", "spamprotection"); ?></th>
+                <th class="col-name"><?php _e('User', 'spamprotection'); ?></th>
+                <th class="col-name"><?php _e('Reason', 'spamprotection'); ?></th>
+                <th class="col-ip"><?php _e('IP', 'spamprotection'); ?></th>
+                <th class="col-email "><?php _e('Email', 'spamprotection'); ?></th>
+                <th class="col-date "><?php _e('Date', 'spamprotection'); ?></th>
             </tr>
         </thead>
         <tbody>
@@ -46,10 +46,12 @@
                             <div class="actions">
                                 <ul>
                                     <li>
-                                        <a href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/ban_log.php?action=delete&id='.$v['pk_i_id']); ?>"><?php _e("Delete entry", "spamprotection"); ?></a>
+                                        <a href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/ban_log.php?action=delete&id='.$v['pk_i_id']); ?>"><?php _e('Delete entry',
+                                                'spamprotection'); ?></a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/ban_log.php?action=activate&id='.$v['pk_i_id']); ?>"><?php _e("Activate user", "spamprotection"); ?></a>
+                                        <a href="<?php echo osc_admin_render_plugin_url('spamprotection/admin/ban_log.php?action=activate&id='.$v['pk_i_id']); ?>"><?php _e('Activate user',
+                                                'spamprotection'); ?></a>
                                     </li>
                                 </ul>
                             </div>

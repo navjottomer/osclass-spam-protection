@@ -1,16 +1,16 @@
 <?php
 
-$del = Params::getParam("deleteUserID");
+$del = Params::getParam('deleteUserID');
 
-$age = Params::getParam("sp_user_minAge");
-$max = Params::getParam("sp_user_maxAcc");
+$age = Params::getParam('sp_user_minAge');
+$max = Params::getParam('sp_user_maxAcc');
 
-$zero = Params::getParam("sp_user_zeroads");
-$activated = Params::getParam("sp_user_activated");
-$enabled = Params::getParam("sp_user_enabled");
+$zero = Params::getParam('sp_user_zeroads');
+$activated = Params::getParam('sp_user_activated');
+$enabled = Params::getParam('sp_user_enabled');
 
-$checkAdmin = Params::getParam("sp_user_noAdmin");
-$neverLogged = Params::getParam("sp_user_neverlogged");
+$checkAdmin = Params::getParam('sp_user_noAdmin');
+$neverLogged = Params::getParam('sp_user_neverlogged');
 
 if (isset($del)) {
     spam_prot::newInstance()->_deleteUnwantedUser($del);    
@@ -27,13 +27,13 @@ if (isset($user) && !empty($user)) {
     <thead>
         <tr>
             <td><input type="checkbox" id="deleteUserAll" /></td>
-            <td>'.__("ID", "spamprotection").'</td>
-            <td>'.__("Name", "spamprotection").'</td>
-            <td>'.__("Email", "spamprotection").'</td>
-            <td>'.__("Registered", "spamprotection").'</td>
-            <td>'.__("Last Login", "spamprotection").'</td>
-            <td>'.__("Listings", "spamprotection").'</td>
-            <td>'.__("Comments", "spamprotection").'</td>            
+            <td>'.__('ID', 'spamprotection').'</td>
+            <td>'.__('Name', 'spamprotection').'</td>
+            <td>'.__('Email', 'spamprotection').'</td>
+            <td>'.__('Registered', 'spamprotection').'</td>
+            <td>'.__('Last Login', 'spamprotection').'</td>
+            <td>'.__('Listings', 'spamprotection').'</td>
+            <td>'.__('Comments', 'spamprotection').'</td>            
         </tr>
     </thead>
     <tbody>
@@ -44,7 +44,7 @@ if (isset($user) && !empty($user)) {
         
         if ($isAdmin) {
             $color = 'red';
-        } elseif ($v['dt_access_date'] === "0000-00-00 00:00:00" || $v['dt_reg_date'] == $v['dt_access_date']) {
+        } elseif ($v['dt_access_date'] === '0000-00-00 00:00:00' || $v['dt_reg_date'] == $v['dt_access_date']) {
             $color = '#00bf00';
         }
         
@@ -67,8 +67,8 @@ if (isset($user) && !empty($user)) {
     </tbody>
 </table>
 <div style="clear: both;"</div>
-<a id="deleteNowUnwantedAccounts" class="btn btn-red" data-link="'.osc_ajax_plugin_url('spamprotection/functions/searchUser.php').'" style="float: right; margin: 20px 0 0 0;">'.__("Delete Now", "spamprotection").'</a>
+<a id="deleteNowUnwantedAccounts" class="btn btn-red" data-link="'.osc_ajax_plugin_url('spamprotection/functions/searchUser.php').'" style="float: right; margin: 20px 0 0 0;">'.__('Delete Now',
+            'spamprotection').'</a>
 <div style="clear: both;"</div>
     ';
 }
-?>

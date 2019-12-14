@@ -24,27 +24,29 @@ if ($contact['fk_i_user_id']) {
     
     <div class="contact_wrapper">
         <div class="author_info infobox halfrow">
-            <h4><?php _e("About the Author", "spamprotection"); ?></h4>
-            <p><?php echo sprintf(__("Name: %s", "spamprotection"), $contact['s_user']); ?></p>
-            <p><?php echo sprintf(__("Existing user account: %s", "spamprotection"), ($user_link ? $user_link : 'No')); ?></p>
-            <p><?php echo sprintf(__("Used E-Mail Address: %s", "spamprotection"), $contact['s_user_mail']); ?></p>
-            <p><?php echo sprintf(__("Used Phone Number: %s", "spamprotection"), $contact['s_user_phone']); ?></p>
-            <p><?php echo sprintf(__("Active spam contacts by user: %d", "spamprotection"), $contacts); ?></p>
+            <h4><?php _e('About the Author', 'spamprotection'); ?></h4>
+            <p><?php echo sprintf(__('Name: %s', 'spamprotection'), $contact['s_user']); ?></p>
+            <p><?php echo sprintf(__('Existing user account: %s', 'spamprotection'), ($user_link ?: 'No')); ?></p>
+            <p><?php echo sprintf(__('Used E-Mail Address: %s', 'spamprotection'), $contact['s_user_mail']); ?></p>
+            <p><?php echo sprintf(__('Used Phone Number: %s', 'spamprotection'), $contact['s_user_phone']); ?></p>
+            <p><?php echo sprintf(__('Active spam contacts by user: %d', 'spamprotection'), $contacts); ?></p>
         </div>
         <div class="contact_info infobox halfrow">
-            <h4><?php _e("About the Mail", "spamprotection"); ?></h4>
-            <p class="contact_title"><?php echo sprintf(__("Item: %s", "spamprotection"), '<a href="'.osc_admin_base_url(true).'?page=items&action=item_edit&id='.$contact['fk_i_item_id'].'">'.$item['s_title'].'</a>'); ?></p>
-            <p class="contact_title"><?php echo sprintf(__("Date: %s", "spamprotection"), $contact['dt_date']); ?></p>
-            <p class="contact_body"><?php echo sprintf(__("Comment: %s", "spamprotection"), $contact['s_user_message']); ?></p>
+            <h4><?php _e('About the Mail', 'spamprotection'); ?></h4>
+            <p class="contact_title"><?php echo sprintf(__('Item: %s', 'spamprotection'), '<a href="'.osc_admin_base_url(true).'?page=items&action=item_edit&id='. $contact['fk_i_item_id'].'">'. $item['s_title'].'</a>'); ?></p>
+            <p class="contact_title"><?php echo sprintf(__('Date: %s', 'spamprotection'), $contact['dt_date']); ?></p>
+            <p class="contact_body"><?php echo sprintf(__('Comment: %s', 'spamprotection'), $contact['s_user_message']); ?></p>
         </div>
     </div>
     
     <div style="clear: both;"></div>
     
     <div class="contact_actions halfrow">
-        <a class="btn btn-submit" onclick="return confirm('<?php _e("Are you sure you want to forward this mail to the user?", "spamprotection"); ?>');" href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_check.php?action=forward&id='.$params['id']); ?>"><?php _e('Forward mail', 'spamprotection'); ?></a>
-        <a class="btn" onclick="return confirm('<?php _e("Are you sure you want to delete this mail?", "spamprotection"); ?>');" href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_check.php?action=delete&id='.$params['id']); ?>"><?php _e('Delete mail', 'spamprotection'); ?></a>
-        <a class="btn btn-red" onclick="return confirm('<?php _e("Are you sure you want to delete this mail and block this user for contact mails?", "spamprotection"); ?>');" href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(dirname(__FILE__)).'admin/contact_check.php?action=block&id='.$params['id']); ?>"><?php _e('Delete mail and block user', 'spamprotection'); ?></a>
+        <a class="btn btn-submit" onclick="return confirm('<?php _e('Are you sure you want to forward this mail to the user?',
+            'spamprotection'); ?>');" href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_check.php?action=forward&id='. $params['id']); ?>"><?php _e('Forward mail', 'spamprotection'); ?></a>
+        <a class="btn" onclick="return confirm('<?php _e('Are you sure you want to delete this mail?', 'spamprotection'); ?>');" href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_check.php?action=delete&id='. $params['id']); ?>"><?php _e('Delete mail', 'spamprotection'); ?></a>
+        <a class="btn btn-red" onclick="return confirm('<?php _e('Are you sure you want to delete this mail and block this user for contact mails?',
+            'spamprotection'); ?>');" href="<?php echo osc_admin_render_plugin_url(osc_plugin_folder(__DIR__).'admin/contact_check.php?action=block&id='. $params['id']); ?>"><?php _e('Delete mail and block user', 'spamprotection'); ?></a>
     </div>
 
 </div>

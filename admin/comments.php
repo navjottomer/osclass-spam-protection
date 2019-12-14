@@ -23,7 +23,7 @@ $sp = new spam_prot;
         <div id="sp_comm_mainfeatures" class="subtab-content current">
         
             <fieldset>
-                <legend><?php _e("Comment Settings", "spamprotection"); ?></legend>
+                <legend><?php _e('Comment Settings', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_comment_activate" value="1"<?php if (!empty($data['sp_comment_activate'])) { echo ' checked="checked"'; } ?> />
@@ -34,7 +34,7 @@ $sp = new spam_prot;
             </fieldset>
         
             <fieldset>
-                <legend><?php _e("Check for Links", "spamprotection"); ?></legend>
+                <legend><?php _e('Check for Links', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <div>
                         <select name="sp_comment_links">
@@ -52,7 +52,7 @@ $sp = new spam_prot;
         <div id="sp_comm_emailblock" class="subtab-content">
             
             <fieldset>
-                <legend><?php _e("Blocked Mails", "spamprotection"); ?></legend>
+                <legend><?php _e('Blocked Mails', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_comment_blocked" value="1"<?php if (!empty($data['sp_comment_blocked'])) { echo ' checked="checked"'; } ?> />
@@ -68,7 +68,7 @@ $sp = new spam_prot;
             </fieldset>
             
             <fieldset>
-                <legend><?php _e("Blocked Mail Hoster", "spamprotection"); ?></legend>
+                <legend><?php _e('Blocked Mail Hoster', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <label>
                         <input type="checkbox" name="sp_comment_blocked_tld" value="1"<?php if (!empty($data['sp_comment_blocked_tld'])) { echo ' checked="checked"'; } ?> />
@@ -87,7 +87,7 @@ $sp = new spam_prot;
         <div id="sp_comm_stopwords" class="subtab-content">
             
             <fieldset>
-                <legend><?php _e("Stop Words", "spamprotection"); ?></legend>
+                <legend><?php _e('Stop Words', 'spamprotection'); ?></legend>
                 <div class="row form-group">
                     <p>
                         <?php _e('Here you can define the search mechanism, how stopwords are checked. You can search for substrings or particular words', 'spamprotection'); ?>
@@ -117,7 +117,7 @@ $sp = new spam_prot;
         
         <div id="sp_comm_cleaner" class="subtab-content">            
             <fieldset>
-                <legend><?php _e("Delete unwanted comments", "spamprotection"); ?></legend>                
+                <legend><?php _e('Delete unwanted comments', 'spamprotection'); ?></legend>
                 <div class="row form-group">                
                     <div style="float: left; width: calc(50% - 20px); padding: 10px;">
                         <label>
