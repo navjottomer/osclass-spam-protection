@@ -561,7 +561,7 @@ class spam_prot extends DAO
      * @param bool       $orderBy
      * @param string     $orderDir
      *
-     * @return bool
+     * @return bool|array
      */
     public function _getResult($table, $where = false, $orderBy = false, $orderDir = 'DESC')
     {

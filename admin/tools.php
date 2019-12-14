@@ -103,7 +103,6 @@ if ($files === 'clear') {
                             <tbody>
                             <?php
                             $trusted = $sp->_getResult('t_sp_users', array('key' => 'i_reputation', 'value' => '2'));
-
                             if ($trusted) {
                             foreach ($trusted
 
