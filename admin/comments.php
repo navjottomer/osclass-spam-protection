@@ -150,20 +150,19 @@ $sp = new spam_prot;
                         </li>
                     </ol>
                     <select name="sp_comment_blockedtype">
-                        <option value="substr"<?php if (empty($data['sp_comment_blockedtype'])
-                            || !empty($data['sp_comment_blockedtype'])
-                            && $data['sp_comment_blockedtype']
-                            === 'substr'
-                        ) {
-                            echo ' selected="selected"';
-                        } ?>>Substrings
+                        <?php
+                        $sp_comment_blocked_type =
+                            isset($data['sp_comment_blockedtype']) ? $data['sp_comment_blockedtype'] : '';
+                        ?>
+                        <option value="substr" <?php if ($sp_comment_blocked_type === 'sbustr') {
+                            echo 'selected="selected"';
+                        } ?>>
+                            Substrings
                         </option>
-                        <option value="words"<?php if (!empty($data['sp_comment_blockedtype'])
-                            && $data['sp_comment_blockedtype']
-                            === 'words'
-                        ) {
+                        <option value="words" <?php if ($sp_comment_blocked_type === 'words') {
                             echo ' selected="selected"';
-                        } ?>>Words
+                        } ?>>
+                            Words
                         </option>
                     </select>
                     <br/><br/>

@@ -3,6 +3,6 @@ if (!defined('ABS_PATH')) {
     exit('Direct access is not allowed.');
 }
 
-require('backend.php');
-require('frontend.php');
-require('params.php');
+require(__DIR__.'/backend.php');
+require(__DIR__.'/frontend.php');
+require(__DIR__.'/params.php');

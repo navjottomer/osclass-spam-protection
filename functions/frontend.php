@@ -204,7 +204,7 @@ function sp_check_user_login()
         $logins     = spam_prot::newInstance()->_countLogin($email, 'user', $ip);
         $max_logins = spam_prot::newInstance()->_get('sp_security_login_count');
 
-        if (spam_prot::newInstance()->_checkUserBan($email, $ip) || !empty($data_token)) {
+        if (!empty($token) || spam_prot::newInstance()->_checkUserBan($email, $ip)) {
             ob_get_clean();
             osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact support.',
                 'spamprotection'));

@@ -252,58 +252,60 @@ function sp_check_admin_login()
 
 
     $admin = Admin::newInstance()->findByUsername($data_user);
-    if ($admin) {
+    if ($admin && is_array($admin)) {
         $admin_name  = $admin['s_username'];
         $admin_email = $admin['s_email'];
-    }
 
-    $ip = spam_prot::newInstance()->_IpUserLogin();
-    spam_prot::newInstance()->_increaseAdminLogin(($admin ? $admin_name : $data_user));
+        $ip = spam_prot::newInstance()->_IpUserLogin();
+        spam_prot::newInstance()->_increaseAdminLogin(($admin ? $admin_name : $data_user));
 
-    $max_logins = spam_prot::newInstance()->_get('sp_admin_login_count');
-    $login_trys = spam_prot::newInstance()->_countLogin(($admin ? $admin_name : $data_user), 'admin', $ip);
+        $max_logins = spam_prot::newInstance()->_get('sp_admin_login_count');
+        $login_trys = spam_prot::newInstance()->_countLogin(($admin ? $admin_name : $data_user), 'admin', $ip);
 
-    if (spam_prot::newInstance()->_checkAdminBan($ip) || !empty($data_token)) {
-        ob_get_clean();
-        osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact the webmaster.',
-            'spamprotection'), 'admin');
-        header('Location: ' . osc_admin_base_url(true) . '?page=login');
-        exit;
-    }
-
-    if ($login_trys < $max_logins && spam_prot::newInstance()->_checkAdminLogin($admin, $data_pass)) {
-        spam_prot::newInstance()->_resetAdminLogin($data_user);
-    } elseif (!$admin) {
-        if ($login_trys >= $max_logins) {
-            spam_prot::newInstance()->_handleAdminLogin($data_user, $ip);
-        }
-        if (spam_prot::newInstance()->_get('sp_admin_login_inform') == '1') {
+        if (!empty($data_token) || spam_prot::newInstance()->_checkAdminBan($ip)) {
             ob_get_clean();
-            osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact the webmaster.',
-                'spamprotection'), 'admin');
-        }
-        header('Location: ' . osc_admin_base_url(true) . '?page=login');
-        exit;
-    } elseif (!spam_prot::newInstance()->_checkAdminLogin($admin, $data_pass)) {
-        if ($login_trys >= $max_logins) {
-            spam_prot::newInstance()->_handleAdminLogin($admin_name, $ip);
-            if ($login_trys == $max_logins) {
-                spam_prot::newInstance()->_informUser($admin_name, 'admin');
-            }
-            if (spam_prot::newInstance()->_get('sp_admin_login_inform') == '1') {
-                ob_get_clean();
-                osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact the webmaster.',
+            osc_add_flash_error_message(
+                __('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact the webmaster.',
                     'spamprotection'), 'admin');
+            header('Location: ' . osc_admin_base_url(true) . '?page=login');
+            exit;
+        }
+
+        if ($login_trys < $max_logins && spam_prot::newInstance()->_checkAdminLogin($admin, $data_pass)) {
+            spam_prot::newInstance()->_resetAdminLogin($data_user);
+        } elseif (!$admin) {
+            if ($login_trys >= $max_logins) {
+                spam_prot::newInstance()->_handleAdminLogin($data_user, $ip);
             }
-        } elseif (empty($login_trys) || $login_trys < $max_logins) {
             if (spam_prot::newInstance()->_get('sp_admin_login_inform') == '1') {
                 ob_get_clean();
-                osc_add_flash_error_message(sprintf(__('<strong>Warning!</strong> Only %d login attempts remaining',
-                    'spamprotection'), ($max_logins - $login_trys)), 'admin');
+                osc_add_flash_error_message(
+                    __('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact the webmaster.',
+                        'spamprotection'), 'admin');
             }
+            header('Location: ' . osc_admin_base_url(true) . '?page=login');
+            exit;
+        } elseif (!spam_prot::newInstance()->_checkAdminLogin($admin, $data_pass)) {
+            if ($login_trys >= $max_logins) {
+                spam_prot::newInstance()->_handleAdminLogin($admin_name, $ip);
+                if ($login_trys == $max_logins) {
+                    spam_prot::newInstance()->_informUser($admin_name, 'admin');
+                }
+                if (spam_prot::newInstance()->_get('sp_admin_login_inform') == '1') {
+                    ob_get_clean();
+                    osc_add_flash_error_message(__('<strong>Information!</strong> Your account is disabled due to too much of false login attempts. Please contact the webmaster.',
+                        'spamprotection'), 'admin');
+                }
+            } elseif (empty($login_trys) || $login_trys < $max_logins) {
+                if (spam_prot::newInstance()->_get('sp_admin_login_inform') == '1') {
+                    ob_get_clean();
+                    osc_add_flash_error_message(sprintf(__('<strong>Warning!</strong> Only %d login attempts remaining',
+                        'spamprotection'), ($max_logins - $login_trys)), 'admin');
+                }
+            }
+            header('Location: ' . osc_admin_base_url(true) . '?page=login');
+            exit;
         }
-        header('Location: ' . osc_admin_base_url(true) . '?page=login');
-        exit;
     }
 }
 

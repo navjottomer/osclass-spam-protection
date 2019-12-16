@@ -183,20 +183,19 @@ $sp = new spam_prot;
                         </li>
                     </ol>
                     <select name="sp_contact_blockedtype">
-                        <option value="substr"<?php if (empty($data['sp_contact_blockedtype'])
-                            || !empty($data['sp_contact_blockedtype'])
-                            && $data['sp_contact_blockedtype']
-                            === 'substr'
-                        ) {
-                            echo ' selected="selected"';
-                        } ?>>Substrings
+                        <?php
+                        $sp_contact_blocked_type =
+                            isset($data['sp_contact_blockedtype']) ? $data['sp_contact_blockedtype'] : '';
+                        ?>
+                        <option value="substr" <?php if ($sp_contact_blocked_type === 'sbustr') {
+                            echo 'selected="selected"';
+                        } ?>>
+                            Substrings
                         </option>
-                        <option value="words"<?php if (!empty($data['sp_contact_blockedtype'])
-                            && $data['sp_contact_blockedtype']
-                            === 'words'
-                        ) {
+                        <option value="words" <?php if ($sp_contact_blocked_type === 'words') {
                             echo ' selected="selected"';
-                        } ?>>Words
+                        } ?>>
+                            Words
                         </option>
                     </select>
                     <br/><br/>

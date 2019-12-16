@@ -517,3 +517,5 @@ if ($sp->_get('sp_files_activate')) {
 
 
 }
+
+unset($sp);

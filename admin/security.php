@@ -428,11 +428,12 @@ $table = Params::getParam('table');
                     </select><br/>
                     <small><?php _e('This option allows to define which emails can be used for registering an account on your page.',
                             'spamprotection'); ?></small>
-
+                    <?php
+                    $sp_check_registrations =
+                        isset($data['sp_check_registrations']) ? $data['sp_check_registrations'] : '';
+                    ?>
                     <div id="sp_check_registration_mails"
-                         class="hiddeninput<?php if (isset($data['sp_check_registrations'])
-                             && $data['sp_check_registrations'] == '2'
-                             || $data['sp_check_registrations'] == '3'
+                         class="hiddeninput<?php if (in_array($sp_check_registrations, array(2, 3), false)
                          ) {
                              echo ' visible';
                          } ?>">
@@ -443,6 +444,7 @@ $table = Params::getParam('table');
                                 echo $data['sp_check_registration_mails'];
                             } ?></textarea>
                     </div>
+                    <?php unset($sp_check_registrations); ?>
                 </div>
             </fieldset>
 

@@ -8,6 +8,10 @@ class spam_prot extends DAO
 
     private static $instance;
     /**
+     * @var string
+     */
+    public $_table_sp_comments;
+    /**
      * @var array
      */
     private $configFiles;
@@ -43,10 +47,6 @@ class spam_prot extends DAO
      * @var string
      */
     private $_table_sp_contacts;
-    /**
-     * @var string
-     */
-    private $_table_sp_comments;
     /**
      * @var string
      */
@@ -106,28 +106,14 @@ class spam_prot extends DAO
      *
      * @return array|bool|mixed
      */
-    public function _get($opt = false, $type = false)
+    public function _get($opt = false)
     {
         $pref = $this->_sect();
         if ($opt) {
             return osc_get_preference($opt, $pref);
         }
 
-        $this->dao->select('*');
-        $this->dao->from($this->_table_pref);
-        $this->dao->where('s_section', $pref);
-
-        $result = $this->dao->get();
-        if (!$result) {
-            return false;
-        }
-        $opts = array();
-
-        foreach ($result->result() as $k => $v) {
-            $opts[$v['s_name']] = $v['s_value'];
-        }
-
-        return $opts;
+        return $this->getAllSpamProtectionPrefAsArray();
     }
 
     /**
@@ -136,6 +122,31 @@ class spam_prot extends DAO
     public function _sect()
     {
         return 'plugin_spamprotection';
+    }
+
+    /**
+     * Get All SpamProtection Preferences as array
+     *
+     * @return array|bool
+     */
+    public function getAllSpamProtectionPrefAsArray()
+    {
+        $opts = array();
+        $pref = $this->_sect();
+        $this->dao->select('*');
+        $this->dao->from($this->_table_pref);
+        $this->dao->where('s_section', $pref);
+
+        $result = $this->dao->get();
+        if (!$result) {
+            return false;
+        }
+
+        foreach ($result->result() as $k => $v) {
+            $opts[$v['s_name']] = $v['s_value'];
+        }
+
+        return $opts;
     }
 
     /**
@@ -187,7 +198,7 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param bool $key
+     * @param bool|string $key
      *
      * @return array|mixed
      */
@@ -344,7 +355,11 @@ class spam_prot extends DAO
     public function _admin_menu_draw()
     {
         $count    = $this->_countRows('t_item',
-            array(array('key' => 'b_spam', 'value' => '1'), array('key' => 'b_active', 'value' => '0')));
+            array(
+                array('key' => 'b_spam', 'value' => '1'),
+                array('key' => 'b_active', 'value' => '0')
+            )
+        );
         $comments = $this->_countRows('t_comment', array('key' => 'b_spam', 'value' => '1'));
         $contacts = $this->_countRows('t_sp_contacts');
         $bans     = $this->_countRows('t_sp_ban_log');
@@ -461,7 +476,7 @@ class spam_prot extends DAO
      * @param            $table
      * @param bool|array $where
      *
-     * @return bool
+     * @return bool|array
      */
     public function _countRows($table, $where = false)
     {
@@ -606,7 +621,7 @@ class spam_prot extends DAO
     }
 
     /**
-     * @param      $params
+     * @param array $params
      * @param bool $type
      *
      * @return bool
@@ -970,7 +985,7 @@ class spam_prot extends DAO
      * @param bool       $orderBy
      * @param string     $orderDir
      *
-     * @return bool
+     * @return bool|array
      */
     public function _getRow($table, $where = false, $orderBy = false, $orderDir = 'DESC')
     {
@@ -2235,7 +2250,7 @@ class spam_prot extends DAO
 
         $bans = $result->result();
 
-        foreach ($bans AS $k => $v) {
+        foreach ($bans as $k => $v) {
             $this->_addGlobalLog('Account listed on StopForumSpam is now unbanned', $v['s_email'], 'Cron');
             $this->dao->delete($this->_table_bans, '`s_ip` = "' . $v['s_ip'] . '"');
             $this->_doIpBan('delete', $v['s_ip']);
